@@ -3,20 +3,20 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background-color: rgb(80, 80, 80);
+  /* background-color: rgb(80, 80, 80); */
 }
 
 .hero-sec {
-  display: flex;
-  flex-direction: row;
+
 }
 
 .org-sec {
   display: flex;
   flex-direction: row;
-
+  position: absolute;
+  top: 40px; left: 50px;
   margin: 3em;
-  width: 50vw;
+  height: 20px;
 }
 
 .brand-sec {
@@ -27,8 +27,21 @@
   border: none;
 }
 
+.image-container img{
+  display: block;
+  z-index: 1;
+
+}
+
 .links-sec {
   margin: 3em;
-  width: 50vw;
+  width: 228px;
+  background-color: none;
+  position: absolute;
+  top: 40px; right: 254px;
+}
+
+.links-sec ul li {
+  z-index: 5;
 }
 
