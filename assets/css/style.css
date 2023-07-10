@@ -1,0 +1,34 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(80, 80, 80);
+}
+
+.hero-sec {
+  display: flex;
+  flex-direction: row;
+}
+
+.org-sec {
+  display: flex;
+  flex-direction: row;
+
+  margin: 3em;
+  width: 50vw;
+}
+
+.brand-sec {
+  margin-left: 1.5em;
+}
+
+.brand-sec select {
+  border: none;
+}
+
+.links-sec {
+  margin: 3em;
+  width: 50vw;
+}
+
