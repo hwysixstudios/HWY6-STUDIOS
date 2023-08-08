@@ -5,6 +5,10 @@
   font-family: 'Poppins', sans-serif;
   /* background-color: rgb(80, 80, 80); */
 }
+:root{
+  --font-color: white;
+  /* --bg-color: */
+}
 
 .hero-sec {
 
@@ -14,7 +18,7 @@
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 40px; left: 50px;
+  top: 20px; left: 50px;
   margin: 3em;
   height: 20px;
 }
@@ -35,13 +39,74 @@
 
 .links-sec {
   margin: 3em;
-  width: 228px;
-  background-color: none;
+  width: 220px;
   position: absolute;
-  top: 40px; right: 254px;
+
+  top: 20px; right: 90px;
 }
 
 .links-sec ul li {
-  z-index: 5;
+  list-style-type: none;
 }
 
+.links-sec ul li a {
+  z-index: 5;
+  font-size: 20px;
+  font-weight: 800px;
+  color: var(--font-color);
+}
+
+
+/* PROJECTS and MEMBERS SECTION */
+.main-section-header-div {
+  display: flex;
+  border-bottom: 1px solid #6b6b6b;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  
+  margin-top: 10px;
+  margin-bottom: 11px;
+}
+
+.t-h4{
+  text-align: right;
+}
+
+.projects-div,
+.teams-div {
+  width: 50%;
+  background: red;
+}
+
+.memberList{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background: blue;
+}
+
+.choices {
+  width: 100%;
+  display: flex;
+  background: blue;
+}
+
+.member {
+  width: auto;
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+.choice {
+  width: auto;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+/* CARD CONTAINER SECTION  */
