@@ -125,20 +125,17 @@ h4 {
 .projects-div,
 .teams-div {
   width: 50%;
-  background: red;
 }
 
 .memberList {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background: blue;
 }
 
 .choices {
   width: 100%;
   display: flex;
-  background: blue;
 }
 
 .member {
@@ -165,12 +162,9 @@ h4 {
 
 .card {
   flex: 1 0 calc(25% - 20px);
-  /* explanation below */
   margin: 10px;
   min-width: 460px;
-  /* Adjust as needed */
   min-height: 300px;
-  /* Adjust as needed */
   background-color: blue;
   background-size: cover;
   background-repeat: no-repeat;
@@ -213,8 +207,7 @@ h4 {
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top: 0;
-  margin-bottom: 0;
+\
   padding: .5rem;
   font-size: 1.25em;
   font-weight: 700;
