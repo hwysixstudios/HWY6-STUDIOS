@@ -166,9 +166,16 @@ h4 {
 }
 
 .card {
-  flex: 1 0 21%; /* explanation below */
-  margin: 5px;
-  height: 100px;
+  flex: 1 0 20%; /* explanation below */
+  margin: 10px;
+  min-width: 500px; /* Adjust as needed */
+  min-height: 300px; /* Adjust as needed */
   background-color: blue;
-  align-self: start;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* When only one card remains */
+.card-holder:only-child .card {
+  flex: 0; /* Prevents the card from growing */
 }
