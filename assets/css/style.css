@@ -5,20 +5,32 @@
   font-family: 'Poppins', sans-serif;
   /* background-color: rgb(80, 80, 80); */
 }
-:root{
-  --font-color: white;
-  /* --bg-color: */
+
+:root {
+  --dark-bg-font: #fff;
+  --light-bg-font: #000;
 }
 
-.hero-sec {
+.img-container {
 
 }
+
+body {
+  background-color: #101010;
+  color: #ffffff;
+}
+
+#main-img {
+  width: 100%;
+}
+
 
 .org-sec {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 20px; left: 50px;
+  top: 20px;
+  left: 50px;
   margin: 3em;
   height: 20px;
 }
@@ -27,22 +39,56 @@
   margin-left: 1.5em;
 }
 
-.brand-sec select {
+
+.dropdown-btn {
   border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.image-container img{
-  display: block;
-  z-index: 1;
-
+#selected-option {
+  color: var(--dark-bg-font);
+  text-shadow: 1px 8px 17px var(--dark-bg-font), 1px 8px 17px var(--dark-bg-font), 1px 8px 17px var(--dark-bg-font);
+  font-size: 18px;
+  text-align: center;
 }
+
+/* Define the bounce animation */
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.arrow {
+  display: inline-block;
+  animation: bounce 1s infinite;
+  animation-timing-function: ease-in-out;
+  color: var(--dark-bg-font);
+}
+
+
 
 .links-sec {
   margin: 3em;
   width: 220px;
   position: absolute;
 
-  top: 20px; right: 90px;
+  top: 20px;
+  right: 90px;
 }
 
 .links-sec ul li {
@@ -53,7 +99,7 @@
   z-index: 5;
   font-size: 20px;
   font-weight: 800px;
-  color: var(--font-color);
+  color: var(--dark-bg-font);
 }
 
 
@@ -69,12 +115,12 @@ h4 {
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
-  
+
   margin-top: 10px;
   margin-bottom: 11px;
 }
 
-.t-h4{
+.t-h4 {
   text-align: right;
 }
 
@@ -84,7 +130,7 @@ h4 {
   background: red;
 }
 
-.memberList{
+.memberList {
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -110,3 +156,19 @@ h4 {
 }
 
 /* CARD CONTAINER SECTION  */
+.card-container {
+  /* display: flex; */
+}
+
+.card-holder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0 21%; /* explanation below */
+  margin: 5px;
+  height: 100px;
+  background-color: blue;
+  align-self: start;
+}
