@@ -12,6 +12,9 @@ dropdownButton.addEventListener("click", function () {
 
 // Add click event listeners to the dropdown items
 const dropdownItems = dropdownContent.querySelectorAll("li");
+
+
+function handleDropdown(event){
   dropdownContent.style.display = 'none';
   let originalChoice = currentBrand.textContent;
 
