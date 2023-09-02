@@ -93,19 +93,35 @@
 
       <div class="teams-div">
         <h4 class="t-h4">TEAM MEMBERS</h4>
-
-        <div class="memberList">
-          <div class="member">
-            <a>
-              <p>HELLO THERE</p>
-            </a>
-          </div>
-
-          <div class="member">
-            <a>
-              <p>HELLO THERE</p>
-            </a>
-          </div>
+      
+        <div class="memberList" id="memberList">
+          <!-- Content will be inserted here -->
+        </div>
+      
+        <script>
+          const numberOfMembers = 10; // Numbers of Members change here 
+          const memberList = document.getElementById('memberList');
+      
+          for (let i = 1; i <= numberOfMembers; i++) {
+            const memberDiv = document.createElement('div');
+            memberDiv.classList.add('member');
+      
+            const memberLink = document.createElement('a');
+      
+            const memberName = document.createElement('p');
+            memberName.textContent = `Member ${i}`;
+      
+            const memberSummary = document.createElement('p');
+            memberSummary.textContent = `Summary for Member ${i}.`;
+      
+            memberLink.appendChild(memberName);
+            memberLink.appendChild(memberSummary);
+            memberDiv.appendChild(memberLink);
+      
+            memberList.appendChild(memberDiv);
+          }
+        </script>
+      </div>
 
 
         </div>
