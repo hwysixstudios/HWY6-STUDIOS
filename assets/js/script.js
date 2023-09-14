@@ -14,19 +14,32 @@ dropdownButton.addEventListener("click", function () {
 const dropdownItems = dropdownContent.querySelectorAll("li");
 
 
-function handleDropdown(event){
+const handleDropdown = (event) => {
+
   dropdownContent.style.display = 'none';
-  let originalChoice = currentBrand.textContent;
+  const originalChoice = currentBrand.dataset.id;
 
   const li = document.createElement('li');
   li.innerHTML = `<a href="#">${originalChoice}</a>`
   dropdownContent.appendChild(li);
   li.addEventListener('click', handleDropdown)
 
-  const newBrand = event.target.textContent
   event.currentTarget.remove();
 
-  currentBrand.textContent = newBrand;
+  switch (event.originalTarget.innerHTML) {
+    case 'Norsu':
+      currentBrand.src = './assets/images/NORSU.png'
+      currentBrand.dataset.id = 'Norsu'
+      break;
+    case 'Sequoiah':
+      currentBrand.src = './assets/images/SEQUOIAH.png'
+      currentBrand.dataset.id = 'Sequoiah'
+      break;
+    case 'FRNDSnFOES':
+      currentBrand.src = './assets/images/FNF-Logo.png'
+      currentBrand.dataset.id = 'FRNDSnFOES'
+      break;
+  }
 }
 
 dropdownItems.forEach(function (item) {

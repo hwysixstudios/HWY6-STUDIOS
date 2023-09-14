@@ -24,23 +24,24 @@
 
     <div class="img-container">
       <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
+      <div><fade/></div>
     </div>
+    
 
     <div class="org-sec">
       <a id="logo" href="#">
-        <img style="background:none" src="./assets/images/STUDIOS.png">
+        <img id="org" style="background:none" src="./assets/images/STUDIOS.png">
       </a>
-
+      
 
       <div class="brand-sec">
         <button class="dropdown-btn" id="dropdown-button">
-          <span id="selected-option">Sequoiah</span>
+          <img data-id="FRNDSnFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
         </button>
-        <span class="arrow fade-in-down"> &dtrif;</span>
+        <span class="arrow fade-in-down">&dtrif;</span>
         <ul class="dropdown-content" id="dropdown-content" style="display:none;">
-          <li><a href="#">FRNDSnFOES</a></li>
-          <li><a href="#">Vue</a></li>
-          <li><a href="#">Svelte</a></li>
+          <li><a href="#">Sequoiah</a></li>
+          <li><a href="#">Norsu</a></li>
         </ul>
       </div>
 
@@ -48,6 +49,7 @@
     </div>
   </header>
 
+  
 
   <div class="links-sec">
     <ul class="main-links">
@@ -55,7 +57,7 @@
         <a href="mailto:hwysixstudios@gmail.com">HWYSIXSTUDIOS@gmail.com</a>
       </li>
       <li>
-        <a href="">@HWY6STUDIOS</a>
+        <a href="https://www.instagram.com/hwy6studios/">@HWY6STUDIOS</a>
       </li>
     </ul>
   </div>
@@ -66,7 +68,7 @@
     <div class="main-section-header-div">
 
       <div class="projects-div">
-        <h4>Projects</h4>
+        <h3 class="p-h3">Projects</h3>
 
         <div class="choices">
 
@@ -93,13 +95,18 @@
       </div>
 
       <div class="teams-div">
-        <h4 class="t-h4">TEAM MEMBERS</h4>
+        <h3 class="t-h3">TEAM MEMBERS</h3>
       
         <div class="memberList" id="memberList">
-          <!-- Content will be inserted here -->
+          <div class="member-cont">
+            <a class="member" href="#">Ekemini Ekwere</a>
+          </div>
+          <div class="member-cont">
+            <a class="member" href="#">Terry Washington</a>
+          </div>
         </div>
       
-        <script>
+        <!-- <script>
           const numberOfMembers = 10; // Numbers of Members change here 
           const memberList = document.getElementById('memberList');
       
@@ -121,7 +128,7 @@
       
             memberList.appendChild(memberDiv);
           }
-        </script>
+        </script> -->
       </div>
 
 
@@ -131,10 +138,19 @@
 
     <div class="card-container">
       <div class="card-holder">
+
+
         <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
           <div class="card-info">
-            <h4 class="heading-name">YOOOOOS!</h4>
-            <h4 class="heading-card">YOOOOOS!</h4>
+            <h4 class="heading-name">Sequoiah</h4>
+            <h4 class="heading-card">DROP #</h4>
+          </div>
+        </a>
+
+        <a class="card" style="background-image: url(./assets/images/NORSU\ \(72\ of\ 75\).jpg);">
+          <div class="card-info">
+            <h4 class="heading-name">Norsu</h4>
+            <h4 class="heading-card">DROP #</h4>
           </div>
         </a>
 
