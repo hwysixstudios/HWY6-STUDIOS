@@ -9,6 +9,8 @@
 :root {
   --dark-bg-font: #fff;
   --light-bg-font: #000;
+  --font-azeret: 'Azeret Mono', monospace;
+  --font-poppins: 'Poppins', 'sans-serif';
 }
 
 .img-container {}
@@ -42,8 +44,8 @@ fade {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 20px;
-  left: 50px;
+  top: 0px;
+  left: 0px;
   margin: 3em;
   height: 20px;
 }
@@ -117,24 +119,36 @@ fade {
 
 .links-sec {
   margin: 3em;
-  width: 220px;
+  /* width: 220px; */
   position: absolute;
 
-  top: 20px;
-  right: 90px;
+  top: -20px;
+  right: -10px;
+
 }
 
 .links-sec ul li {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.links-sec ul {
+  text-align: right;
 }
 
 .links-sec ul li a {
   z-index: 5;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 800px;
+  font-family: var(--font-azeret);
   color: var(--dark-bg-font);
+  text-decoration: none;
 }
 
+.links-sec ul li a:hover {
+  color: rgb(0, 217, 255);
+}
 
 /* PROJECTS and MEMBERS SECTION */
 .main-section-header-div {
@@ -146,18 +160,15 @@ fade {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 24px;
-
-  margin-top: 10px;
-  margin-bottom: 11px;
+  padding-bottom: 20px;
 }
 
 h4 {
 
   line-height: 20px;
-
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -168,8 +179,6 @@ h4 {
 
 .p-h3 {
   text-align: left;
-  font-size: 40px;
-  padding-bottom: 10px;
 }
 
 .projects-div,
@@ -201,11 +210,32 @@ h4 {
   filter: brightness(100%);
 }
 
+.member {
+  font-family: var(--font-azeret);
+}
 
 .choice {
-  width: auto;
-  padding-left: 0;
   padding-right: 10px;
+}
+
+
+.choice a {
+  font-family: var(--font-azeret);
+  font-size: 15px;
+  /* padding: 5px; */
+  cursor: pointer;
+}
+
+.choice a:hover {
+  filter: brightness(100%);
+}
+
+.unselected {
+  filter: brightness(50%)
+}
+
+.highlighted {
+  filter: brightness(100%)
 }
 
 /* CARD CONTAINER SECTION  */
@@ -260,6 +290,7 @@ h4 {
   text-transform: uppercase;
   font-size: .8em;
   font-weight: 400;
+  font-family: var(--font-azeret);
 }
 
 .heading-card {
