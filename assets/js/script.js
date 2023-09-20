@@ -3,6 +3,8 @@ const dropdownButton = document.getElementById("dropdown-button");
 const dropdownContent = document.getElementById("dropdown-content");
 const currentBrand = document.getElementById("selected-option");
 const projectCategories = document.querySelectorAll(".catChoice");
+const mainImgContainer = document.querySelector(".img-container");
+const mainVideoContainer = document.querySelector(".video-container")
 
 // Add a click event listener to the dropdown button
 dropdownButton.addEventListener("click", function () {
@@ -28,7 +30,7 @@ const handleDropdown = (event) => {
 
   // Removes the clicked target from the dropdown list.
   event.currentTarget.remove();
-  
+
   // Change the dropdown item to the new logo of the selected brand.
   setLogo(event.target.innerHTML);
 }
@@ -52,24 +54,8 @@ const GetLastChoice = () => {
     dropdownContent.appendChild(li);
     li.addEventListener('click', handleDropdown);
   }
-    // logic for handling the remembrance of the lastChoice. Sets the current selected brand to the last choice logged in LocalStorage.
-    switch (lastChoice) {
-      case 'Norsu':
-        currentBrand.src = './assets/images/NORSU.png'
-        currentBrand.dataset.id = 'Norsu'
-        localStorage.setItem('lastChoice', 'Norsu')
-        break;
-      case 'Sequoiah':
-        currentBrand.src = './assets/images/SEQUOIAH.png'
-        currentBrand.dataset.id = 'Sequoiah'
-        localStorage.setItem('lastChoice', 'Sequoiah')
-        break;
-      case 'FRNDSnFOES':
-        currentBrand.src = './assets/images/FNF-Logo.png'
-        currentBrand.dataset.id = 'FRNDSnFOES'
-        localStorage.setItem('lastChoice', 'FRNDSnFOES')
-        break;
-    }
+  // logic for handling the remembrance of the lastChoice. Sets the current selected brand to the last choice logged in LocalStorage.
+  setLogo(lastChoice)
 }
 
 const setLogo = (name) => {
@@ -88,18 +74,20 @@ const setLogo = (name) => {
       currentBrand.src = './assets/images/FNF-Logo.png'
       currentBrand.dataset.id = 'FRNDSnFOES'
       localStorage.setItem('lastChoice', 'FRNDSnFOES')
+      // mainImgContainer.style.display = 'none';
+      mainVideoContainer.style.display = 'block';
       break;
   }
 }
 
 const setSelectedCategory = (event) => {
   for (let i = 0; i < projectCategories.length; i++) {
-    
+
     const selected = projectCategories[i];
     selected.classList.remove('highlighted')
     selected.classList.add('unselected');
     event.target.classList.add('highlighted')
-    
+
   }
 }
 
@@ -113,9 +101,9 @@ dropdownItems.forEach(function (item) {
   item.addEventListener("click", handleDropdown);
 });
 
-projectCategories.forEach(function(item) {
+projectCategories.forEach(function (item) {
   item.addEventListener('click', setSelectedCategory)
-}) 
+})
 
 // Close the dropdown when clicking outside of it
 window.addEventListener("click", function (event) {
