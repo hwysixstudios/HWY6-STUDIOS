@@ -84,7 +84,7 @@ const setLogo = (name) => {
       break;
   }
 }
-
+// NEW 
 const setSelectedCategory = (event) => {
   for (let i = 0; i < projectCategories.length; i++) {
     const selected = projectCategories[i];
