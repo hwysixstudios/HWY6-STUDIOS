@@ -5,6 +5,7 @@ const currentBrand = document.getElementById("selected-option");
 const projectCategories = document.querySelectorAll(".catChoice");
 const mainImgContainer = document.querySelector(".img-container");
 const mainVideoContainer = document.querySelector(".video-container")
+const mainSiteImg = document.querySelector("#main-img");
 
 // Add a click event listener to the dropdown button
 dropdownButton.addEventListener("click", function () {
@@ -24,9 +25,9 @@ const handleDropdown = (event) => {
 
   // Adds the current choice as a dropdown item
   const li = document.createElement('li');
-  li.innerHTML = `<a href="#">${originalChoice}</a>`
+  li.innerHTML = `<a href="#">${originalChoice}</a>`;
   dropdownContent.appendChild(li);
-  li.addEventListener('click', handleDropdown)
+  li.addEventListener('click', handleDropdown);
 
   // Removes the clicked target from the dropdown list.
   event.currentTarget.remove();
@@ -61,33 +62,35 @@ const GetLastChoice = () => {
 const setLogo = (name) => {
   switch (name) {
     case 'Norsu':
-      currentBrand.src = './assets/images/NORSU.png'
-      currentBrand.dataset.id = 'Norsu'
-      localStorage.setItem('lastChoice', 'Norsu')
+      currentBrand.src = './assets/images/NORSU.png';
+      mainSiteImg.src = './assets/images/NORSU_1.jpg';
+      mainSiteImg.style.height = '170%';
+      currentBrand.dataset.id = 'Norsu';
+      localStorage.setItem('lastChoice', 'Norsu');
       break;
     case 'Sequoiah':
-      currentBrand.src = './assets/images/SEQUOIAH.png'
-      currentBrand.dataset.id = 'Sequoiah'
-      localStorage.setItem('lastChoice', 'Sequoiah')
+      currentBrand.src = './assets/images/SEQUOIAH.png';
+      mainSiteImg.src = './assets/images/ig-pre2.jpg';
+      mainSiteImg.style.height = '100%';
+      currentBrand.dataset.id = 'Sequoiah';
+      localStorage.setItem('lastChoice', 'Sequoiah');
       break;
     case 'FRNDSnFOES':
-      currentBrand.src = './assets/images/FNF-Logo.png'
-      currentBrand.dataset.id = 'FRNDSnFOES'
-      localStorage.setItem('lastChoice', 'FRNDSnFOES')
-      // mainImgContainer.style.display = 'none';
-      mainVideoContainer.style.display = 'block';
+      currentBrand.src = './assets/images/FNF-Logo.png';
+      mainSiteImg.src = './assets/images/stolenartifactss.png';
+      mainSiteImg.style.height = '100%';
+      currentBrand.dataset.id = 'FRNDSnFOES';
+      localStorage.setItem('lastChoice', 'FRNDSnFOES');
       break;
   }
 }
 
 const setSelectedCategory = (event) => {
   for (let i = 0; i < projectCategories.length; i++) {
-
     const selected = projectCategories[i];
-    selected.classList.remove('highlighted')
+    selected.classList.remove('highlighted');
     selected.classList.add('unselected');
-    event.target.classList.add('highlighted')
-
+    event.target.classList.add('highlighted');
   }
 }
 
@@ -102,7 +105,7 @@ dropdownItems.forEach(function (item) {
 });
 
 projectCategories.forEach(function (item) {
-  item.addEventListener('click', setSelectedCategory)
+  item.addEventListener('click', setSelectedCategory);
 })
 
 // Close the dropdown when clicking outside of it

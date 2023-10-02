@@ -18,7 +18,12 @@
   /* z-index: -1; */
 }
 
-.img-container {}
+.img-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 
 .video-container {
   width: 100%;
@@ -33,12 +38,15 @@ body {
 #main-img,
 .gdriveVideo {
   width: 100%;
-  filter: brightness(50%)
+  height: 100%;
+  filter: brightness(50%);
+
 }
+
 
 fade {
   position: relative;
-  bottom: 57px;
+  bottom: 50px;
 
   display: block;
 
@@ -164,7 +172,7 @@ fade {
 /* PROJECTS and MEMBERS SECTION */
 .main-section-header-div {
   display: flex;
-  border-bottom: 2px solid #c5c5c5;
+  border-bottom: 1px solid #424242;
   justify-content: space-between;
   padding-bottom: 10px;
   margin: 25px;
@@ -194,7 +202,7 @@ h4 {
 
 .projects-div,
 .teams-div {
-  width: 50%;
+  width: 100%;
 }
 
 .memberList {
@@ -317,4 +325,17 @@ h4 {
   font-weight: 700;
   text-decoration: none;
   padding-bottom: 20px;
+}
+
+.red {
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+/* FOOTER SECTION  */
+.footer_sec_div {
+  display: flex;
+  border-top: 1px solid #424242;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin: 25px;
 }
