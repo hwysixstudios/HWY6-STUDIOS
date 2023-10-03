@@ -4,11 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HWY6STUDIO</title>
+  <title>HWY6STUDIOS</title>
   <meta content="hwy6studio REPRESENTS THE FUTURE IN CREATIVE AND VISUAL PRODUCTION " name="description">
   <meta content="hwy6studio" property="og:title">
   <meta content="hwy6studio REPRESENTS THE FUTURE IN CREATIVE AND VISUAL PRODUCTION " property="og:title">
-  <meta property="og:type" content="website"/> 
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -22,25 +25,40 @@
 <body>
   <header class="hero-sec">
 
-    <div class="img-container">
-      <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
-    </div>
+    <div class="background-container">
+      
+      <!-- Div for the img. We'll change the src in JavaScript to another image or video depending on what the user selects from the dropdown menu.  -->
+      <div class="img-container">
+        <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
+      </div>
+      <fade/>
 
+
+      <!-- ! This is for the video! We'll be changing how this works later, but for now it's going to use youtube. -->
+      <!-- <div class="video-container">
+        <video class="gdriveVideo" preload="auto">
+          <iframe width="1280" height="533" src="https://www.youtube.com/embed/hH71pnHr_lc" title="Stolen Artifacts @frndsnfoes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <fade/>
+        </video>
+      </div> -->
+
+    </div>
+    
+    <!-- Org choosing section. Has the HWY6STUDIO Logo and the brands -->
     <div class="org-sec">
       <a id="logo" href="#">
-        <img style="background:none" src="./assets/images/STUDIOS.png">
+        <img id="org" style="background:none" src="./assets/images/STUDIOS.png">
       </a>
 
-
+      <!-- ! Brand Section. Uses dropdown  -->
       <div class="brand-sec">
         <button class="dropdown-btn" id="dropdown-button">
-          <span id="selected-option">Sequoiah</span>
+          <img data-id="FRNDSnFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
         </button>
-        <span class="arrow fade-in-down"> &dtrif;</span>
+        <span class="arrow fade-in-down">&dtrif;</span>
         <ul class="dropdown-content" id="dropdown-content" style="display:none;">
-          <li><a href="#">FRNDSnFOES</a></li>
-          <li><a href="#">Vue</a></li>
-          <li><a href="#">Svelte</a></li>
+          <li><a href="#">Sequoiah</a></li>
+          <li><a href="#">Norsu</a></li>
         </ul>
       </div>
 
@@ -49,13 +67,12 @@
   </header>
 
 
+
   <div class="links-sec">
-    <ul class="main-links">
+    <ul>
       <li>
-        <a href="mailto:hwysixstudios@gmail.com">HWYSIXSTUDIOS@gmail.com</a>
-      </li>
-      <li>
-        <a href="">@HWY6STUDIOS</a>
+        <a href="mailto:hwysixstudios@gmail.com">hwy6studios@gmail</a>
+        <a href="https://www.instagram.com/hwy6studios/">@hwy6studios</a>
       </li>
     </ul>
   </div>
@@ -66,92 +83,109 @@
     <div class="main-section-header-div">
 
       <div class="projects-div">
-        <h4>Projects</h4>
+        <h3 class="p-h3">PROJECTS</h3>
 
         <div class="choices">
 
           <div class="choice">
-            <a>
-              <p>ALL</p>
-            </a>
+            <a class="catChoice highlighted">ALL</a>
           </div>
 
           <div class="choice">
-            <a>
-              <p>PHOTO</p>
-            </a>
+            <a class="catChoice unselected">PHOTO</a>
           </div>
 
-          <div class="">
-            <a>
-              <p>BRAND</p>
-            </a>
+          <div class="choice">
+            <a class="catChoice unselected">BRAND</a>
           </div>
 
         </div>
-
-      </div>
-
-      <div class="teams-div">
-        <h4 class="t-h4">TEAM MEMBERS</h4>
-      
-        <div class="memberList" id="memberList">
-          <!-- Content will be inserted here -->
-        </div>
-      
-        <script>
-          const numberOfMembers = 10; // Numbers of Members change here 
-          const memberList = document.getElementById('memberList');
-      
-          for (let i = 1; i <= numberOfMembers; i++) {
-            const memberDiv = document.createElement('div');
-            memberDiv.classList.add('member');
-      
-            const memberLink = document.createElement('a');
-      
-            const memberName = document.createElement('p');
-            memberName.textContent = `Member ${i}`;
-      
-            const memberSummary = document.createElement('p');
-            memberSummary.textContent = `Summary for Member ${i}.`;
-      
-            memberLink.appendChild(memberName);
-            memberLink.appendChild(memberSummary);
-            memberDiv.appendChild(memberLink);
-      
-            memberList.appendChild(memberDiv);
-          }
-        </script>
-      </div>
-
-
-        </div>
-      </div>
-    </div>
-
-    <div class="card-container">
-      <div class="card-holder">
-        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
-          <div class="card-info">
-            <h4 class="heading-name">YOOOOOS!</h4>
-            <h4 class="heading-card">YOOOOOS!</h4>
-          </div>
-        </a>
-
-        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
-          <div></div>
-        </a>
-
-        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
-          <div></div>
-        </a>
-
-        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
-          <div></div>
-        </a>
 
       </div>
     </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card-holder">
+
+      <!-- ! Project cards  -->
+      <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Sequoiah</h4>
+          <h4 class="heading-card">DROP #</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/NORSU_1.jpg);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Norsu</h4>
+          <h4 class="heading-card">Pretty Girls Wear Norsu</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/SOLARBOY.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Solarboy</h4>
+          <h4 class="heading-card">Solarworld  #</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/drivenangels.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name red">Sequoiah</h4>
+          <h4 class="heading-card red">Driven Angels #</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/fnfworkerjacket.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name red">FRNDSnFOES</h4>
+          <h4 class="heading-card red">Faith Collection</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/fnfwarshirt.jpg);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">FRNDSnFOES</h4>
+          <h4 class="heading-card">War Tee</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/Seddy-Project.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Seddy Hendrinx</h4>
+          <h4 class="heading-card">David Ruffin</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/agthsb-sequoiah-tee.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Sequoiah</h4>
+          <h4 class="heading-card">AGTHSB Tee #</h4>
+        </div>
+      </a>
+
+    </div>
+
+
+    <footer>
+      <div class="footer_sec_div">
+
+        <div class="projects-div">
+          <h3 class="p-h3">FIND US...</h3>
+          
+          <div class="  ">
+            <p>Meet the HWY6 Crew.</p>
+            <div>
+              <li>Ekemini Ekwere</li>
+              <li>Terry Washington</li>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </footer>
+  </div>
 
   </div>
 
