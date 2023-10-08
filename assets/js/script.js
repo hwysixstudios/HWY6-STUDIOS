@@ -37,3 +37,22 @@ window.addEventListener("click", function (event) {
   }
 });
 
+const numberOfMembers = 10; // Number of Members (change as needed)
+const memeberList = document.getElementById();
+
+for (let i = 1; <= numberOfMembers; i++){
+  const memberDiv = document.createElement('div');
+  memberDiv.classList.add('member');
+
+  const memberImage = document.createElement
+   memberImage.src = `path_to_member_photo_${i}.jpg`; // Replace with the actual path to member photos
+  memberImage.alt = `Member ${i}`;
+
+  const memberName = document.createElement('p');
+  memberName.textContent = `Member ${i}`;
+
+  memberDiv.appendChild(memberImage);
+  memberDiv.appendChild(memberName);
+
+  memberList.appendChild(memberDiv);
+}
