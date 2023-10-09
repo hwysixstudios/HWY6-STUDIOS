@@ -123,3 +123,28 @@ window.addEventListener("click", function (event) {
     dropdownContent.classList.remove("show");
   }
 });
+
+
+
+// Add click event listeners to your card sections (assuming they have class "card")
+const cardSections = document.querySelectorAll(".card");
+
+cardSections.forEach(function (card) {
+  card.addEventListener("click", function () {
+    const cardImageSrc = card.style.backgroundImage.slice(5, -2); // Get the background image URL from the card
+    const modalImage = document.getElementById("modalImage");
+    modalImage.src = cardImageSrc;
+
+    // Display the modal
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "block";
+
+    // Add a click event listener to the close button (X)
+    const closeBtn = document.querySelector(".close");
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+  });
+});
+
+
