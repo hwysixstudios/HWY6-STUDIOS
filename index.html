@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/9cb376baee.js" crossorigin="anonymous"></script>
 </head>
 
 
@@ -53,7 +54,7 @@
       <!-- ! Brand Section. Uses dropdown  -->
       <div class="brand-sec">
         <button class="dropdown-btn" id="dropdown-button">
-          <img data-id="FRNDSnFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
+          <img data-id="FRNDSNFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
         </button>
         <span class="arrow fade-in-down">&dtrif;</span>
         <ul class="dropdown-content" id="dropdown-content" style="display:none;">
@@ -83,12 +84,19 @@
     <div class="main-section-header-div">
 
       <div class="projects-div">
-        <h3 class="p-h3">PROJECTS</h3>
+        <h3 class="p-h3">CATALOGUE</h3>
+
+        <a class="main_card" style="background-image: url(./assets/images/hwy6arcgivesbanner.png);" href="https://docs.google.com/forms/d/e/1FAIpQLSdjUroRu4BBsfUkC6zpVYpYTyr2__qN8qVs-zzxPhxLk6J3fw/viewform">
+          <div class="card-info">
+            <h4 class="heading-name black">HWY6STUDIOS</h4>
+            <h4 class="heading-card black">HWY 6 ARCHIVES</h4>
+          </div>
+        </a>
 
         <div class="choices">
 
-          <div class="choice">
-            <a class="catChoice highlighted">ALL</a>
+          <div class="choice" id="main-option">
+            <a class="catChoice highlighted">PROJECTS</a>  |
           </div>
 
           <div class="choice">
@@ -96,7 +104,15 @@
           </div>
 
           <div class="choice">
-            <a class="catChoice unselected">BRAND</a>
+            <a class="catChoice unselected">VIDEO</a>
+          </div>
+
+          <div class="choice">
+            <a class="catChoice unselected">BRANDS</a>
+          </div>
+
+          <div class="choice">
+            <a class="catChoice unselected">CONTACTS</a>
           </div>
 
         </div>
@@ -109,6 +125,8 @@
     <div class="card-holder">
 
       <!-- ! Project cards  -->
+      
+
       <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);" href="#">
         <div class="card-info">
           <h4 class="heading-name">Sequoiah</h4>
@@ -139,14 +157,14 @@
 
       <a class="card" style="background-image: url(./assets/images/fnfworkerjacket.png);" href="#">
         <div class="card-info">
-          <h4 class="heading-name red">FRNDSnFOES</h4>
+          <h4 class="heading-name red">FRNDSNFOES</h4>
           <h4 class="heading-card red">Faith Collection</h4>
         </div>
       </a>
 
       <a class="card" style="background-image: url(./assets/images/fnfwarshirt.jpg);" href="#">
         <div class="card-info">
-          <h4 class="heading-name">FRNDSnFOES</h4>
+          <h4 class="heading-name">FRNDSNFOES</h4>
           <h4 class="heading-card">War Tee</h4>
         </div>
       </a>
@@ -165,24 +183,33 @@
         </div>
       </a>
 
+      <a class="card" style="background-image: url(./assets/images/stolenartifactss.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">FRNDSNFOES</h4>
+          <h4 class="heading-card">Stolen Artifacts</h4>
+        </div>
+      </a>
+
     </div>
 
 
     <footer>
       <div class="footer_sec_div">
 
-        <div class="projects-div">
-          <h3 class="p-h3">FIND US...</h3>
           
-          <div class="  ">
-            <p>Meet the HWY6 Crew.</p>
-            <div>
-              <li>Ekemini Ekwere</li>
-              <li>Terry Washington</li>
+          <div class="contact_icons">
+            <div class="icon_list">
+              <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+              <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
             </div>
           </div>
   
-        </div>
       </div>
     </footer>
   </div>
