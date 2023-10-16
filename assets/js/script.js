@@ -14,7 +14,7 @@ dropdownButton.addEventListener("click", function () {
 });
 
 // Add click event listeners to the dropdown items
-const dropdownItems = dropdownContent.querySelectorAll("li");
+const dropdownItems = dropdownContent.querySelectorAll("li a");
 
 
 const handleDropdown = (event) => {
@@ -24,10 +24,8 @@ const handleDropdown = (event) => {
   const originalChoice = currentBrand.dataset.id;
 
   // Adds the current choice as a dropdown item
-  const li = document.createElement('li');
-  li.innerHTML = `<a href="#">${originalChoice}</a>`;
-  dropdownContent.appendChild(li);
-  li.addEventListener('click', handleDropdown);
+ 
+  createListItem(originalChoice);
 
   // Removes the clicked target from the dropdown list.
   event.currentTarget.remove();
@@ -36,6 +34,17 @@ const handleDropdown = (event) => {
   setLogo(event.target.innerHTML);
 }
 
+const createListItem = (brand) => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+
+  a.innerHTML = brand;
+  a.addEventListener('click', handleDropdown);
+
+
+  li.appendChild(a);
+  dropdownContent.appendChild(li);
+}
 
 const GetLastChoice = () => {
   // Get lastChoice from Local Storage
@@ -48,12 +57,9 @@ const GetLastChoice = () => {
   }
 
   // Make FRNDSnFOES a choice if FRNDSnFOES isn't in localStorage
-  if (lastChoice != 'FRNDSnFOES') {
+  if (lastChoice != 'FRNDSNFOES') {
     const originalChoice = currentBrand.dataset.id;
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="#">${originalChoice}</a>`;
-    dropdownContent.appendChild(li);
-    li.addEventListener('click', handleDropdown);
+    createListItem(originalChoice);
   }
   // logic for handling the remembrance of the lastChoice. Sets the current selected brand to the last choice logged in LocalStorage.
   setLogo(lastChoice)
@@ -70,17 +76,17 @@ const setLogo = (name) => {
       break;
     case 'Sequoiah':
       currentBrand.src = './assets/images/SEQUOIAH.png';
-      mainSiteImg.src = './assets/images/ig-pre2.jpg';
+      mainSiteImg.src = './assets/images/agthsb-sequoiah-tee.png';
       mainSiteImg.style.height = '100%';
       currentBrand.dataset.id = 'Sequoiah';
       localStorage.setItem('lastChoice', 'Sequoiah');
       break;
-    case 'FRNDSnFOES':
+    case 'FRNDSNFOES':
       currentBrand.src = './assets/images/FNF-Logo.png';
-      mainSiteImg.src = './assets/images/stolenartifactss.png';
+      mainSiteImg.src = './assets/images/fnfwarshirt.jpg';
       mainSiteImg.style.height = '100%';
-      currentBrand.dataset.id = 'FRNDSnFOES';
-      localStorage.setItem('lastChoice', 'FRNDSnFOES');
+      currentBrand.dataset.id = 'FRNDSNFOES';
+      localStorage.setItem('lastChoice', 'FRNDSNFOES');
       break;
   }
 }
@@ -110,7 +116,8 @@ projectCategories.forEach(function (item) {
 
 // Close the dropdown when clicking outside of it
 window.addEventListener("click", function (event) {
-  if (!event.target.matches("#dropdown-button")) {
-    dropdownContent.classList.remove("show");
+  if (event.target.matches("#dropdown-button")) {
+    console.log("Dropdown not clicked!");
+    dropdownContent.style.display = 'none';
   }
 });
