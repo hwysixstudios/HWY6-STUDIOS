@@ -21,6 +21,9 @@
 
 
 
+<!-- Made with inspiration from paperwork.studio  -->
+<!-- Credits to Håvard Brynjulfsen 
+  https://codepen.io/havardob/pen/eYJPwdb  -->
 
 
 <body>
@@ -96,23 +99,23 @@
         <div class="choices">
 
           <div class="choice" id="main-option">
-            <a class="catChoice highlighted">PROJECTS</a>  |
+            <a class="catChoice highlighted">PROJECTS</a>
           </div>
 
-          <div class="choice">
+          <div class="choice" id="sub-option">
             <a class="catChoice unselected">PHOTO</a>
           </div>
 
-          <div class="choice">
+          <div class="choice" id="sub-option">
             <a class="catChoice unselected">VIDEO</a>
           </div>
 
-          <div class="choice">
+          <div class="choice" id="sub-option">
             <a class="catChoice unselected">BRANDS</a>
           </div>
 
-          <div class="choice">
-            <a class="catChoice unselected">CONTACTS</a>
+          <div class="choice" id="sub-option">
+            <a class="catChoice unselected">CONTACT US</a>
           </div>
 
         </div>
@@ -127,70 +130,211 @@
       <!-- ! Project cards  -->
       
 
-      <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);" href="#">
+      <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name">Sequoiah</h4>
           <h4 class="heading-card">DROP #</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/NORSU_1.jpg);" href="#">
+      <a class="card" style="background-image: url(./assets/images/NORSU_1.jpg);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name">Norsu</h4>
           <h4 class="heading-card">Pretty Girls Wear Norsu</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/SOLARBOY.png);" href="#">
+      <a class="card" style="background-image: url(./assets/images/SOLARBOY.png);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name">Solarboy</h4>
           <h4 class="heading-card">Solarworld  #</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/drivenangels.png);" href="#">
+      <a class="card" style="background-image: url(./assets/images/drivenangels.png);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name red">Sequoiah</h4>
           <h4 class="heading-card red">Driven Angels #</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/fnfworkerjacket.png);" href="#">
+      <a class="card" style="background-image: url(./assets/images/fnfworkerjacket.png);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name red">FRNDSNFOES</h4>
           <h4 class="heading-card red">Faith Collection</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/fnfwarshirt.jpg);" href="#">
+      <a class="card" style="background-image: url(./assets/images/fnfwarshirt.jpg);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name">FRNDSNFOES</h4>
           <h4 class="heading-card">War Tee</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/Seddy-Project.png);" href="#">
+      <a class="card" style="background-image: url(./assets/images/Seddy-Project.png);" href="#"data-category="VIDEO">
         <div class="card-info">
-          <h4 class="heading-name">Seddy Hendrinx</h4>
-          <h4 class="heading-card">David Ruffin</h4>
+          <h4 class="heading-name black">Seddy Hendrinx</h4>
+          <h4 class="heading-card black">David Ruffin</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/agthsb-sequoiah-tee.png);" href="#">
+      <a class="card" style="background-image: url(./assets/images/agthsb-sequoiah-tee.png);" href="#" data-category="BRANDS">
         <div class="card-info">
           <h4 class="heading-name">Sequoiah</h4>
-          <h4 class="heading-card">AGTHSB Tee #</h4>
+          <h4 class="heading-card">AGTHSB Tee</h4>
         </div>
       </a>
 
-      <a class="card" style="background-image: url(./assets/images/stolenartifactss.png);" href="#">
+      <a class="card" style="background-image: url(./assets/images/stolenartifactss.png);" href="#" data-category="VIDEO">
         <div class="card-info">
           <h4 class="heading-name">FRNDSNFOES</h4>
           <h4 class="heading-card">Stolen Artifacts</h4>
         </div>
       </a>
 
+
+      <div class="card" href="#" data-category="CONTACT US" style="display:none"  id="c_card" >
+        
+        <div class="contact_section" >
+
+
+          <!-- <div class="member-container">
+            <div  id="contact_card">
+              <h5 style="text-align: center;">Our Members</h5>
+            
+              <div class="member-info">
+                <h5 class="member-name">First Last</h5>
+                <h5 class="member-card">Production Lead</h5>
+                <a href="mailto:hwysixstudios@gmail.com"  class="member-details">Email/Number</a>
+              </div>
+            
+              <div class="member-info">
+                <h5 class="member-name">First Last</h5>
+                <h5 class="member-card">Production Lead</h5>
+                <a href="mailto:hwysixstudios@gmail.com"  class="member-details">Email/Number</a>
+              </div>
+            
+              <div class="member-info">
+                <h5 class="member-name">First Last</h5>
+                <h5 class="member-card">Production Lead</h5>
+                <a href="mailto:hwysixstudios@gmail.com"  class="member-details">Email/Number</a>
+              </div>
+            
+              <div class="member-info">
+                <h5 class="member-name">First Last</h5>
+                <h5 class="member-card">Production Lead</h5>
+                <a href="mailto:hwysixstudios@gmail.com"  class="member-details">Email/Number</a>
+              </div>
+            
+              <div class="member-info">
+                <h5 class="member-name">First Last</h5>
+                <h5 class="member-card">Production Lead</h5>
+                <a href="mailto:hwysixstudios@gmail.com"  class="member-details">Email/Number</a>
+              </div>
+            </div>
+          </div> -->
+
+
+
+          
+          <div class="signup_form">
+            <p>Let's work together!</p>
+            <br>
+            <p id="font_aza">HWY6STUDIOS wants to get to know you better!</p>
+
+
+            <div class="contact_form">
+
+              <div>
+
+                <div class="input">
+                  <input type="text" class="input-field" value="" required/>
+                  <label class="input-label">Full name</label>
+                </div>
+
+                <div class="input">
+                  <input type="text" class="input-field" value="" required/>
+                  <label class="input-label">Email</label>
+                </div>
+                
+              </div>
+
+              <div>
+                <div class="input">
+                  <input type="text" class="input-field" value="" required/>
+                  <label class="input-label">Company</label>
+                </div>
+                <div class="input">
+                  <input type="text" class="input-field" value="" required/>
+                  <label class="input-label">Primary Social Media</label>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="contact_options" style="display: none;">
+
+              <p id="font_aza">Get creative with your project; feel free to mix and match ideas! </p>
+
+              <div class="options_ctn">
+                <div class="option" data-o-contacts="">Branding</div>
+                <div class="option" data-o-contacts="">Brand Consultation</div>
+                <div class="option" data-o-contacts="">Manufacturing</div>
+                <div class="option" data-o-contacts="">Photography</div>
+                <div class="option" data-o-contacts="">Videography</div>
+                <div class="option" data-o-contacts="">Web Design</div>
+              </div>
+
+              <div class="form_extra">
+                <div class="input">
+                  <input type="text" class="input-field" value="" required/>
+                  <label class="input-label">Other:</label>
+                </div>
+              </div>
+
+              
+            </div>
+
+            <div class="extra_notes" style="display: none;">
+
+              <div>extra notes</div>
+
+
+            </div>
+
+            <div class="page_controllers">
+              <div class="indicators">
+                <ul>
+                  <li class="current"></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="form_controller">
+                <div class="form_btns">
+                  <a class="unselected" id="form_ctrl">BACK</a>
+                  <a class="highlighted" id="form_ctrl">NEXT</a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      
+      
+
     </div>
+
+
 
 
     <footer>
@@ -199,16 +343,18 @@
           
           <div class="contact_icons">
             <div class="icon_list">
-              <li class="icon"><a href="#"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-brands fa-github fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
-              <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li>
+              <li class="icon"><a href="https://www.linkedin.com/company/hwy6studios"><i class="fa-brands fa-linkedin fa-lg"></i></a></li>
+              <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-lg"></i></a></li>
+              <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-lg"></i></a></li>
+              <li class="icon"><a href="https://www.instagram.com/hwy6studios/"><i class="fa-brands fa-instagram fa-lg"></i></a></li>
+              <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li> -->
+              <li class="icon"><a href="https://www.tiktok.com/@MS4wLjABAAAAZ4zbBTXDR5Vvmuv_ZNMiNUTCF1ogYUOgr6bdc0cMLc3sRRe0XleCqxJWqA3qePcD"><i class="fa-brands fa-tiktok fa-lg"></i></a></li>
+              <li class="icon"><a href="https://www.youtube.com/channel/UC3EYz3mtSoDCECNNz_eHuxg"><i class="fa-brands fa-youtube fa-lg"></i></a></li>
+              <!-- <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li> -->
             </div>
           </div>
+
+
   
       </div>
     </footer>
@@ -218,7 +364,10 @@
 
 
 
-
+  <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
