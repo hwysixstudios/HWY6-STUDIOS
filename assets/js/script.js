@@ -125,6 +125,7 @@ window.addEventListener("click", function (event) {
 });
 
 
+<<<<<<< Updated upstream
 
 // Add click event listeners to your card sections (assuming they have class "card")
 const cardSections = document.querySelectorAll(".card");
@@ -148,3 +149,21 @@ cardSections.forEach(function (card) {
 });
 
 
+=======
+  //Add events listeners to each icon to handle the click event
+  document.getElementById('linkedin').addEventListener('click', function(){
+    window.location.href = 'https://www.linkedin.com/';
+  });
+
+  document.getElementById('github').addEventListener('click', function(){
+    window.location.href = 'https://github.com/';
+  });
+
+  document.getElementById('twitter').addEventListener('click', function(){
+    window.location.href = 'https://twitter.com/';
+  });
+
+  document.getElementById('instagram').addEventListener('click', function(){
+    window.location.href = 'https:// www.instagram.com/';
+  });
+>>>>>>> Stashed changes
