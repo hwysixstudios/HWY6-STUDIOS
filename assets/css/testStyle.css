@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+  height:100%;
+}
+
+.loading_ctn {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 1px;
+}
+
+#progressbar {
+  border-radius: 0;
+  /* (height of inner div) / 2 + padding */
+  padding: 0px;
+  width: 100px;
+}
+
+#progressbar>div {
+  background-color: rgb(255, 255, 255);
+  width: 10%;
+  /* Adjust with JavaScript */
+  height: 2px;
+  border-radius: 0px;
+}

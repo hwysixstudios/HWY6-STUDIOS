@@ -6,7 +6,8 @@ const projectCategories = document.querySelectorAll(".catChoice");
 const mainImgContainer = document.querySelector(".img-container");
 const mainVideoContainer = document.querySelector(".video-container")
 const mainSiteImg = document.querySelector("#main-img");
-
+const contactFormTitle = document.querySelector(".signup_form").children[0];
+const contactFormText = document.querySelector(".signup_form").children[2];
 // Add a click event listener to the dropdown button
 dropdownButton.addEventListener("click", function () {
   // Toggle the visibility of the dropdown content
@@ -90,14 +91,37 @@ const setLogo = (name) => {
       break;
   }
 }
+
+
+
 // NEW 
 const setSelectedCategory = (event) => {
-  for (let i = 0; i < projectCategories.length; i++) {
-    const selected = projectCategories[i];
-    selected.classList.remove('highlighted');
-    selected.classList.add('unselected');
-    event.target.classList.add('highlighted');
-  }
+  // Remove highlighting from all categories and add it to the selected one
+  projectCategories.forEach(category => {
+    category.classList.toggle('highlighted', category === event.target);
+    category.classList.toggle('unselected', category !== event.target);
+  });
+
+  // Get the category from the clicked element
+  const selectedCategory = event.target.innerText; // or event.target.textContent
+
+  // Get all project cards
+  const projectCards = document.querySelectorAll('.card');
+
+  // Show or hide project cards based on the selected category
+  projectCards.forEach(card => {
+    const shouldDisplay = selectedCategory === 'PROJECTS'|| card.dataset.category === selectedCategory;
+    const isContactCard = card.dataset.category === 'CONTACT US';
+    card.style.display = shouldDisplay ? 'block' : 'none';
+    if (isContactCard) {
+      card.style.display = selectedCategory === 'CONTACT US' ? 'block' : 'none';
+    } else {
+      card.style.display = shouldDisplay ? 'block' : 'none';
+    }
+    if (shouldDisplay || (isContactCard && selectedCategory === 'CONTACT US')) {
+      card.classList.add('slide-in'); // Add class for animation
+    }
+  });
 }
 
 
@@ -120,4 +144,84 @@ window.addEventListener("click", function (event) {
     console.log("Dropdown not clicked!");
     dropdownContent.style.display = 'none';
   }
+});
+
+
+
+// PAGE INDICATORS 
+let index = 1;
+const $indicators = $("div.indicators ul li");
+const $divs = [$(".contact_form"), $(".contact_options"),  $(".extra_notes")]; 
+
+const handleIndicatorClick = () => {
+  $indicators.off("click");
+  index = $(this).index();
+  setCurrentProject();
+}
+
+const updateSlideShow = (direction, position, diff) => {
+  const leftStyle = index === 1 ? "0" : position + "px";
+  const $current = $indicators.filter(".current");
+
+  $current.css({
+    left: direction === "left" ? leftStyle : $current.css("left"),
+    width: Math.abs(diff) + 20 + "px"
+  });
+
+  setTimeout(() => {
+    $current.css({
+      left: direction === "right" ? leftStyle : $current.css("left"),
+      width: "20px"
+    });
+    $indicators.on("click", handleIndicatorClick);
+  }, 500);
+}
+
+const setCurrentProject = (isInitialRun = false) => {
+  const totalIndicators = $indicators.length;
+  index = index > totalIndicators - 1 ? 1 : index < 1 ? totalIndicators - 1 : index;
+  const $currentItem = $indicators.eq(index);
+
+  if (!$currentItem.hasClass("current")) {
+    const parentLeft = $currentItem.parent().offset().left + 10;
+    const position = $currentItem.offset().left - parentLeft;
+    const diff = position - ($indicators.filter(".current").offset().left - parentLeft);
+    const direction = diff < 0 ? "left" : "right";
+    updateSlideShow(direction, position, diff);
+  }
+
+  $divs[index - 1].css("left", $divs[index - 1].width() * 4).show().animate({ left: '0' }, 200);
+
+  if (index - 1 === 0){
+    contactFormTitle.innerText = "Introduce yourself!";
+    contactFormText.style.display = 'block';
+  } else if (index - 1 === 1) {
+    contactFormTitle.innerText = "Let's work together!"
+    contactFormText.style.display = 'none';
+  }
+
+  if (!isInitialRun) {
+    $divs.forEach(($div, i) => {
+      if (i !== index - 1) {
+        $div.hide();
+      }
+    });
+  }
+}
+
+
+
+
+
+$indicators.on("click", handleIndicatorClick);
+setCurrentProject(true);
+
+$("#form_ctrl.highlighted").on("click", () => {
+  index++;
+  setCurrentProject();
+});
+
+$("#form_ctrl.unselected").on("click", () => {
+  index--;
+  setCurrentProject();
 });
