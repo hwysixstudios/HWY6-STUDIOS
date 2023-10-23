@@ -12,6 +12,64 @@
   --font-azeret: 'Azeret Mono', monospace;
   --font-poppins: 'Poppins', 'sans-serif';
 }
+
+
+/* LOADING SCREEN  */
+.loading_ctn {
+  background-color: black;
+  width: auto;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 9999;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.loading_assets {
+  flex-shrink: 0; /* ADDED instead of the width/height of the wrapper */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#progressbar {
+  border-radius: 0;
+  /* (height of inner div) / 2 + padding */
+  padding: 0px;
+  width: 75px;
+  background-color: rgb(46, 46, 46);
+}
+
+#progressbar>div {
+  background-color: rgb(255, 255, 255);
+  width: 0%;
+  /* Adjust with JavaScript */
+  height: 1px;
+  border-radius: 0px;
+}
+
+.img_ctn {
+  height: 31px;
+  width: 82px;
+}
+
+#loadOrg {
+  height: 100%;
+  width: 100%;
+}
+
+.main_page {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 .background-container {
   width: 100%;
   height: 100%;
@@ -20,7 +78,7 @@
 
 .img-container {
   width: 100vw;
-  height: 115vh;
+  height: 1000px;
   position: relative;
   overflow: hidden;
 }
@@ -159,8 +217,8 @@ body {
 
 .links-sec ul li a {
   z-index: 5;
-  font-size: 30px;
-  font-weight: 800px;
+  font-size: 25px;
+  font-weight: 100;
   font-family: var(--font-azeret);
   color: var(--dark-bg-font);
   text-decoration: none;
@@ -665,6 +723,7 @@ i {
   font-family: var(--font-azeret);
   font-weight: 100;
 }
+
 
 @media screen and (max-width: 480px) {
     #main-img,

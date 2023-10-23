@@ -8,6 +8,7 @@ const mainVideoContainer = document.querySelector(".video-container")
 const mainSiteImg = document.querySelector("#main-img");
 const contactFormTitle = document.querySelector(".signup_form").children[0];
 const contactFormText = document.querySelector(".signup_form").children[2];
+
 // Add a click event listener to the dropdown button
 dropdownButton.addEventListener("click", function () {
   // Toggle the visibility of the dropdown content
@@ -16,7 +17,6 @@ dropdownButton.addEventListener("click", function () {
 
 // Add click event listeners to the dropdown items
 const dropdownItems = dropdownContent.querySelectorAll("li a");
-
 
 const handleDropdown = (event) => {
   // Hide the Dropdown.
@@ -42,7 +42,6 @@ const createListItem = (brand) => {
   a.innerHTML = brand;
   a.addEventListener('click', handleDropdown);
 
-
   li.appendChild(a);
   dropdownContent.appendChild(li);
 }
@@ -65,6 +64,7 @@ const GetLastChoice = () => {
   // logic for handling the remembrance of the lastChoice. Sets the current selected brand to the last choice logged in LocalStorage.
   setLogo(lastChoice)
 }
+
 
 const setLogo = (name) => {
   switch (name) {
@@ -93,7 +93,6 @@ const setLogo = (name) => {
 }
 
 
-
 // NEW 
 const setSelectedCategory = (event) => {
   // Remove highlighting from all categories and add it to the selected one
@@ -112,7 +111,9 @@ const setSelectedCategory = (event) => {
   projectCards.forEach(card => {
     const shouldDisplay = selectedCategory === 'PROJECTS'|| card.dataset.category === selectedCategory;
     const isContactCard = card.dataset.category === 'CONTACT US';
+
     card.style.display = shouldDisplay ? 'block' : 'none';
+
     if (isContactCard) {
       card.style.display = selectedCategory === 'CONTACT US' ? 'block' : 'none';
     } else {
@@ -145,6 +146,7 @@ window.addEventListener("click", function (event) {
     dropdownContent.style.display = 'none';
   }
 });
+
 
 
 
@@ -190,15 +192,15 @@ const setCurrentProject = (isInitialRun = false) => {
     updateSlideShow(direction, position, diff);
   }
 
-  $divs[index - 1].css("left", $divs[index - 1].width() * 4).show().animate({ left: '0' }, 200);
+  const formTitles = ["Introduce yourself!", "Let's work together!"];
 
-  if (index - 1 === 0){
-    contactFormTitle.innerText = "Introduce yourself!";
-    contactFormText.style.display = 'block';
-  } else if (index - 1 === 1) {
-    contactFormTitle.innerText = "Let's work together!"
-    contactFormText.style.display = 'none';
-  }
+  $divs.forEach(($div, i) => {
+    if (i === index - 1) {
+      $div.css("left", $div.width() * 4).show().animate({ left: '0' }, 200);
+      contactFormTitle.innerText = formTitles[i];
+      contactFormText.style.display = i === 0 ? 'block' : 'none';
+    }
+  });
 
   if (!isInitialRun) {
     $divs.forEach(($div, i) => {
@@ -208,10 +210,6 @@ const setCurrentProject = (isInitialRun = false) => {
     });
   }
 }
-
-
-
-
 
 $indicators.on("click", handleIndicatorClick);
 setCurrentProject(true);
@@ -225,3 +223,44 @@ $("#form_ctrl.unselected").on("click", () => {
   index--;
   setCurrentProject();
 });
+
+// Loader functionality 
+let isMoving = false;
+
+const move = () => {
+  return new Promise((resolve, reject) => {
+    if (!isMoving) {
+      isMoving = true;
+      const elem = document.getElementById("progressbar").firstElementChild;
+      let width = 1;
+      const id = setInterval(() => {
+        if (width >= 100) {
+          clearInterval(id);
+          isMoving = false;
+          resolve(); // Resolve the promise when the animation is done
+        } else {
+          width++;
+          elem.style.width = width + "%";
+        }
+      }, 10);
+    }
+  });
+} 
+
+// Disable scrolling
+document.body.style.overflow = 'hidden';
+
+// Delay the start of the move function by a certain number of milliseconds
+setTimeout(async () => {
+  await move();
+  // Check if the document's readyState is complete after the move function is done animating
+  if (document.readyState == "complete") {
+    // hide loader after 2 seconds
+    setTimeout(() => { 
+      document.getElementById('loader').style.display = 'none';
+      const mainPage = document.getElementsByClassName('main_page')[0];
+      mainPage.style.opacity = '1';
+      document.body.style.overflow = 'auto'; // Enable scrolling again
+    }, 700);
+  }
+}, 700); // Replace 1000 with the number of milliseconds you want to delay
