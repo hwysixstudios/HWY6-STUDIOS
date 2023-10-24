@@ -62,9 +62,10 @@
     
       <!-- Org choosing section. Has the HWY6STUDIO Logo and the brands -->
       <div class="org-sec">
-        <a id="logo" href="#">
+        <a id="logo" href="/" aria-current="page">
           <img id="org" style="background:none" src="./assets/images/STUDIOS.png">
         </a>
+
         <!-- ! Brand Section. Uses dropdown  -->
         <div class="brand-sec">
           <button class="dropdown-btn" id="dropdown-button">
@@ -78,19 +79,34 @@
         </div>
       </div>
     </header>
+
     <div class="links-sec">
       <ul>
         <li>
           <a href="mailto:hwysixstudios@gmail.com">hwy6studios@gmail</a>
+        </li>
+        <li>
           <a href="https://www.instagram.com/hwy6studios/">@hwy6studios</a>
         </li>
       </ul>
     </div>
+
+    <div class="subtitle_sec">
+      <div class="description"> 
+        <p>HWY6STUDIOS operates as a versatile studio specializing in creative consultation and multimedia production.</p>
+      </div>
+      <div class="location">
+        <p>HOUSTON, TX</p>
+        <p>77083</p>
+      </div>
+    </div>
+
+
     <!-- Beginning of main projects section  -->
     <div class="main-section">
       <div class="main-section-header-div">
         <div class="projects-div">
-          <h3 class="p-h3">CATALOGUE</h3>
+          <!-- <h3 class="p-h3">CATALOGUE</h3> -->
           <a class="main_card" style="background-image: url(./assets/images/hwy6arcgivesbanner.png);" href="https://docs.google.com/forms/d/e/1FAIpQLSdjUroRu4BBsfUkC6zpVYpYTyr2__qN8qVs-zzxPhxLk6J3fw/viewform">
             <div class="card-info">
               <h4 class="heading-name black">HWY6STUDIOS</h4>
@@ -217,26 +233,26 @@
             <div class="signup_form">
               <p>Let's work together!</p>
               <br>
-              <p id="font_aza">HWY6STUDIOS wants to get to know you better!</p>
+              <p class="font_aza">HWY6STUDIOS wants to get to know you better!</p>
               <div class="contact_form">
                 <div>
                   <div class="input">
-                    <input type="text" class="input-field" value="" required/>
+                    <input type="text" id="full_name_form" class="input-field" value="" required/>
                     <label class="input-label">Full name</label>
                   </div>
                   <div class="input">
-                    <input type="text" class="input-field" value="" required/>
+                    <input type="text" id="email_form" class="input-field" value="" required/>
                     <label class="input-label">Email</label>
                   </div>
     
                 </div>
                 <div>
                   <div class="input">
-                    <input type="text" class="input-field" value="" required/>
+                    <input type="text" id="company_form" class="input-field" value="" required/>
                     <label class="input-label">Company</label>
                   </div>
                   <div class="input">
-                    <input type="text" class="input-field" value="" required/>
+                    <input type="text" id="social_form" class="input-field" value="" required/>
                     <label class="input-label">Primary Social Media</label>
                   </div>
                 </div>
@@ -259,9 +275,79 @@
                 </div>
     
               </div>
+
+
               <div class="extra_notes" style="display: none;">
-                <div>extra notes</div>
+                <p class="font_aza">Let us know when we're working and any extra information that we might need to know! </p>
+
+                <div class="date_form">
+                  <div class="date_input">
+                    <input maxlength="2" type="text" placeholder="MM" data-v-3ae5c648="" value="" id="month">
+                    <input maxlength="2" type="text" placeholder="DD" data-v-3ae5c648="" value="" id="day">
+                    <input maxlength="2" type="text" placeholder="YY" data-v-3ae5c648="" value="" id="year">
+                  </div>
+                </div>
+
+                <div class="form_extra">
+                  <div class="input_area">
+                    <textarea class="text-field" rows="4" spellcheck="false" id="extra_form"></textarea>
+                    <label class="text-label">Extra notes:</label>
+                  </div>
+                </div>
               </div>
+
+              <div class="final_card" style="display: none;">
+                <p class="font_aza">This is what you're going to be sending to us.</p>
+
+                <div class="final_form_items">
+
+                  <div class="final_form_info">
+                    <div>
+                      <p>Name:</p>
+                      <p class="font_aza" id="full_name">Full Name</p>
+                    </div>
+                    <div>
+                      <p>Email:</p>
+                      <p class="font_aza"  id="email"></p>
+                    </div>
+                    <div>
+                      <p>Company:</p>
+                      <p class="font_aza" id="company"></p>
+                    </div>
+                    <div>
+                      <p>Primary Social Media:</p>
+                      <p class="font_aza" id="social_media"></p>
+                    </div>
+                  </div>
+
+                  <div class="final_form_choices">
+                    <div class="options_ctn_final">
+                      <div class="option_final" data-o-contacts="Branding">Branding</div>
+                      <div class="option_final" data-o-contacts="Brand Consultation">Brand Consultation</div>
+                      <div class="option_final" data-o-contacts="Manufacturing">Manufacturing</div>
+                      <div class="option_final" data-o-contacts="Photography">Photography</div>
+                      <div class="option_final" data-o-contacts="Videography">Videography</div>
+                      <div class="option_final" data-o-contacts="Web Design">Web Design</div>
+                    </div>
+                  </div>
+
+                  <div class="final_form_extras">
+
+                    <div class="final_date_form">
+                      <h5>Date:</h5>
+                      <p class="font_aza"></p>
+                    </div>
+                    <div class="final_extra_form">
+                      <h5>Extra Notes:</h5>
+                      <p class="font_aza"></p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
               <div class="page_controllers">
                 <div class="indicators">
                   <ul>
@@ -269,12 +355,13 @@
                     <li></li>
                     <li></li>
                     <li></li>
+                    <li></li>
                   </ul>
                 </div>
                 <div class="form_controller">
                   <div class="form_btns">
-                    <a class="unselected" id="form_ctrl">BACK</a>
-                    <a class="highlighted" id="form_ctrl">NEXT</a>
+                    <a style="display: none;" class="unselected form_ctrl" id="back_btn">BACK</a>
+                    <a class="highlighted form_ctrl" id="next_btn">NEXT</a>
                   </div>
                 </div>
               </div>

@@ -11,6 +11,8 @@
   --light-bg-font: #000;
   --font-azeret: 'Azeret Mono', monospace;
   --font-poppins: 'Poppins', 'sans-serif';
+  --border-lines-gray:  #424242;
+  --border-lines-lightGray:  rgb(165, 165, 165);
 }
 
 
@@ -205,14 +207,18 @@ body {
 
 }
 
-.links-sec ul li {
+
+
+.links-sec ul{
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  text-align: right;
 }
 
-.links-sec ul {
-  text-align: right;
+
+.links-sec ul li{
+  width: 100%;
 }
 
 .links-sec ul li a {
@@ -228,15 +234,44 @@ body {
   color: rgb(0, 217, 255);
 }
 
-/* PROJECTS and MEMBERS SECTION */
 
+.subtitle_sec {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 80px 40px;
+
+  border-bottom: 1px solid var(--border-lines-lightGray);
+}
+
+.description > p {
+  font-family: var(--font-azeret);
+  font-weight: 100;
+}
+
+.location > p {
+  font-family: var(--font-azeret);
+  font-weight: 300;
+}
+
+.description {
+  width: 800px;
+}
+
+
+/* PROJECTS and MEMBERS SECTION */
 .main-section {
   margin-top: 80px;
 }
 
 .main-section-header-div {
   display: flex;
-  border-bottom: 1px solid #424242;
+  border-bottom: 1px solid var(--border-lines-gray);
   justify-content: space-between;
   padding-bottom: 10px;
   margin: 25px;
@@ -283,7 +318,7 @@ h4 {
 }
 
 #main-option {
-  border-right: 1px solid  #424242;
+  border-right: 1px solid var(--border-lines-gray);
 }
 
 #sub-option {
@@ -512,6 +547,7 @@ h4 {
 .contact_form {
   display: flex;
   gap: 30px;
+  position: relative;
 }
 
 .input {
@@ -527,10 +563,18 @@ h4 {
 }
 
 .input-label {
-	color: #585858;
+	color: var(--border-lines-gray);
 	position: absolute;
 	top: 1.5rem;
 	transition: .25s ease;
+}
+
+textarea {
+  white-space: pre-wrap;       /* CSS3 */
+  white-space: -moz-pre-wrap;  /* Firefox */
+  white-space: -pre-wrap;      /* Opera <7 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer */
 }
 
 .contact_options {
@@ -556,12 +600,17 @@ h4 {
   background: hsla(0,0%,100%,.05);
   border: 1px solid transparent;
   border-radius: .75rem;
-  color: #8e8e8e;
+  color: #424242;
   cursor: pointer;
   font-size: 1.3rem;
   padding: 1rem 1.5rem;
   text-align: center;
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.selected {
+  color: #fff !important;
+  border: 1px solid #fff  !important; /* or any other color you want for the outline */
 }
 
 .input-field {
@@ -569,7 +618,7 @@ h4 {
 	z-index: 1;
   
 	background-color: transparent;
-	border-bottom: 1px solid #585858;
+	border-bottom: 1px solid var(--border-lines-gray);
   color: white;
 	font: inherit;
 	font-size: 1.125rem;
@@ -584,6 +633,52 @@ h4 {
 	}
 }
 
+.input_area {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+  width: 100%;
+  margin-top: 2.5rem;
+	&+.input {
+		margin-top: 4.5rem;
+	}
+}
+
+.text-field {
+	border: 0;
+	z-index: 1;
+  height: 100px;
+	background-color: transparent;
+	border-bottom: 1px solid var(--border-lines-gray);
+  color: white;
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+  resize: vertical;
+  background: unset;
+
+  outline: none;
+  transition: border-bottom .3s ease;
+  width: 100%;
+  &:focus {
+    outline: 0;
+    border-bottom-color: #ffffff;
+  }
+}
+
+.focused .text-label {
+  color: white;
+  transform: translateY(-1.5rem);
+}
+
+.text-label {
+	color: var(--border-lines-gray);
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
 .form_controller {
 
   right: 0;
@@ -594,10 +689,12 @@ h4 {
   gap: 20px;
 }
 
-#form_ctrl {
+.highlighted.form_ctrl,
+.unselected.form_ctrl{
   cursor: pointer;
   font-family: var(--font-azeret);
 }
+
 
 .red {
   -webkit-text-stroke: 1px rgb(0, 0, 0);
@@ -659,10 +756,122 @@ div.indicators ul li{
 	cursor: pointer;
 }
 
+.final_card {
+  position: relative;
+}
+
+.final_form_items {
+  display: flex;
+  margin-top: 95px;
+  justify-content: flex-start;
+  gap: 5px;
+
+  /* border: 1px solid white;
+  padding: 30px; */
+}
+
+.final_form_info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 15%;
+}
+
+.final_form_info div p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.final_form_info div p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.final_form_choices {
+  width: 45%
+}
+
+.options_ctn_final {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  /* padding: 20px 0 0 0; */
+  /* width: 400px; */
+  align-items: center;
+}
+
+/* .option_final[data-o-contacts]:hover {
+  color: #fff;
+} */
+
+.option_final[data-o-contacts] {
+  background: hsla(0,0%,100%,.05);
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  color: #424242;
+  /* cursor: pointer; */
+  font-size: 0.8rem;
+  padding: 0.9rem 1.1rem;
+  text-align: center;
+  transition: all .2s ease-in-out;
+}
+
+.selected {
+  color: #fff !important;
+  border: 1px solid #fff  !important; /* or any other color you want for the outline */
+}
+
+.final_form_extras {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extra_notes {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.date_form {
+  margin-top: 80px;
+}
+
+.date_input input[data-v-3ae5c648]:nth-child(2) {
+  border-left: 1px solid var(--border-lines-gray);
+  border-right: 1px solid var(--border-lines-gray);
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+input[data-v-3ae5c648] {
+  background: unset;
+  border: none;
+  border-bottom: 1px solid var(--border-lines-gray);
+  color: #fff;
+  font-size: 1.625rem;
+  font-weight: 300;
+  margin-bottom: 6rem;
+  outline: unset;
+  padding: 1rem 0;
+  transition: border-bottom .3s ease;
+  width: 100%;
+  border: none;
+  text-align: center;
+  width: 4rem;
+}
+
+.date_input {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
 /* FOOTER SECTION  */
 .footer_sec_div {
   display: flex;
-  border-top: 1px solid #424242;
+  border-top: 1px solid var(--border-lines-gray);
   justify-content: space-between;
   padding-top: 20px;
   margin: 25px;
@@ -719,11 +928,10 @@ i {
               -0.055em -0.05em 0 rgba(0, 242, 234,0.75);
 }
 
-#font_aza{
+.font_aza{
   font-family: var(--font-azeret);
   font-weight: 100;
 }
-
 
 @media screen and (max-width: 480px) {
     #main-img,

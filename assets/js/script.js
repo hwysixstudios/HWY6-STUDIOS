@@ -149,16 +149,45 @@ window.addEventListener("click", function (event) {
 
 
 
+// Form Values 
+const fullNameValue = $("#full_name_form");
+const emailValue = $("#email_form");
+const companyValue = $("#company_form");
+const socialValue = $("#social_form");
+
+const monthValue = $("#month");
+const dayValue = $("#day");
+const yearValue = $("#year");
+
+const extraValue = $("#extra_form");
+// Final Page Elements 
+const fullNameElement = $("#full_name");
+const emailElement = $("#email");
+const companyElement = $("#company");
+const socialElement = $("#social_media");
+
+const dateElement = $(".final_date_form p");
+const extraElement = $(".final_extra_form p");
 
 // PAGE INDICATORS 
+const $backButton = $("#back_btn");
+const $nextButton = $("#next_btn");
+
 let index = 1;
 const $indicators = $("div.indicators ul li");
-const $divs = [$(".contact_form"), $(".contact_options"),  $(".extra_notes")]; 
+const $divs = [$(".contact_form"), $(".contact_options"),  $(".extra_notes"), $(".final_card")]; 
 
-const handleIndicatorClick = () => {
+const handleIndicatorClick = function() {
   $indicators.off("click");
   index = $(this).index();
   setCurrentProject();
+
+  fullNameElement.html(fullNameValue.val());
+  emailElement.html(emailValue.val());
+  companyElement.html(companyValue.val());
+  socialElement.html(socialValue.val());
+  dateElement.html(monthValue.val() + "/" + dayValue.val() + "/" + yearValue.val());
+  extraElement.html(extraValue.val());
 }
 
 const updateSlideShow = (direction, position, diff) => {
@@ -192,7 +221,7 @@ const setCurrentProject = (isInitialRun = false) => {
     updateSlideShow(direction, position, diff);
   }
 
-  const formTitles = ["Introduce yourself!", "Let's work together!"];
+  const formTitles = ["Introduce yourself!", "What are we working on?","When are we working?", "Here's what we got..."];
 
   $divs.forEach(($div, i) => {
     if (i === index - 1) {
@@ -201,6 +230,19 @@ const setCurrentProject = (isInitialRun = false) => {
       contactFormText.style.display = i === 0 ? 'block' : 'none';
     }
   });
+
+  if (index === 1) {
+    $backButton.hide();
+  } else {
+    $backButton.show();
+  }
+
+
+  if (index === 4) {
+    $nextButton.html("SUBMIT");
+  } else {
+    $nextButton.html("NEXT");
+  }
 
   if (!isInitialRun) {
     $divs.forEach(($div, i) => {
@@ -211,18 +253,31 @@ const setCurrentProject = (isInitialRun = false) => {
   }
 }
 
+console.log(fullNameValue, emailValue, companyValue, socialValue);
+console.log(fullNameElement, emailElement, companyElement, socialElement)
+
+
 $indicators.on("click", handleIndicatorClick);
 setCurrentProject(true);
 
-$("#form_ctrl.highlighted").on("click", () => {
+$nextButton.on("click", () => {
   index++;
   setCurrentProject();
+
+  fullNameElement.html(fullNameValue.val());
+  emailElement.html(emailValue.val());
+  companyElement.html(companyValue.val());
+  socialElement.html(socialValue.val());
+
+  dateElement.html(monthValue.val() + "/" + dayValue.val() + "/" + yearValue.val());
+  extraElement.html(extraValue.val());
 });
 
-$("#form_ctrl.unselected").on("click", () => {
+$backButton.on("click", () => {
   index--;
   setCurrentProject();
 });
+
 
 // Loader functionality 
 let isMoving = false;
@@ -261,6 +316,37 @@ setTimeout(async () => {
       const mainPage = document.getElementsByClassName('main_page')[0];
       mainPage.style.opacity = '1';
       document.body.style.overflow = 'auto'; // Enable scrolling again
-    }, 700);
+    }, 600);
   }
-}, 700); // Replace 1000 with the number of milliseconds you want to delay
+}, 900); // Replace 1000 with the number of milliseconds you want to delay
+
+
+
+
+
+//FORM HANDLERS
+
+document.querySelectorAll('.option').forEach(option => {
+  option.addEventListener('click', function() {
+    this.classList.toggle('selected');
+    
+    // Find the option_final div with the same data-o-contacts as the innerText of the clicked button
+    var matchingDiv = document.querySelector(`.option_final[data-o-contacts='${this.innerText}']`);
+    
+    // If a matching div is found, toggle the 'selected' class
+    if (matchingDiv) {
+      matchingDiv.classList.toggle('selected');
+    }
+  });
+});
+
+// Javascript method of moving the label up and turning it white for the EXTRA_NOTES DIV ONLY. It seems like the textarea element doesn't work properly with &:focus pseudo-class and the sibling selector.
+document.querySelector('.text-field').addEventListener('focus', function() {
+  this.parentElement.classList.add('focused');
+});
+document.querySelector('.text-field').addEventListener('blur', function() {
+  if (this.value.trim() === '') {
+    this.parentElement.classList.remove('focused');
+  }
+});
+
