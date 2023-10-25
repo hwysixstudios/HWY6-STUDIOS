@@ -8,6 +8,7 @@ const mainVideoContainer = document.querySelector(".video-container")
 const mainSiteImg = document.querySelector("#main-img");
 const contactFormTitle = document.querySelector(".signup_form").children[0];
 const contactFormText = document.querySelector(".signup_form").children[2];
+
 // Add a click event listener to the dropdown button
 dropdownButton.addEventListener("click", function () {
   // Toggle the visibility of the dropdown content
@@ -16,7 +17,6 @@ dropdownButton.addEventListener("click", function () {
 
 // Add click event listeners to the dropdown items
 const dropdownItems = dropdownContent.querySelectorAll("li a");
-
 
 const handleDropdown = (event) => {
   // Hide the Dropdown.
@@ -42,7 +42,6 @@ const createListItem = (brand) => {
   a.innerHTML = brand;
   a.addEventListener('click', handleDropdown);
 
-
   li.appendChild(a);
   dropdownContent.appendChild(li);
 }
@@ -65,6 +64,7 @@ const GetLastChoice = () => {
   // logic for handling the remembrance of the lastChoice. Sets the current selected brand to the last choice logged in LocalStorage.
   setLogo(lastChoice)
 }
+
 
 const setLogo = (name) => {
   switch (name) {
@@ -93,7 +93,6 @@ const setLogo = (name) => {
 }
 
 
-
 // NEW 
 const setSelectedCategory = (event) => {
   // Remove highlighting from all categories and add it to the selected one
@@ -112,7 +111,9 @@ const setSelectedCategory = (event) => {
   projectCards.forEach(card => {
     const shouldDisplay = selectedCategory === 'PROJECTS'|| card.dataset.category === selectedCategory;
     const isContactCard = card.dataset.category === 'CONTACT US';
+
     card.style.display = shouldDisplay ? 'block' : 'none';
+
     if (isContactCard) {
       card.style.display = selectedCategory === 'CONTACT US' ? 'block' : 'none';
     } else {
@@ -148,15 +149,45 @@ window.addEventListener("click", function (event) {
 
 
 
+// Form Values 
+const fullNameValue = $("#full_name_form");
+const emailValue = $("#email_form");
+const companyValue = $("#company_form");
+const socialValue = $("#social_form");
+
+const monthValue = $("#month");
+const dayValue = $("#day");
+const yearValue = $("#year");
+
+const extraValue = $("#extra_form");
+// Final Page Elements 
+const fullNameElement = $("#full_name");
+const emailElement = $("#email");
+const companyElement = $("#company");
+const socialElement = $("#social_media");
+
+const dateElement = $(".final_date_form p");
+const extraElement = $(".final_extra_form p");
+
 // PAGE INDICATORS 
+const $backButton = $("#back_btn");
+const $nextButton = $("#next_btn");
+
 let index = 1;
 const $indicators = $("div.indicators ul li");
-const $divs = [$(".contact_form"), $(".contact_options"),  $(".extra_notes")]; 
+const $divs = [$(".contact_form"), $(".contact_options"),  $(".extra_notes"), $(".final_card")]; 
 
-const handleIndicatorClick = () => {
+const handleIndicatorClick = function() {
   $indicators.off("click");
   index = $(this).index();
   setCurrentProject();
+
+  fullNameElement.html(fullNameValue.val());
+  emailElement.html(emailValue.val());
+  companyElement.html(companyValue.val());
+  socialElement.html(socialValue.val());
+  dateElement.html(monthValue.val() + "/" + dayValue.val() + "/" + yearValue.val());
+  extraElement.html(extraValue.val());
 }
 
 const updateSlideShow = (direction, position, diff) => {
@@ -190,14 +221,27 @@ const setCurrentProject = (isInitialRun = false) => {
     updateSlideShow(direction, position, diff);
   }
 
-  $divs[index - 1].css("left", $divs[index - 1].width() * 4).show().animate({ left: '0' }, 200);
+  const formTitles = ["Introduce yourself!", "What are we working on?","When are we working?", "Here's what we got..."];
 
-  if (index - 1 === 0){
-    contactFormTitle.innerText = "Introduce yourself!";
-    contactFormText.style.display = 'block';
-  } else if (index - 1 === 1) {
-    contactFormTitle.innerText = "Let's work together!"
-    contactFormText.style.display = 'none';
+  $divs.forEach(($div, i) => {
+    if (i === index - 1) {
+      $div.css("left", $div.width() * 4).show().animate({ left: '0' }, 200);
+      contactFormTitle.innerText = formTitles[i];
+      contactFormText.style.display = i === 0 ? 'block' : 'none';
+    }
+  });
+
+  if (index === 1) {
+    $backButton.hide();
+  } else {
+    $backButton.show();
+  }
+
+
+  if (index === 4) {
+    $nextButton.html("SUBMIT");
+  } else {
+    $nextButton.html("NEXT");
   }
 
   if (!isInitialRun) {
@@ -209,19 +253,100 @@ const setCurrentProject = (isInitialRun = false) => {
   }
 }
 
-
-
+console.log(fullNameValue, emailValue, companyValue, socialValue);
+console.log(fullNameElement, emailElement, companyElement, socialElement)
 
 
 $indicators.on("click", handleIndicatorClick);
 setCurrentProject(true);
 
-$("#form_ctrl.highlighted").on("click", () => {
+$nextButton.on("click", () => {
   index++;
   setCurrentProject();
+
+  fullNameElement.html(fullNameValue.val());
+  emailElement.html(emailValue.val());
+  companyElement.html(companyValue.val());
+  socialElement.html(socialValue.val());
+
+  dateElement.html(monthValue.val() + "/" + dayValue.val() + "/" + yearValue.val());
+  extraElement.html(extraValue.val());
 });
 
-$("#form_ctrl.unselected").on("click", () => {
+$backButton.on("click", () => {
   index--;
   setCurrentProject();
 });
+
+
+// Loader functionality 
+let isMoving = false;
+
+const move = () => {
+  return new Promise((resolve, reject) => {
+    if (!isMoving) {
+      isMoving = true;
+      const elem = document.getElementById("progressbar").firstElementChild;
+      let width = 1;
+      const id = setInterval(() => {
+        if (width >= 100) {
+          clearInterval(id);
+          isMoving = false;
+          resolve(); // Resolve the promise when the animation is done
+        } else {
+          width++;
+          elem.style.width = width + "%";
+        }
+      }, 10);
+    }
+  });
+} 
+
+// Disable scrolling
+document.body.style.overflow = 'hidden';
+
+// Delay the start of the move function by a certain number of milliseconds
+setTimeout(async () => {
+  await move();
+  // Check if the document's readyState is complete after the move function is done animating
+  if (document.readyState == "complete") {
+    // hide loader after 2 seconds
+    setTimeout(() => { 
+      document.getElementById('loader').style.display = 'none';
+      const mainPage = document.getElementsByClassName('main_page')[0];
+      mainPage.style.opacity = '1';
+      document.body.style.overflow = 'auto'; // Enable scrolling again
+    }, 600);
+  }
+}, 900); // Replace 1000 with the number of milliseconds you want to delay
+
+
+
+
+
+//FORM HANDLERS
+
+document.querySelectorAll('.option').forEach(option => {
+  option.addEventListener('click', function() {
+    this.classList.toggle('selected');
+    
+    // Find the option_final div with the same data-o-contacts as the innerText of the clicked button
+    var matchingDiv = document.querySelector(`.option_final[data-o-contacts='${this.innerText}']`);
+    
+    // If a matching div is found, toggle the 'selected' class
+    if (matchingDiv) {
+      matchingDiv.classList.toggle('selected');
+    }
+  });
+});
+
+// Javascript method of moving the label up and turning it white for the EXTRA_NOTES DIV ONLY. It seems like the textarea element doesn't work properly with &:focus pseudo-class and the sibling selector.
+document.querySelector('.text-field').addEventListener('focus', function() {
+  this.parentElement.classList.add('focused');
+});
+document.querySelector('.text-field').addEventListener('blur', function() {
+  if (this.value.trim() === '') {
+    this.parentElement.classList.remove('focused');
+  }
+});
+
