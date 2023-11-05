@@ -58,8 +58,8 @@
 }
 
 .img_ctn {
-  height: 31px;
-  width: 82px;
+  height: 26px;
+  width: 68px;
 }
 
 #loadOrg {
@@ -131,7 +131,8 @@ body {
 }
 
 #org {
-  width: 150px;
+  width: 100%;
+  width: 100%;
 }
 
 .brand-sec {
