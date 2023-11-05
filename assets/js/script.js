@@ -18,6 +18,7 @@ dropdownButton.addEventListener("click", function () {
 // Add click event listeners to the dropdown items
 const dropdownItems = dropdownContent.querySelectorAll("li a");
 
+
 const handleDropdown = (event) => {
   // Hide the Dropdown.
   dropdownContent.style.display = 'none';
@@ -35,11 +36,13 @@ const handleDropdown = (event) => {
   setLogo(event.target.innerHTML);
 }
 
+
 const createListItem = (brand) => {
   const li = document.createElement('li');
   const a = document.createElement('a');
 
   a.innerHTML = brand;
+  a.classList.add('font_aza');
   a.addEventListener('click', handleDropdown);
 
   li.appendChild(a);
@@ -126,7 +129,6 @@ const setSelectedCategory = (event) => {
 }
 
 
-
 // On window load, run the GetLastChoice function.
 window.onload = GetLastChoice();
 
@@ -147,6 +149,11 @@ window.addEventListener("click", function (event) {
   }
 });
 
+
+
+
+
+// FORM HANDLER 
 
 
 // Form Values 
@@ -172,6 +179,7 @@ const extraElement = $(".final_extra_form p");
 // PAGE INDICATORS 
 const $backButton = $("#back_btn");
 const $nextButton = $("#next_btn");
+
 
 let index = 1;
 const $indicators = $("div.indicators ul li");
@@ -253,14 +261,15 @@ const setCurrentProject = (isInitialRun = false) => {
   }
 }
 
-console.log(fullNameValue, emailValue, companyValue, socialValue);
-console.log(fullNameElement, emailElement, companyElement, socialElement)
+// console.log(fullNameValue, emailValue, companyValue, socialValue);
+// console.log(fullNameElement, emailElement, companyElement, socialElement)
 
 
 $indicators.on("click", handleIndicatorClick);
 setCurrentProject(true);
 
-$nextButton.on("click", () => {
+$nextButton.on("click", (event) => {
+  event.preventDefault();
   index++;
   setCurrentProject();
 
@@ -273,7 +282,8 @@ $nextButton.on("click", () => {
   extraElement.html(extraValue.val());
 });
 
-$backButton.on("click", () => {
+$backButton.on("click", (event) => {
+  event.preventDefault();
   index--;
   setCurrentProject();
 });
@@ -350,3 +360,19 @@ document.querySelector('.text-field').addEventListener('blur', function() {
   }
 });
 
+$('.card.proj').each(function() {
+  $(this).on('click', function(event) {
+    
+    // Prevent the default link behavior
+    event.preventDefault();
+
+    // Get the data-id attribute
+    const dataId = $(this).attr('data-id');
+    
+    // Store the data-id in local storage
+    localStorage.setItem('logo', dataId);
+
+    // Navigate to the gallery page
+    window.location.href = $(this).attr('href');
+  });
+});
