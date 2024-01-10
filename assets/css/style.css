@@ -16,7 +16,7 @@
 }
 
 
-/* LOADING SCREEN  */
+/* ! LOADING SCREEN  */
 .loading_ctn {
   background-color: black;
   width: auto;
@@ -611,7 +611,7 @@ textarea {
 
 .selected {
   color: #fff !important;
-  border: 1px solid #fff  !important; /* or any other color you want for the outline */
+  border: 1px solid #fff  !important;
 }
 
 .input-field {
@@ -766,9 +766,6 @@ div.indicators ul li{
   margin-top: 95px;
   justify-content: flex-start;
   gap: 5px;
-
-  /* border: 1px solid white;
-  padding: 30px; */
 }
 
 .final_form_info {
@@ -796,21 +793,15 @@ div.indicators ul li{
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
-  /* padding: 20px 0 0 0; */
-  /* width: 400px; */
   align-items: center;
 }
 
-/* .option_final[data-o-contacts]:hover {
-  color: #fff;
-} */
 
 .option_final[data-o-contacts] {
   background: hsla(0,0%,100%,.05);
   border: 1px solid transparent;
   border-radius: .75rem;
   color: #424242;
-  /* cursor: pointer; */
   font-size: 0.8rem;
   padding: 0.9rem 1.1rem;
   text-align: center;
@@ -819,7 +810,7 @@ div.indicators ul li{
 
 .selected {
   color: #fff !important;
-  border: 1px solid #fff  !important; /* or any other color you want for the outline */
+  border: 1px solid #fff  !important;
 }
 
 .final_form_extras {
@@ -869,7 +860,7 @@ input[data-v-3ae5c648] {
   justify-content: flex-start;
 }
 
-/* FOOTER SECTION  */
+/* ! FOOTER SECTION  */
 .footer_sec_div {
   display: flex;
   border-top: 1px solid var(--border-lines-gray);
@@ -938,7 +929,7 @@ i {
     #main-img,
   .gdriveVideo {
     width: 100%;
-    height: 50%;
+    height: 100%;
     filter: brightness(50%);
 
   }
@@ -947,6 +938,26 @@ i {
     height: 50vh;
     position: relative;
     overflow: hidden;
+  }
+
+  .org-sec {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 2em;
+    height: 20px;
+  }
+  
+  #org {
+    width: 100%;
+    width: 100%;
+  }
+
+
+  .links-sec {
+position: relative;
   }
 }
 
