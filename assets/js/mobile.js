@@ -1,11 +1,9 @@
 const ddContent = document.querySelector("#dd_menu ul");
 const ddBtn = document.querySelector("#brand_logo button");
+const mainSiteImg = document.querySelector("#background_ctn img");
 const projectCategories = document.querySelectorAll(".catChoice");
-
-ddBtn.addEventListener("click", function () {
-  // Toggle the visibility of the dropdown content
-  ddContent.style.display = 'block';
-});
+const dropdownItems = ddContent.querySelectorAll("li a");
+const currentBrand = document.getElementById("selected-option");
 
 
 
@@ -52,8 +50,7 @@ setTimeout(async () => {
 
 // * END LOADER FUNCTIONALITY
 
-// Add click event listeners to the dropdown items
-const dropdownItems = ddContent.querySelectorAll("li a");
+
 
 
 const handleDropdown = (event) => {
@@ -83,7 +80,7 @@ const createListItem = (brand) => {
   a.addEventListener('click', handleDropdown);
 
   li.appendChild(a);
-  dropdownContent.appendChild(li);
+  ddContent.appendChild(li);
 }
 
 const GetLastChoice = () => {
@@ -131,3 +128,63 @@ const setLogo = (name) => {
       break;
   }
 }
+
+
+const setSelectedCategory = (event) => {
+  // Remove highlighting from all categories and add it to the selected one
+  projectCategories.forEach(category => {
+    category.classList.toggle('highlighted', category === event.target);
+    category.classList.toggle('unselected', category !== event.target);
+  });
+
+  // Get the category from the clicked element
+  const selectedCategory = event.target.innerText; // or event.target.textContent
+
+  // Get all project cards
+  const projectCards = document.querySelectorAll('.card_ctn');
+
+  // Show or hide project cards based on the selected category
+  projectCards.forEach(card => {
+    const shouldDisplay = selectedCategory === 'PROJECTS'|| card.dataset.category === selectedCategory;
+    const isContactCard = card.dataset.category === 'CONTACT US';
+
+    card.style.display = shouldDisplay ? 'block' : 'none';
+
+    if (isContactCard) {
+      card.style.display = selectedCategory === 'CONTACT US' ? 'block' : 'none';
+    } else {
+      card.style.display = shouldDisplay ? 'block' : 'none';
+    }
+    if (shouldDisplay || (isContactCard && selectedCategory === 'CONTACT US')) {
+      card.classList.add('slide-in'); // Add class for animation
+    }
+  });
+}
+
+
+// On window load, run the GetLastChoice function.
+window.onload = GetLastChoice();
+
+// Close the dropdown when clicking outside of it
+window.addEventListener("click", function (event) {
+  if (event.target.matches("#dropdown-button")) {
+    console.log("Dropdown not clicked!");
+    dropdownContent.style.display = 'none';
+  }
+});
+
+// Event Listeners for dropdown and category selection.
+dropdownItems.forEach(function (item) {
+  item.addEventListener("click", handleDropdown);
+});
+
+projectCategories.forEach(function (item) {
+  item.addEventListener('click', setSelectedCategory);
+})
+
+
+ddBtn.addEventListener("click", function () {
+  // Toggle the visibility of the dropdown content
+  ddContent.style.display = 'block';
+});
+
