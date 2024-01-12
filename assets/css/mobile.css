@@ -193,6 +193,17 @@ body {
   overflow: hidden;
 }
 
+
+/* ! VIDEO SECTION  */
+.video-container {
+  height: 100vh;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
 #background_ctn img {
   height: 100%;
   width: 275%;
@@ -498,7 +509,6 @@ body {
 i {
   color: white;
 }
-
 
 @media screen and (min-width: 800px) {
 
