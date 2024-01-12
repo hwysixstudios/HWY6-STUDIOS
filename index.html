@@ -31,8 +31,12 @@
 
     <!-- ! background section  -->
     <div id="background_ctn">
-      <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
-      <fade />
+      <!-- <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
+      <fade /> -->
+      <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/PTNm_Bcr_Fw" title="baccend" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allow="autoplay" allowfullscreen></iframe>
+            <fade/>
+        </div>
     </div>
 
     <!-- ! Header Section.  -->
@@ -45,22 +49,25 @@
           <img style="background:none" src="./assets/images/STUDIOS.png">
         </a>
 
-        <div id="dd_sec">
-          <!-- ! Brand Section. -->
+
+          <!-- ! DROPDOWN Section.  -->
+
+        <!-- <div id="dd_sec">
+
           <div id="brand_logo">
             <button>
               <img data-id="FRNDSNFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
             </button>
             <span class="fade-in-down" id="arrow">&dtrif;</span>
           </div>
-          <!-- ! Dropdown (dd) Section. -->
+
           <div id="dd_menu">
             <ul style="display:none;">
               <li><a class="font_aza" href="#">Sequoiah</a></li>
               <li><a class="font_aza" href="#">Norsu</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
       </div>
 
@@ -103,12 +110,12 @@
           <!-- <h3 class="p-h3">CATALOGUE</h3> -->
 
           <div id="main_card_ctn">
-            <a id="main_card" style="background-image: url(./assets/images/hwy6arcgivesbanner.png);"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdjUroRu4BBsfUkC6zpVYpYTyr2__qN8qVs-zzxPhxLk6J3fw/viewform">
+            <a id="main_card" style="background-image: url(./assets/images/hwy6popup.jpg);"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfp-PfW9b-zTAhurON-I6DabQsJhuFMtvvyOEM2PhGzgJpsZw/viewform">
             </a>
             <div id="card_info">
               <h4 id="heading_name">HWY6STUDIOS</h4>
-              <h4 id="heading_sub">HWY 6 ARCHIVES</h4>
+              <h4 id="heading_sub">HWY6 POP UP</h4>
             </div>
           </div>
 
@@ -204,7 +211,7 @@
           </a>
           <div class="card_info_child">
             <h4 class="heading_name">Seddy Hendrix</h4>
-            <h4 class="heading_sub">David Ruffin</h4>
+            <h4 class="heading_sub">"David Ruffin"</h4>
           </div>
         </div>
 
@@ -228,6 +235,61 @@
             <h4 class="heading_sub">Stolen Artifacts</h4>
           </div>
         </div>
+
+        <div class="card_ctn" data-category="CLOTHING">
+          <a class="card proj" style="background-image: url(./assets/images/image1.jpg);" href="gallery.html"
+            data-id="FRNDSNFOES">
+          </a>
+
+          <div class="card_info_child">
+            <h4 class="heading_name">FRNDSNFOES x SEQUOIAH</h4>
+            <h4 class="heading_sub">Academy Collection</h4>
+          </div>
+        </div>
+
+        <div class="card_ctn" data-category="VIDEO">
+          <a class="card proj" style="background-image: url(./assets/images/image2.jpg);" href="gallery.html"
+            data-id="FRNDSNFOES">
+          </a>
+
+          <div class="card_info_child">
+            <h4 class="heading_name">OzoneTheGod</h4>
+            <h4 class="heading_sub">"How I'm Feeling"</h4>
+          </div>
+        </div>
+
+        <div class="card_ctn" data-category="CLOTHING">
+          <a class="card proj" style="background-image: url(./assets/images/image3.jpg);" href="gallery.html"
+            data-id="FRNDSNFOES">
+          </a>
+
+          <div class="card_info_child">
+            <h4 class="heading_name">CreatorOfSex</h4>
+            <h4 class="heading_sub">Jesus Piece</h4>
+          </div>
+        </div>
+
+        <!-- <div class="card_ctn" data-category="VIDEO">
+          <a class="card proj" style="background-image: url(./assets/images/image4.jpg);" href="gallery.html"
+            data-id="FRNDSNFOES">
+          </a>
+
+          <div class="card_info_child">
+            <h4 class="heading_name">Lorem</h4>
+            <h4 class="heading_sub">Lorem</h4>
+          </div>
+        </div> -->
+
+        <!-- <div class="card_ctn" data-category="CLOTHING">
+          <a class="card proj" style="background-image: url(./assets/images/STUDIOS.png);" href="gallery.html"
+            data-id="FRNDSNFOES">
+          </a>
+
+          <div class="card_info_child">
+            <h4 class="heading_name">Lorem</h4>
+            <h4 class="heading_sub">Lorem</h4>
+          </div>
+        </div> -->
 
       </div>
     </div>
@@ -272,7 +334,7 @@
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
-  <script src="./assets/js/mobile.js"></script>
+  <script src="./assets/js/noDrop.js"></script>
 </body>
 
 
