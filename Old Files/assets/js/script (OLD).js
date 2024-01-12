@@ -20,13 +20,15 @@ const dropdownItems = dropdownContent.querySelectorAll("li a");
 
 
 const handleDropdown = (event) => {
+
+
   // Hide the Dropdown.
   dropdownContent.style.display = 'none';
+
   // sets the current dropdown ID to a const.
   const originalChoice = currentBrand.dataset.id;
 
   // Adds the current choice as a dropdown item
- 
   createListItem(originalChoice);
 
   // Removes the clicked target from the dropdown list.
@@ -50,10 +52,13 @@ const createListItem = (brand) => {
 }
 
 const GetLastChoice = () => {
+
   // Get lastChoice from Local Storage
   const lastChoice = localStorage.getItem('lastChoice');
+
   // Get all children of the dropdown.
   const listChildren = dropdownContent.children;
+  
   // Loop through the dropdown, and remove any children that match the lastChoice.
   for (let i = 0; i < listChildren.length; i++) {
     lastChoice === listChildren[i].innerText ? listChildren[i].remove() : null;
