@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* background-color: rgb(80, 80, 80); */
+}
+
+:root {
+  --dark-bg-font: #fff;
+  --light-bg-font: #000;
+  --font-azeret: 'Azeret Mono', monospace;
+  --font-poppins: 'Poppins', 'sans-serif';
+  --border-lines-gray:  #424242;
+  --border-lines-lightGray:  rgb(165, 165, 165);
+}
+
+.font_aza{
+  font-family: var(--font-azeret);
+  font-weight: 100;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+body {
+  background-color: #101010;
+  color: #ffffff;
+}
+
+
+/* LOADING SCREEN  */
+.loading_ctn {
+  background-color: black;
+  width: auto;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 9999;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.loading_assets {
+  flex-shrink: 0; /* ADDED instead of the width/height of the wrapper */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#progressbar {
+  border-radius: 0;
+  /* (height of inner div) / 2 + padding */
+  padding: 0px;
+  width: 75px;
+  background-color: rgb(46, 46, 46);
+}
+
+#progressbar>div {
+  background-color: rgb(255, 255, 255);
+  width: 0%;
+  /* Adjust with JavaScript */
+  height: 1px;
+  border-radius: 0px;
+}
+
+.img_ctn {
+  height: 26px;
+  width: 68px;
+}
+
+#loadOrg {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* PAGE START  */
+.main_page {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.page_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header_img_ctn {
+  height: 26px;
+  width: 68px;
+}
+
+#org {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  margin-top: 10px;
+}
+
+.gallery_img_ctn {
+  width: 100%;
+  height: 100%;
+  margin-top: 100px;
+}
+
+#main-img,
+.sub_img{
+  height: 100%;
+  width: 100%;
+}
+
+/* top/right/bottom/left  */
+.gallery_info {
+  display: flex;
+  margin: 100px 0 0 0;
+  gap: 120px;
+}
+
+.gallery_logo {
+  width: 500px;
+  height: 200px;
+}
+
+#logo {
+  height: 100%;
+  width: 100%;
+}
+
+.gallery_text {
+  width: 800px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
