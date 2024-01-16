@@ -186,7 +186,7 @@ body {
 
 /* ! BACKGROUND SECTION  */
 #background_ctn {
-  width: 100vw;
+  /* width: 100vw; */
   height: 70vh; /* Change on Desktop/Tablet */
   z-index: -1;
   position: relative;
@@ -228,9 +228,9 @@ body {
   gap: 25px;
 
   position: absolute;
-  bottom: 300px;
+  bottom: 350px;
 
-
+  width: 100%;
   font-size: 12px;
 
   padding-bottom: 10px;
@@ -287,7 +287,7 @@ body {
 }
 
 #description {
-  width: 100vw;
+  /* width: 100vw; */
 }
 /* ! FLAVOR TEXT SECTION  */
 
@@ -316,7 +316,7 @@ body {
 
 #main_card_ctn {
   width: 100%;
-  height: 350px;
+  height: 320px;
   position: relative;
   padding-bottom: 20px;
   margin: 0 auto;
@@ -572,11 +572,10 @@ i {
 .subtitle_sec {
   bottom: 400px;
   font-size: 15px;
-  width: 100vw;
 }
 
 #description {
-  width: 50vw;
+  width: 75vw;
 }
 
 #links_sec {
@@ -596,19 +595,14 @@ i {
 /* ! FLAVOR TEXT SECTION  */
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   .subtitle_sec {
     bottom: 75px;
     font-size: 15px;
-    width: 100vw;
-  }
-
-  #background_ctn img {
-    width: 100%;
   }
 
   #description {
-    width: 30vw;
+    width: 50vw;
   }
 
  /* ! HOVER EFFECTS  */
@@ -665,9 +659,9 @@ i {
     height: 300px;
   }
   
-  #card_holder {
+  /* #card_holder {
     grid-template-columns: 25% 25% 25% 25%;
-  }
+  } */
 
   .heading_name {
     font-size: .8em;
@@ -684,7 +678,21 @@ i {
   }
   
   #background_ctn img {
-    width: 100%;
+    width: 200%;
   }
     /* !BACKGROUND SECTION  */
+}
+
+@media screen and (min-width: 1920px) {
+  #background_ctn img {
+    width: 100%;
+  }
+
+  #description {
+    width: 25vw;
+  }
+
+  #card_holder {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
 }
