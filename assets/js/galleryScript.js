@@ -40,7 +40,6 @@ setTimeout(async () => {
 }, 900); // Replace 1000 with the number of milliseconds you want to delay
 
 
-
 $(window).scroll(function () {
   $('.sub_img').each(function () {
     var top_of_element = $(this).offset().top;
@@ -57,26 +56,119 @@ $(window).on('beforeunload', function () {
 });
 
 
-window.onload = function () {
-  // Get the data-id from local storage
-  const logo = localStorage.getItem('logo');
 
-  // Use the data-id to determine which logo to display
-  switch (logo) {
-    case 'SEQUOIAH':
-      // Change the logo source
-      changeLogo('./assets/images/SEQUOIAH.png', '500px', '150px');
-      break;
-    case 'FRNDSNFOES':
-      // Change the logo source
-      changeLogo('./assets/images/FNF-Logo.png');
-      break;
-    case 'NORSU':
-      // Change the logo source and size
-      changeLogo('./assets/images/NORSU-LOGO.png', '300px', '200px');
-      break;
-    // Add more cases as needed for other logos
+// This script runs when gallery.html loads and updates the images based on the stored data-id
+window.onload = function() {
+
+  // Get the data-id from local storage
+  const selectedCardId = localStorage.getItem('selectedCardId');
+
+  getLogo();
+  changeTitle(selectedCardId);
+  changeImgs(selectedCardId);
+
+
+};
+
+
+function changeImgs (cardID){
+
+  // Get the data-id from local storage
+
+  // Define an object with the content for each card
+  const cardContent = {
+    'NORSU-GIRLS': {
+      type: 'image',
+      main: 'https://drive.google.com/uc?id=1SFPDddjphg7Kw2EEvhluIi2PHBpQUfRn',
+      subImages: [
+        'https://drive.google.com/uc?id=1SHFCklTY83XwBj18OaUMltsOXFlKqTTI',
+        'https://drive.google.com/uc?id=1DNjusFYOX697FCRmIBDURB3Eczr4hvA2'
+      ]
+    },
+    'CLOTHING_NORSU_2': {
+      type: 'video',
+      main: 'https://www.youtube.com/embed/VIDEO_ID',
+      subImages: [
+        'https://drive.google.com/uc?export=view&id=IMAGE_ID_3',
+        'https://drive.google.com/uc?export=view&id=IMAGE_ID_4'
+      ]
+    },
+    // ... other card IDs and their corresponding content
+  };
+
+  const content = cardContent[cardID];
+
+  if (content) {
+    // Clear existing gallery content
+    const galleryContainer = document.getElementById('gallery-container'); // Make sure you have this container in your HTML
+    galleryContainer.innerHTML = '';
+
+    // Create and append new gallery_img_ctn elements
+    content.subImages.forEach((url, index) => {
+      const galleryImgCtn = document.createElement('div');
+      galleryImgCtn.className = 'gallery_img_ctn';
+      galleryImgCtn.id = 'gallery_img_ctn_' + (index + 1);
+
+      const img = document.createElement('img');
+      img.className = 'sub_img';
+      img.src = url;
+
+      galleryImgCtn.appendChild(img);
+      galleryContainer.appendChild(galleryImgCtn);
+    });
+
+    // Update the main image or video
+    if (content.type === 'image') {
+      const mainImg = document.getElementById('main-img');
+      mainImg.src = content.main;
+      mainImg.style.display = 'block';
+    } else if (content.type === 'video') {
+      // Update the video player source and display it
+      const videoPlayer = document.getElementById('video-player');
+      videoPlayer.src = content.main;
+      videoPlayer.style.display = 'block';
+      // Hide the main image
+      const mainImg = document.getElementById('main-img');
+      mainImg.style.display = 'none';
+    }
   }
+}
+
+
+
+function changeTitle (cardID) {
+  const titles = {
+    'NORSU-GIRLS': '"Pretty Girls Wear Norsu"',
+  }
+
+  const gTitle = document.getElementById('gallery_title');
+
+  if (titles[cardID]) {
+    gTitle.textContent = titles[cardID];
+  }
+}
+
+function getLogo () {
+    // Get the data-id from local storage
+    const logo = localStorage.getItem('logo').split('-')[0];
+    console.log(logo);
+  
+    // Use the data-id to determine which logo to display
+    switch (logo) {
+      case 'SEQUOIAH':
+        // Change the logo source
+        changeLogo('./assets/images/SEQUOIAH.png', '500px', '150px');
+        break;
+      case 'FRNDSNFOES':
+        // Change the logo source
+        changeLogo('./assets/images/FNF-Logo.png');
+        break;
+      case 'NORSU':
+        // Change the logo source and size
+        changeLogo('./assets/images/NORSU-LOGO.png', '300px', '200px');
+        break;
+      // Add more cases as needed for other logos
+    }
 }
 
 function changeLogo(src, width, height) {
