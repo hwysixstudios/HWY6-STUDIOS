@@ -119,12 +119,16 @@ function changeImgs (cardID){
 
     // Update the main image or video
     if (content.type === 'image') {
+
       const mainImg = document.getElementById('main-img');
+
       mainImg.src = content.main;
       mainImg.style.display = 'block';
     } else if (content.type === 'video') {
+      
       // Update the video player source and display it
       const videoPlayer = document.getElementById('video-player');
+
       videoPlayer.src = content.main;
       videoPlayer.style.display = 'block';
       // Hide the main image
