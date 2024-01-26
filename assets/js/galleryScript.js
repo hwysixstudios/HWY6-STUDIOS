@@ -79,18 +79,27 @@ function changeImgs (cardID){
   const cardContent = {
     'NORSU-GIRLS': {
       type: 'image',
-      main: 'https://drive.google.com/uc?id=1SFPDddjphg7Kw2EEvhluIi2PHBpQUfRn',
+      main: 'https://drive.google.com/thumbnail?id=1SFPDddjphg7Kw2EEvhluIi2PHBpQUfRn&sz=h1920',
       subImages: [
-        'https://drive.google.com/uc?id=1SHFCklTY83XwBj18OaUMltsOXFlKqTTI',
-        'https://drive.google.com/uc?id=1DNjusFYOX697FCRmIBDURB3Eczr4hvA2'
+        'https://drive.google.com/thumbnail?id=1SHFCklTY83XwBj18OaUMltsOXFlKqTTI&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1DNjusFYOX697FCRmIBDURB3Eczr4hvA2&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1uuELA3uvPN8cQ2HDNvtDxrqCySVMzgbT&sz=w1080',
+        'https://drive.google.com/thumbnail?id=11odI1_-rMPUXAqJOiER7jWKBq3M9NOxd&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1I3QGqBLL2az1kO9VZ3o9-puyvh4Nrile&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1YMgCsdHKM_u_uG7mlPjzC-386W8meRiS&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1kjlea3gjYpntxRefbKS0PEjEEY7IBjNW&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1WiobwRtPHEpmpIe4-8wA8S8gSOpxJYKv&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1iCVFpA4Lhf14bqSKwlZSAu7ASxdIlHVK&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1ZeN1oGe7_5eOFct0qX7ZC-Juj6WHZ2X-&sz=w1080',
+        'https://drive.google.com/thumbnail?id=1TLi_emZ2YssYgfVNSRruc0VHQhWjpSEF&sz=w1080',
       ]
     },
-    'CLOTHING_NORSU_2': {
+    'SEDDY': {
       type: 'video',
-      main: 'https://www.youtube.com/embed/VIDEO_ID',
+      main: 'https://www.youtube.com/embed/3B9KaLEPXbU',
       subImages: [
-        'https://drive.google.com/uc?export=view&id=IMAGE_ID_3',
-        'https://drive.google.com/uc?export=view&id=IMAGE_ID_4'
+        // 'https://drive.google.com/uc?export=view&id=IMAGE_ID_3',
+        // 'https://drive.google.com/uc?export=view&id=IMAGE_ID_4'
       ]
     },
     // ... other card IDs and their corresponding content
@@ -143,6 +152,7 @@ function changeImgs (cardID){
 function changeTitle (cardID) {
   const titles = {
     'NORSU-GIRLS': '"Pretty Girls Wear Norsu"',
+    'SEDDY': '"David Ruffin"',
   }
 
   const gTitle = document.getElementById('gallery_title');
