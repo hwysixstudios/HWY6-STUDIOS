@@ -161,6 +161,26 @@ const setSelectedCategory = (event) => {
   });
 }
 
+$('.card.proj').each(function() {
+  $(this).on('click', function(event) {
+    
+    // Prevent the default link behavior
+    event.preventDefault();
+
+    // Get the data-id attribute
+    const dataId = $(this).attr('data-id');
+    
+    // Store the data-id in local storage
+    localStorage.setItem('logo', dataId);
+
+    // Navigate to the gallery page
+    window.location.href = $(this).attr('href');
+
+
+    // Store the data-id in local storage
+    localStorage.setItem('selectedCardId', dataId);
+  });
+});
 
 // On window load, run the GetLastChoice function.
 window.onload = GetLastChoice();
