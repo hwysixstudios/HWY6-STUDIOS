@@ -1,0 +1,21 @@
+{
+    "type": "image",
+    "title": "Pretty Girls Wear Norsu",
+    "logo": "./assets/images/NORSU-LOGO.png",
+    "logoWidth": "300px",
+    "logoHeight": "200px",
+    "mainImage": "https://drive.google.com/thumbnail?id=1SFPDddjphg7Kw2EEvhluIi2PHBpQUfRn&sz=h1920",
+    "subImages": [
+      "https://drive.google.com/thumbnail?id=1SHFCklTY83XwBj18OaUMltsOXFlKqTTI&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1DNjusFYOX697FCRmIBDURB3Eczr4hvA2&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1uuELA3uvPN8cQ2HDNvtDxrqCySVMzgbT&sz=w1080",
+      "https://drive.google.com/thumbnail?id=11odI1_-rMPUXAqJOiER7jWKBq3M9NOxd&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1I3QGqBLL2az1kO9VZ3o9-puyvh4Nrile&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1YMgCsdHKM_u_uG7mlPjzC-386W8meRiS&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1kjlea3gjYpntxRefbKS0PEjEEY7IBjNW&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1WiobwRtPHEpmpIe4-8wA8S8gSOpxJYKv&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1iCVFpA4Lhf14bqSKwlZSAu7ASxdIlHVK&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1ZeN1oGe7_5eOFct0qX7ZC-Juj6WHZ2X-&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1TLi_emZ2YssYgfVNSRruc0VHQhWjpSEF&sz=w1080"
+    ]
+}

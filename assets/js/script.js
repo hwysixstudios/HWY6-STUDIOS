@@ -6,61 +6,15 @@ const dropdownItems = ddContent.querySelectorAll("li a");
 const currentBrand = document.getElementById("selected-option");
 
 
-
-// * START Loader Functionality 
-let isMoving = false;
-
-const move = () => {
-  return new Promise((resolve, reject) => {
-    if (!isMoving) {
-      isMoving = true;
-      const elem = document.getElementById("progressbar").firstElementChild;
-      let width = 1;
-      const id = setInterval(() => {
-        if (width >= 100) {
-          clearInterval(id);
-          isMoving = false;
-          resolve(); // Resolve the promise when the animation is done
-        } else {
-          width++;
-          elem.style.width = width + "%";
-        }
-      }, 10);
-    }
-  });
-}
-
-// Disable scrolling
-document.body.style.overflow = 'hidden';
-
-// Delay the start of the move function by a certain number of milliseconds
-setTimeout(async () => {
-  await move();
-  // Check if the document's readyState is complete after the move function is done animating
-  if (document.readyState == "complete") {
-    // hide loader after 2 seconds
-    setTimeout(() => {
-      document.getElementById('loader').style.display = 'none';
-      const mainPage = document.getElementsByClassName('main_page')[0];
-      mainPage.style.opacity = '1';
-      document.body.style.overflow = 'auto'; // Enable scrolling again
-    }, 600);
-  }
-}, 900); // Replace 1000 with the number of milliseconds you want to delay
-
-// * END LOADER FUNCTIONALITY
-
-
-
-
 const handleDropdown = (event) => {
+
   // Hide the Dropdown.
   ddContent.style.display = 'none';
+
   // sets the current dropdown ID to a const.
   const originalChoice = currentBrand.dataset.id;
 
   // Adds the current choice as a dropdown item
- 
   createListItem(originalChoice);
 
   // Removes the clicked target from the dropdown list.
@@ -208,3 +162,27 @@ ddBtn.addEventListener("click", function () {
   ddContent.style.display = 'block';
 });
 
+document.querySelectorAll('.card.proj').forEach(card => {
+  card.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      const dataId = this.getAttribute('data-id'); // Get the data-id attribute
+      window.location.href = `gallery.html?id=${dataId}`; // Navigate to the gallery page with data-id as a query parameter
+  });
+});
+
+var speed = 'slow';
+
+$('html, body').hide();
+
+$(document).ready(function() {
+    $('html, body').fadeIn(speed, function() {
+        $('a[href], button[href]').click(function(event) {
+            var url = $(this).attr('href');
+            if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
+            event.preventDefault();
+            $('html, body').fadeOut(speed, function() {
+                window.location = url;
+            });
+        });
+    });
+});
