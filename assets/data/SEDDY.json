@@ -1,0 +1,10 @@
+{
+    "type": "video",
+    "title": "David Ruffin",
+    "logo": "./assets/images/NORSU-LOGO.png",
+    "logoWidth": "300px",
+    "logoHeight": "200px",
+    "mainImage": "https://www.youtube.com/embed/3B9KaLEPXbU?autoplay=1&mute=1",
+    "subImages": [
+    ]
+}
