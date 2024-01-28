@@ -43,12 +43,27 @@ const createListItem = (brand) => {
 }
 
 const initialSetup = () => {
-  const lastChoice = localStorage.getItem('lastChoice');
+  const lastChoice = localStorage.getItem('lastChoice') || 'FRNDSNFOES'; // Default to 'FRNDSNFOES' if no last choice is stored
+  setLogo(lastChoice); // Set the logo based on the last choice or default to 'FRNDSNFOES'
+
+  // Check if 'FRNDSNFOES' is not the current choice
   if (lastChoice !== 'FRNDSNFOES' && userHasInteracted) {
-      createListItem(currentBrand.dataset.id);
+      // Remove the current choice from the list if it exists
+      removeListItem(currentBrand.dataset.id);
+      // Add 'FRNDSNFOES' to the list
+      createListItem('FRNDSNFOES');
   }
-  setLogo(lastChoice);
-}
+};
+
+// Function to remove a list item based on the brand
+const removeListItem = (brand) => {
+  const items = ddContent.querySelectorAll('li');
+  items.forEach(item => {
+      if (item.textContent === brand) {
+          item.remove();
+      }
+  });
+};
 
 // Call initialSetup on window load
 window.onload = function() {
