@@ -47,7 +47,7 @@ const initialSetup = () => {
   setLogo(lastChoice); // Set the logo based on the last choice or default to 'FRNDSNFOES'
 
   // Check if 'FRNDSNFOES' is not the current choice
-  if (lastChoice !== 'FRNDSNFOES' && userHasInteracted) {
+  if (lastChoice !== 'FRNDSNFOES') {
       // Remove the current choice from the list if it exists
       removeListItem(currentBrand.dataset.id);
       // Add 'FRNDSNFOES' to the list
