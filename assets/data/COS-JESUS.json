@@ -1,0 +1,18 @@
+{
+    "type": "image",
+    "title": "Jesus Piece",
+    "logo": "./assets/images/STUDIOS.png",
+    "logoWidth": "500px",
+    "logoHeight": "150px",
+    "mainImage": "https://drive.google.com/thumbnail?id=1AaAEFsB2LZVJ9hyukQ_ITZk8TLKXef0D&sz=w1920",
+    "subImages": [
+      "https://drive.google.com/thumbnail?id=1Ge3Ib5V5mHicQ5EDtL7mUn-TUX3LrxUX&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1DxYuKOAfJeopqive7jWPlO7SeT0tlTOf&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1aGKocHKwaSJAkWNhk-5vmZnHdfZx27bP&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1TXi1zxf4lp4kabOpYDdEtIFimQqEWh-c&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1GKLtPhFcBaW0jXnSGcT2mvSKJWAdn48Q&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1ungEEkMHN-yO8umi4nduTU_VX5pxUaqZ&sz=w1080",
+      "https://drive.google.com/thumbnail?id=12rlgdGfsjhzEo22FKS1bzdRNXhKtdPJ1&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1HAVC59VGtj5t0aV2JCoxcLv6x_3u7IrH&sz=w1080"
+  ]
+}

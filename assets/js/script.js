@@ -4,7 +4,7 @@ const mainSiteImg = document.querySelector("#background_ctn img");
 const projectCategories = document.querySelectorAll(".catChoice");
 const dropdownItems = ddContent.querySelectorAll("li a");
 const currentBrand = document.getElementById("selected-option");
-
+let userHasInteracted = false;
 
 const handleDropdown = (event) => {
 
@@ -22,8 +22,13 @@ const handleDropdown = (event) => {
 
   // Change the dropdown item to the new logo of the selected brand.
   setLogo(event.target.innerHTML);
+
+  setUserHasInteracted();
 }
 
+const setUserHasInteracted = () => {
+  userHasInteracted = true;
+}
 
 const createListItem = (brand) => {
   const li = document.createElement('li');
@@ -37,24 +42,18 @@ const createListItem = (brand) => {
   ddContent.appendChild(li);
 }
 
-const GetLastChoice = () => {
-  // Get lastChoice from Local Storage
+const initialSetup = () => {
   const lastChoice = localStorage.getItem('lastChoice');
-  // Get all children of the dropdown.
-  const listChildren = ddContent.children;
-  // Loop through the dropdown, and remove any children that match the lastChoice.
-  for (let i = 0; i < listChildren.length; i++) {
-    lastChoice === listChildren[i].innerText ? listChildren[i].remove() : null;
+  if (lastChoice !== 'FRNDSNFOES' && userHasInteracted) {
+      createListItem(currentBrand.dataset.id);
   }
-
-  // Make FRNDSnFOES a choice if FRNDSnFOES isn't in localStorage
-  if (lastChoice != 'FRNDSNFOES') {
-    const originalChoice = currentBrand.dataset.id;
-    createListItem(originalChoice);
-  }
-  // logic for handling the remembrance of the lastChoice. Sets the current selected brand to the last choice logged in LocalStorage.
-  setLogo(lastChoice)
+  setLogo(lastChoice);
 }
+
+// Call initialSetup on window load
+window.onload = function() {
+  initialSetup();
+};
 
 
 const setLogo = (name) => {
@@ -87,31 +86,25 @@ const setLogo = (name) => {
 const setSelectedCategory = (event) => {
   // Remove highlighting from all categories and add it to the selected one
   projectCategories.forEach(category => {
-    category.classList.toggle('highlighted', category === event.target);
-    category.classList.toggle('unselected', category !== event.target);
+      category.classList.toggle('highlighted', category === event.target);
+      category.classList.toggle('unselected', category !== event.target);
   });
 
   // Get the category from the clicked element
-  const selectedCategory = event.target.innerText; // or event.target.textContent
+  const selectedCategory = event.target.innerText;
 
   // Get all project cards
   const projectCards = document.querySelectorAll('.card_ctn');
 
   // Show or hide project cards based on the selected category
   projectCards.forEach(card => {
-    const shouldDisplay = selectedCategory === 'PROJECTS'|| card.dataset.category === selectedCategory;
-    const isContactCard = card.dataset.category === 'CONTACT US';
+      // Split the data-category attribute into an array of categories
+      const cardCategories = card.getAttribute('data-category').split(' ');
 
-    card.style.display = shouldDisplay ? 'block' : 'none';
+      // Check if the selectedCategory is one of the card's categories
+      const shouldDisplay = cardCategories.includes(selectedCategory) || selectedCategory === 'PROJECTS';
 
-    if (isContactCard) {
-      card.style.display = selectedCategory === 'CONTACT US' ? 'block' : 'none';
-    } else {
       card.style.display = shouldDisplay ? 'block' : 'none';
-    }
-    if (shouldDisplay || (isContactCard && selectedCategory === 'CONTACT US')) {
-      card.classList.add('slide-in'); // Add class for animation
-    }
   });
 }
 
@@ -136,8 +129,6 @@ $('.card.proj').each(function() {
   });
 });
 
-// On window load, run the GetLastChoice function.
-window.onload = GetLastChoice();
 
 // Close the dropdown when clicking outside of it
 window.addEventListener("click", function (event) {

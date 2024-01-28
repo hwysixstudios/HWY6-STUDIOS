@@ -19,6 +19,7 @@ function updateGallery(itemId) {
 
       // Update main image or video
       const mainImg = document.getElementById('main-img');
+      const imgContainer = document.getElementById('main_img_ctn');
       const videoPlayer = document.getElementById('video-player');
       const videoContainer = document.getElementById('video-container');
       if (data.type === 'image') {
@@ -28,7 +29,7 @@ function updateGallery(itemId) {
       } else if (data.type === 'video') {
         videoPlayer.src = data.mainImage;
         videoContainer.style.display = 'block';
-        mainImg.style.display = 'none';
+        imgContainer.style.display = 'none';
       }
 
       // Clear existing gallery content
