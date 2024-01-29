@@ -176,6 +176,21 @@ document.querySelectorAll('.card.proj').forEach(card => {
   });
 });
 
+const adjustBackgroundCtnHeight = () => {
+  const viewportHeight = window.innerHeight;
+  const backgroundCtn = document.getElementById('background_ctn');
+  if (backgroundCtn) {
+    backgroundCtn.style.height = `${viewportHeight}px`;
+  }
+}
+
+// Adjust height on initial load
+adjustBackgroundCtnHeight();
+
+// Adjust height whenever the window resizes
+window.addEventListener('resize', adjustBackgroundCtnHeight);
+
+
 var speed = 'slow';
 
 $('html, body').hide();
