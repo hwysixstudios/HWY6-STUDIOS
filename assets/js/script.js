@@ -188,7 +188,7 @@ const adjustBackgroundCtnHeight = () => {
 adjustBackgroundCtnHeight();
 
 // Adjust height whenever the window resizes
-window.addEventListener('resize', adjustBackgroundCtnHeight);
+// window.addEventListener('resize', adjustBackgroundCtnHeight);
 
 
 var speed = 'slow';
