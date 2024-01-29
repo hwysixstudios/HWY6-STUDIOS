@@ -47,7 +47,7 @@ const initialSetup = () => {
   setLogo(lastChoice); // Set the logo based on the last choice or default to 'FRNDSNFOES'
 
   // Check if 'FRNDSNFOES' is not the current choice
-  if (lastChoice !== 'FRNDSNFOES' && userHasInteracted) {
+  if (lastChoice !== 'FRNDSNFOES') {
       // Remove the current choice from the list if it exists
       removeListItem(currentBrand.dataset.id);
       // Add 'FRNDSNFOES' to the list
@@ -175,6 +175,21 @@ document.querySelectorAll('.card.proj').forEach(card => {
       window.location.href = `gallery.html?id=${dataId}`; // Navigate to the gallery page with data-id as a query parameter
   });
 });
+
+const adjustBackgroundCtnHeight = () => {
+  const viewportHeight = window.innerHeight;
+  const backgroundCtn = document.getElementById('background_ctn');
+  if (backgroundCtn) {
+    backgroundCtn.style.height = `${viewportHeight}px`;
+  }
+}
+
+// Adjust height on initial load
+adjustBackgroundCtnHeight();
+
+// Adjust height whenever the window resizes
+window.addEventListener('resize', adjustBackgroundCtnHeight);
+
 
 var speed = 'slow';
 

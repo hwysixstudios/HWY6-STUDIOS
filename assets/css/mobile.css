@@ -187,7 +187,7 @@ body {
 /* ! BACKGROUND SECTION  */
 #background_ctn {
   /* width: 100vw; */
-  height: 70vh; /* Change on Desktop/Tablet */
+  /* height: 70vh; Change on Desktop/Tablet */
   z-index: -1;
   position: relative;
   overflow: hidden;
@@ -228,7 +228,7 @@ body {
   gap: 25px;
 
   position: absolute;
-  bottom: 350px;
+  bottom: 75px;
 
   width: 100%;
   font-size: 12px;
@@ -560,7 +560,7 @@ i {
 
 /* ! BACKGROUND SECTION  */
 #background_ctn {
-  height: 75vh; /* Change on Desktop/Tablet */
+  /* height: 75vh; Change on Desktop/Tablet */
 }
 
 #background_ctn img {
@@ -674,7 +674,7 @@ i {
 
   /* !BACKGROUND SECTION  */
   #background_ctn {
-    height: 100vh; /* Change on Desktop/Tablet */
+    /* height: 100vh; Change on Desktop/Tablet */
   }
   
   #background_ctn img {
