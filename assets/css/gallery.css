@@ -137,9 +137,15 @@ header {
 }
 
 #video-container {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   margin: 15rem 0px;
+}
+
+#video-player {
+  width: 100%; /* Make the iframe take up 100% of the screen's width */
+  height: auto; /* Adjust the height automatically based on the aspect ratio */
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
 }
 
 #main-img,
@@ -226,11 +232,6 @@ i {
   color: white;
 }
 
-#video-player {
-  width: 100%; /* Make the iframe take up 100% of the screen's width */
-  height: auto; /* Adjust the height automatically based on the aspect ratio */
-  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
-}
 
 @media screen and (min-width: 1920px) {
   .gallery_text {
