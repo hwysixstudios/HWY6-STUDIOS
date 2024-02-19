@@ -491,6 +491,13 @@ body {
 }
 /* !! CARD SECTION  */
 
+/* !! TYPEFORM SECTION  */
+
+#typeform_card {
+  width: auto;
+  height: auto;
+}
+
 /* ! FOOTER SECTION  */
 .footer_sec_div {
   display: flex;

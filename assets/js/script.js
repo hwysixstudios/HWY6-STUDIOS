@@ -119,9 +119,22 @@ const setSelectedCategory = (event) => {
       // Check if the selectedCategory is one of the card's categories
       const shouldDisplay = cardCategories.includes(selectedCategory) || selectedCategory === 'PROJECTS';
 
+      // Set the display property of the card based on the selected category
       card.style.display = shouldDisplay ? 'block' : 'none';
   });
+
+  // Hide the Typeform card if the selected category is not 'Contact'
+  const typeformCard = document.querySelector('.card_ctn[data-category="CONTACT"]');
+  
+  console.log(typeformCard);
+  if (selectedCategory !== 'CONTACT') {
+      typeformCard.style.display = 'none';
+  } else {
+      typeformCard.style.display = 'block';
+  }
 }
+
+
 
 $('.card.proj').each(function() {
   $(this).on('click', function(event) {
@@ -189,21 +202,3 @@ adjustBackgroundCtnHeight();
 
 // Adjust height whenever the window resizes
 // window.addEventListener('resize', adjustBackgroundCtnHeight);
-
-
-var speed = 'slow';
-
-$('html, body').hide();
-
-$(document).ready(function() {
-    $('html, body').fadeIn(speed, function() {
-        $('a[href], button[href]').click(function(event) {
-            var url = $(this).attr('href');
-            if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
-            event.preventDefault();
-            $('html, body').fadeOut(speed, function() {
-                window.location = url;
-            });
-        });
-    });
-});
