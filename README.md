@@ -1,5 +1,24 @@
 # HWY6-STUDIOS
 
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+  
+## Description
+  
+An HTML, CSS, and JavaScript powered website made for the HWY6-STUDIOS Creative Team.
+  
+## Table of Contents
+  
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Media](#media)
+- [Credits](#credits)
+  
+## Installation
+  
+N/A
+
 ## Technologies
 
 ![Technologies](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=white)
@@ -32,4 +51,7 @@ Click to watch the full video on YouTube!
 ## Credits
 
   Ediubong Ekwere | JunoAndIce
+  jpd61
+
   <https://github.com/JunoAndIce> | [ekwere.edi@gmail.com](mailto:ekwere.edi@gmail.com)
+  

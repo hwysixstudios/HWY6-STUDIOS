@@ -1,58 +1,194 @@
-// Get references to the dropdown elements
-const dropdownButton = document.getElementById("dropdown-button");
-const dropdownContent = document.getElementById("dropdown-content");
+const ddContent = document.querySelector("#dd_menu ul");
+const ddBtn = document.querySelector("#brand_logo button");
+const mainSiteImg = document.querySelector("#background_ctn img");
+const projectCategories = document.querySelectorAll(".catChoice");
+const dropdownItems = ddContent.querySelectorAll("li a");
 const currentBrand = document.getElementById("selected-option");
+let userHasInteracted = false;
 
-// Add a click event listener to the dropdown button
-dropdownButton.addEventListener("click", function () {
-  // Toggle the visibility of the dropdown content
-  dropdownContent.style.display = 'block';
-  // console.log(selectedOption.textContent)
-});
+const handleDropdown = (event) => {
 
-// Add click event listeners to the dropdown items
-const dropdownItems = dropdownContent.querySelectorAll("li");
-  dropdownContent.style.display = 'none';
-  let originalChoice = currentBrand.textContent;
+  // Hide the Dropdown.
+  ddContent.style.display = 'none';
 
-  const li = document.createElement('li');
-  li.innerHTML = `<a href="#">${originalChoice}</a>`
-  dropdownContent.appendChild(li);
-  li.addEventListener('click', handleDropdown)
+  // sets the current dropdown ID to a const.
+  const originalChoice = currentBrand.dataset.id;
 
-  const newBrand = event.target.textContent
+  // Adds the current choice as a dropdown item
+  createListItem(originalChoice);
+
+  // Removes the clicked target from the dropdown list.
   event.currentTarget.remove();
 
-  currentBrand.textContent = newBrand;
+  // Change the dropdown item to the new logo of the selected brand.
+  setLogo(event.target.innerHTML);
+
+  setUserHasInteracted();
 }
 
+const setUserHasInteracted = () => {
+  userHasInteracted = true;
+}
+
+const createListItem = (brand) => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+
+  a.innerHTML = brand;
+  a.classList.add('font_aza');
+  a.addEventListener('click', handleDropdown);
+
+  li.appendChild(a);
+  ddContent.appendChild(li);
+}
+
+const initialSetup = () => {
+  const lastChoice = localStorage.getItem('lastChoice') || 'FRNDSNFOES'; // Default to 'FRNDSNFOES' if no last choice is stored
+  setLogo(lastChoice); // Set the logo based on the last choice or default to 'FRNDSNFOES'
+
+  // Check if 'FRNDSNFOES' is not the current choice
+  if (lastChoice !== 'FRNDSNFOES' && userHasInteracted) {
+      // Remove the current choice from the list if it exists
+      removeListItem(currentBrand.dataset.id);
+      // Add 'FRNDSNFOES' to the list
+      createListItem('FRNDSNFOES');
+  }
+};
+
+// Function to remove a list item based on the brand
+const removeListItem = (brand) => {
+  const items = ddContent.querySelectorAll('li');
+  items.forEach(item => {
+      if (item.textContent === brand) {
+          item.remove();
+      }
+  });
+};
+
+// Call initialSetup on window load
+window.onload = function() {
+  initialSetup();
+};
+
+
+const setLogo = (name) => {
+  switch (name) {
+    case 'Norsu':
+      currentBrand.src = './assets/images/NORSU.png';
+      mainSiteImg.src = './assets/images/NORSU_1.jpg';
+      mainSiteImg.style.height = '170%';
+      currentBrand.dataset.id = 'Norsu';
+      localStorage.setItem('lastChoice', 'Norsu');
+      break;
+    case 'Sequoiah':
+      currentBrand.src = './assets/images/SEQUOIAH.png';
+      mainSiteImg.src = './assets/images/agthsb-sequoiah-tee.png';
+      mainSiteImg.style.height = '100%';
+      currentBrand.dataset.id = 'Sequoiah';
+      localStorage.setItem('lastChoice', 'Sequoiah');
+      break;
+    case 'FRNDSNFOES':
+      currentBrand.src = './assets/images/FNF-Logo.png';
+      mainSiteImg.src = './assets/images/fnfwarshirt.jpg';
+      mainSiteImg.style.height = '100%';
+      currentBrand.dataset.id = 'FRNDSNFOES';
+      localStorage.setItem('lastChoice', 'FRNDSNFOES');
+      break;
+  }
+}
+
+
+const setSelectedCategory = (event) => {
+  // Remove highlighting from all categories and add it to the selected one
+  projectCategories.forEach(category => {
+      category.classList.toggle('highlighted', category === event.target);
+      category.classList.toggle('unselected', category !== event.target);
+  });
+
+  // Get the category from the clicked element
+  const selectedCategory = event.target.innerText;
+
+  // Get all project cards
+  const projectCards = document.querySelectorAll('.card_ctn');
+
+  // Show or hide project cards based on the selected category
+  projectCards.forEach(card => {
+      // Split the data-category attribute into an array of categories
+      const cardCategories = card.getAttribute('data-category').split(' ');
+
+      // Check if the selectedCategory is one of the card's categories
+      const shouldDisplay = cardCategories.includes(selectedCategory) || selectedCategory === 'PROJECTS';
+
+      card.style.display = shouldDisplay ? 'block' : 'none';
+  });
+}
+
+$('.card.proj').each(function() {
+  $(this).on('click', function(event) {
+    
+    // Prevent the default link behavior
+    event.preventDefault();
+
+    // Get the data-id attribute
+    const dataId = $(this).attr('data-id');
+    
+    // Store the data-id in local storage
+    localStorage.setItem('logo', dataId);
+
+    // Navigate to the gallery page
+    window.location.href = $(this).attr('href');
+
+
+    // Store the data-id in local storage
+    localStorage.setItem('selectedCardId', dataId);
+  });
+});
+
+
+// Close the dropdown when clicking outside of it
+window.addEventListener("click", function (event) {
+  if (event.target.matches("#dropdown-button")) {
+    console.log("Dropdown not clicked!");
+    dropdownContent.style.display = 'none';
+  }
+});
+
+// Event Listeners for dropdown and category selection.
 dropdownItems.forEach(function (item) {
   item.addEventListener("click", handleDropdown);
 });
 
-// Close the dropdown when clicking outside of it
-window.addEventListener("click", function (event) {
-  if (!event.target.matches("#dropdown-button")) {
-    dropdownContent.classList.remove("show");
-  }
+projectCategories.forEach(function (item) {
+  item.addEventListener('click', setSelectedCategory);
+})
+
+
+ddBtn.addEventListener("click", function () {
+  // Toggle the visibility of the dropdown content
+  ddContent.style.display = 'block';
 });
 
-const numberOfMembers = 10; // Number of Members (change as needed)
-const memeberList = document.getElementById();
+document.querySelectorAll('.card.proj').forEach(card => {
+  card.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      const dataId = this.getAttribute('data-id'); // Get the data-id attribute
+      window.location.href = `gallery.html?id=${dataId}`; // Navigate to the gallery page with data-id as a query parameter
+  });
+});
 
-for (let i = 1; <= numberOfMembers; i++){
-  const memberDiv = document.createElement('div');
-  memberDiv.classList.add('member');
+var speed = 'slow';
 
-  const memberImage = document.createElement
-   memberImage.src = `path_to_member_photo_${i}.jpg`; // Replace with the actual path to member photos
-  memberImage.alt = `Member ${i}`;
+$('html, body').hide();
 
-  const memberName = document.createElement('p');
-  memberName.textContent = `Member ${i}`;
-
-  memberDiv.appendChild(memberImage);
-  memberDiv.appendChild(memberName);
-
-  memberList.appendChild(memberDiv);
-}
+$(document).ready(function() {
+    $('html, body').fadeIn(speed, function() {
+        $('a[href], button[href]').click(function(event) {
+            var url = $(this).attr('href');
+            if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
+            event.preventDefault();
+            $('html, body').fadeOut(speed, function() {
+                window.location = url;
+            });
+        });
+    });
+});

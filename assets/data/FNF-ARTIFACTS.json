@@ -1,0 +1,23 @@
+{
+    "type": "video",
+    "title": "Stolen Artifacts",
+    "logo": "./assets/images/FNF-Logo.png",
+    "logoWidth": "500px",
+    "logoHeight": "150px",
+    "mainImage": "https://www.youtube.com/embed/hH71pnHr_lc?autoplay=1&mute=1&loop=1&playlist=hH71pnHr_lc",
+    "subImages": [
+      "https://drive.google.com/thumbnail?id=1h9Q_TDY_zrlyzO468ATC-bDe6D7PDBL9&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1AB2oam33xYBiDQa4-xeuPZps7gidFvKG&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1Z6rmDC8QUvuX-TXVYqM8biukAVM0F7Lk&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1Cdzk3q0owspNnac5m0eSjGuwxPv2g-fZ&sz=w1080",
+      "https://drive.google.com/thumbnail?id=18mecnTRpjXujX7WO4WvZV7tON_nY9a2_&sz=w1080",
+      "https://drive.google.com/thumbnail?id=17oNhYV4d6BvIQUwVEIe94Q0Xl5cxhkak&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1_PkbTHh4uqIaILCgDI2ThZvcexKhJCJd&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1JOO-1WQinGr4d5KJEamPWNvVq55RkVaE&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1naruka-7Jo1Wz_Ac-WKJWfHOs9OEoaIf&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1BeFtc6YKcxj0oX8THYgsAX6BWo9ZlbNK&sz=w1080",
+      "https://drive.google.com/thumbnail?id=13s6QFSACOv4vzE-vV8C5JCdulKsGTR-C&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1tm5e-mv14-JL34r3Q3Kzwtd-3zTcI3RX&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1EvnVII27jtsbedYAmXgAz6uSDCAo9Fn9&sz=w1080"
+    ]
+  }
