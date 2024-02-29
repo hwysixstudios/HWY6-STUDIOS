@@ -4,344 +4,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HWY6 STUDIOS</title>
-  <meta content="HWY6STUDIOS operates as a versatile studio specializing in creative consultation and multimedia production." property="og:title"
-    name="description">
+  <title>HWY6STUDIOS</title>
+  <meta content="hwy6studio REPRESENTS THE FUTURE IN CREATIVE AND VISUAL PRODUCTION " name="description">
+  <meta content="hwy6studio" property="og:title">
+  <meta content="hwy6studio REPRESENTS THE FUTURE IN CREATIVE AND VISUAL PRODUCTION " property="og:title">
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/x-icon" href="./assets/images/HWY6.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/mobile.css" />
-  <link rel="stylesheet" href="./assets/css/fadeOut.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<body>
 
-  <div class="loading_ctn" id="loader">
-    <div class="loading_assets">
-      <div class="img_ctn">
-        <img id="loadOrg" style="background:none" src="./assets/images/STUDIOS.png">
+
+
+
+
+
+
+<body>
+  <header class="hero-sec">
+
+    <div class="background-container">
+      
+      <!-- Div for the img. We'll change the src in JavaScript to another image or video depending on what the user selects from the dropdown menu.  -->
+      <div class="img-container">
+        <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
       </div>
-      <div id="progressbar">
-        <div></div>
+      <fade/>
+
+
+      <!-- ! This is for the video! We'll be changing how this works later, but for now it's going to use youtube. -->
+      <!-- <div class="video-container">
+        <video class="gdriveVideo" preload="auto">
+          <iframe width="1280" height="533" src="https://www.youtube.com/embed/hH71pnHr_lc" title="Stolen Artifacts @frndsnfoes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <fade/>
+        </video>
+      </div> -->
+
+    </div>
+    
+    <!-- Org choosing section. Has the HWY6STUDIO Logo and the brands -->
+    <div class="org-sec">
+      <a id="logo" href="#">
+        <img id="org" style="background:none" src="./assets/images/STUDIOS.png">
+      </a>
+
+      <!-- ! Brand Section. Uses dropdown  -->
+      <div class="brand-sec">
+        <button class="dropdown-btn" id="dropdown-button">
+          <img data-id="FRNDSnFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
+        </button>
+        <span class="arrow fade-in-down">&dtrif;</span>
+        <ul class="dropdown-content" id="dropdown-content" style="display:none;">
+          <li><a href="#">Sequoiah</a></li>
+          <li><a href="#">Norsu</a></li>
+        </ul>
       </div>
+
+
+    </div>
+  </header>
+
+
+
+  <div class="links-sec">
+    <ul>
+      <li>
+        <a href="mailto:hwysixstudios@gmail.com">hwy6studios@gmail</a>
+        <a href="https://www.instagram.com/hwy6studios/">@hwy6studios</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Beginning of main projects section  -->
+  <div class="main-section">
+
+    <div class="main-section-header-div">
+
+      <div class="projects-div">
+<<<<<<< Updated upstream
+        <h3 class="p-h3">PROJECTS</h3>
+=======
+        <h4>PROJECT CATEGORY</h4>
+>>>>>>> Stashed changes
+
+        <div class="choices">
+
+          <div class="choice">
+            <a class="catChoice highlighted">ALL</a>
+          </div>
+
+          <div class="choice">
+            <a class="catChoice unselected">PHOTO</a>
+          </div>
+
+          <div class="choice">
+            <a class="catChoice unselected">BRAND</a>
+          </div>
+
+        </div>
+
+      </div>
+<<<<<<< Updated upstream
+=======
+
+      <div class="teams-div">
+        <h4 class="t-h4">TEAM MEMBERS</h4>
+       <div class="memberList" id="memberList">
+          <!-- Content will be inserted here -->
+        </div>
+      </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card-holder">
+        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
+          <div class="card-info">
+            <h4 class="heading-name">YOOOOOS!</h4>
+            <h4 class="heading-card">YOOOOOS!</h4>
+          </div>
+        </a>
+
+        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
+          <div></div>
+        </a>
+
+        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
+          <div></div>
+        </a>
+
+        <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);">
+          <div></div>
+        </a>
+
+      </div>
+>>>>>>> Stashed changes
     </div>
   </div>
 
-  <div class="main_page">
+  <div class="card-container">
+    <div class="card-holder">
 
-    <!-- ! background section  -->
-    <div id="background_ctn">
-      <img id="main-img" src="./assets/images/fnfwarshirt.jpg">
-      <fade />
-      <!-- <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/PTNm_Bcr_Fw" title="baccend" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allow="autoplay" allowfullscreen></iframe>
-            <fade/>
-        </div> -->
+      <!-- ! Project cards  -->
+      <a class="card" style="background-image: url(./assets/images/ig-pre2.jpg);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Sequoiah</h4>
+          <h4 class="heading-card">DROP #</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/NORSU_1.jpg);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Norsu</h4>
+          <h4 class="heading-card">Pretty Girls Wear Norsu</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/SOLARBOY.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Solarboy</h4>
+          <h4 class="heading-card">Solarworld  #</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/drivenangels.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name red">Sequoiah</h4>
+          <h4 class="heading-card red">Driven Angels #</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/fnfworkerjacket.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name red">FRNDSnFOES</h4>
+          <h4 class="heading-card red">Faith Collection</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/fnfwarshirt.jpg);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">FRNDSnFOES</h4>
+          <h4 class="heading-card">War Tee</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/Seddy-Project.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Seddy Hendrinx</h4>
+          <h4 class="heading-card">David Ruffin</h4>
+        </div>
+      </a>
+
+      <a class="card" style="background-image: url(./assets/images/agthsb-sequoiah-tee.png);" href="#">
+        <div class="card-info">
+          <h4 class="heading-name">Sequoiah</h4>
+          <h4 class="heading-card">AGTHSB Tee #</h4>
+        </div>
+      </a>
+
     </div>
 
-    <!-- ! Header Section.  -->
-    <div id="header">
-
-      <div id="icon_ctn">
-        <!-- ! Logo Section.  -->
-
-        <a id="main_logo" href="/" aria-current="page">
-          <img style="background:none" src="./assets/images/STUDIOS.png" alt="hwy6studios Inc.">
-        </a>
-
-
-          <!-- ! DROPDOWN Section.  -->
-
-        <div id="dd_sec">
-
-          <div id="brand_logo">
-            <button>
-              <img data-id="FRNDSNFOES" id="selected-option" src="./assets/images/FNF-Logo.png"></img>
-            </button>
-            <span class="fade-in-down" id="arrow">&dtrif;</span>
-          </div>
-
-          <div id="dd_menu">
-            <ul style="display:none;">
-              <li><a class="font_aza" href="#">Sequoiah</a></li>
-              <li><a class="font_aza" href="#">Norsu</a></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-
-
-
-    </div>
-
-    <!-- ! Mission statement section  -->
-    <div class="subtitle_sec">
-
-      <div id="links_loc">
-        <div id="description">
-          <p>HWY6STUDIOS operates as a versatile studio specializing in creative consultation and multimedia production.
-          </p>
-        </div>
-        <div id="links_sec">
-          <ul>
-            <li>
-              <a href="mailto:hwysixstudios@gmail.com">hwy6studios@gmail</a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/hwy6studios/">@hwy6studios</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-
-
-      <div id="location">
-        <p>HOUSTON, TX</p>
-        <p>77083</p>
-      </div>
-    </div>
-
-    <!-- ! PROJECTS SECTION -->
-    <div id="main_section">
-      <div id="main-section-header-div">
-        <div id="projects_div">
-          <!-- <h3 class="p-h3">CATALOGUE</h3> -->
-
-          <div id="main_card_ctn">
-            <a id="main_card" style="background-image: url(./assets/images/hwy6popup.jpg);"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfp-PfW9b-zTAhurON-I6DabQsJhuFMtvvyOEM2PhGzgJpsZw/viewform">
-            </a>
-            <div id="card_info">
-              <h4 id="heading_name">HWY6STUDIOS</h4>
-              <h4 id="heading_sub">HWY6 POP UP</h4>
-            </div>
-          </div>
-
-          <div id="section_choices">
-            <div class="choice" id="main-option">
-              <a class="catChoice highlighted">PROJECTS</a>
-            </div>
-            <!-- <div class="choice" id="sub-option">
-                <a class="catChoice unselected">PHOTO</a>
-              </div> -->
-            <div class="choice" id="sub-option">
-              <a class="catChoice unselected">VIDEO</a>
-            </div>
-            <div class="choice" id="sub-option">
-              <a class="catChoice unselected">CLOTHING</a>
-            </div>
-            <div class="choice" id="sub-option">
-              <a class="catChoice unselected">CONTACT</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="card_container">
-      <div id="card_holder">
-
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/ig-pre2.jpg);" href="gallery.html"
-            data-id="SEQUOIAH">
-
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">Sequoiah</h4>
-            <h4 class="heading_sub">DROP</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/NORSU_1.jpg);" data-id="NORSU-GIRLS" href="gallery.html">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">Norsu</h4>
-            <h4 class="heading_sub">Pretty Girls Wear Norsu</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/SOLARBOY.png);" href="gallery.html"
-            data-id="SOLARWORLD">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">Solarboy</h4>
-            <h4 class="heading_sub">Solarworld</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="VIDEO CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/drivenangels.png);" href="gallery.html"
-            data-id="SEQUOIAH-DRIVE">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">Sequoiah</h4>
-            <h4 class="heading_sub">Driven Angels</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/fnfworkerjacket.png);" href="gallery.html"
-            data-id="FNF-FAITH">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">FRNDSNFOES</h4>
-            <h4 class="heading_sub">Faith Collection</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/fnfwarshirt.jpg);" href="gallery.html"
-            data-id="FNF-WARTEE">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">FRNDSNFOES</h4>
-            <h4 class="heading_sub">War Tee</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="VIDEO">
-          <a class="card proj" style="background-image: url(./assets/images/Seddy-Project.png);" href="gallery.html"
-            data-id="SEDDY-DAVID">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">Seddy Hendrinx</h4>
-            <h4 class="heading_sub">"David Ruffin"</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/agthsb-sequoiah-tee.png);"
-            href="gallery.html" data-id="SEQUOIAH-AGTHSB">
-          </a>
-          <div class="card_info_child">
-            <h4 class="heading_name">Sequoiah</h4>
-            <h4 class="heading_sub">AGTHSB Tee</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="VIDEO CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/stolenartifactss.png);" href="gallery.html"
-            data-id="FNF-ARTIFACTS">
-          </a>
-
-          <div class="card_info_child">
-            <h4 class="heading_name">FRNDSNFOES</h4>
-            <h4 class="heading_sub">Stolen Artifacts</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/image1.jpg);" href="gallery.html"
-            data-id="FRNDSNFOES">
-          </a>
-
-          <div class="card_info_child">
-            <h4 class="heading_name">FRNDSNFOES x SEQUOIAH</h4>
-            <h4 class="heading_sub">Academy Collection</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="VIDEO">
-          <a class="card proj" style="background-image: url(./assets/images/image2.jpg);" href="gallery.html"
-            data-id="OZONE-FEELING">
-          </a>
-
-          <div class="card_info_child">
-            <h4 class="heading_name">OzoneTheGod</h4>
-            <h4 class="heading_sub">"How I'm Feeling"</h4>
-          </div>
-        </div>
-
-        <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/image3.jpg);" href="gallery.html"
-            data-id="COS-JESUS">
-          </a>
-
-          <div class="card_info_child">
-            <h4 class="heading_name">CreatorOfSex</h4>
-            <h4 class="heading_sub">Jesus Piece</h4>
-          </div>
-        </div>
-
-        <!-- <div class="card_ctn" data-category="VIDEO">
-          <a class="card proj" style="background-image: url(./assets/images/image4.jpg);" href="gallery.html"
-            data-id="FRNDSNFOES">
-          </a>
-
-          <div class="card_info_child">
-            <h4 class="heading_name">Lorem</h4>
-            <h4 class="heading_sub">Lorem</h4>
-          </div>
-        </div> -->
-
-        <!-- <div class="card_ctn" data-category="CLOTHING">
-          <a class="card proj" style="background-image: url(./assets/images/STUDIOS.png);" href="gallery.html"
-            data-id="FRNDSNFOES">
-          </a>
-
-          <div class="card_info_child">
-            <h4 class="heading_name">Lorem</h4>
-            <h4 class="heading_sub">Lorem</h4>
-          </div>
-        </div> -->
-
-      </div>
-    </div>
 
     <footer>
       <div class="footer_sec_div">
 
-        <div class="contact_icons">
-          <div class="icon_list">
-            <li class="icon"><a href="https://www.linkedin.com/company/hwy6studios"><i
-                  class="fa-brands fa-linkedin fa-sm"></i></a></li>
-            <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-sm"></i></a>
-            </li>
-            <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-sm"></i></a>
-            </li>
-            <li class="icon"><a href="https://www.instagram.com/hwy6studios/"><i
-                  class="fa-brands fa-instagram fa-sm"></i></a></li>
-            <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-sm"></i></a></li> -->
-            <li class="icon"><a
-                href="https://www.tiktok.com/@MS4wLjABAAAAZ4zbBTXDR5Vvmuv_ZNMiNUTCF1ogYUOgr6bdc0cMLc3sRRe0XleCqxJWqA3qePcD"><i
-                  class="fa-brands fa-tiktok fa-sm"></i></a></li>
-            <li class="icon"><a href="https://www.youtube.com/channel/UC3EYz3mtSoDCECNNz_eHuxg"><i
-                  class="fa-brands fa-youtube fa-sm"></i></a></li>
-            <!-- <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-sm"></i></a></li> -->
+        <div class="projects-div">
+          <h3 class="p-h3">FIND US...</h3>
+          
+          <div class="  ">
+            <p>Meet the HWY6 Crew.</p>
+            <div>
+              <li>Ekemini Ekwere</li>
+              <li>Terry Washington</li>
+            </div>
           </div>
+  
         </div>
-
-        <div id="page_credit">
-          <p class="font_aza credit">Site designed by:</p>
-          <a class="font_aza credit" id="link_rem" href="https://github.com/JunoAndIce">Juno and Ice &#8226; Ediubong Ekwere</a>
-        </div>
-
       </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
+  </div>
 
   </div>
-  <script src="https://kit.fontawesome.com/9cb376baee.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-  <script src="./assets/js/loader.js"></script>
-  <script src="./assets/js/router.js"></script>
+
+
+
+
   <script src="./assets/js/script.js"></script>
 </body>
+
+
+
+
 
 
 </html>
