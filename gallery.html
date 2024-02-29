@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./assets/images/HWY6.ico">
+  <link rel="stylesheet" href="./assets/css/gallery.css" />
+  <link rel="stylesheet" href="./assets/css/fadeOut.css" />
+</head>
+<body>
+
+<div class="loading_ctn" id="loader">
+
+    <div class="loading_assets">
+      <div class="img_ctn">
+        <img id="loadOrg" style="background:none" src="./assets/images/STUDIOS.png">
+      </div>
+      <div id="progressbar">
+        <div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="main_page">
+
+    <div class="page_content">
+      
+      <header>
+        <a class="header_img_ctn" href="index.html" > 
+          <img id="org" style="background:none" src="./assets/images/STUDIOS.png">
+        </a>
+      </header>
+
+      <div class="gallery_img_ctn" id="main_img_ctn">
+        <img id="main-img" src="./assets/images/stolenartifactss.png">
+      </div>
+
+      <div id="video-container" style="display: none;">
+        <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+
+        <div class="gallery_info">
+
+          <div class="gallery_logo" id="logo_ctn">
+            <img data-id="FRNDSNFOES" id="logo" src="./assets/images/FNF-Logo.png"></img>
+          </div>
+
+          <div class="gallery_text">
+            <div>
+              <p id="gallery_title" class="font_aza">"Stolen Artifacts"</p>
+            </div>
+
+            <p class="font_aza" style="font-size: 14px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, sit nihil ex accusamus nisi tempore, molestiae quaerat eos accusantium perspiciatis nam amet cupiditate eligendi saepe aperiam nesciunt ea! Harum, expedita.
+            Praesentium voluptatibus, labore tempora corporis at vitae illo quaerat aspernatur. Temporibus nulla sed atque, ex nostrum laborum accusantium beatae asperiores dolorem rem exercitationem, vel molestias adipisci praesentium laudantium consequatur doloribus.</p>
+          </div>
+
+        </div>
+
+
+        <div id="gallery-container">
+          <!-- Dynamic gallery_img_ctn elements will be appended here -->
+        </div>
+
+
+
+        <footer>
+          <div class="footer_sec_div">
+    
+            <div class="contact_icons">
+              <div class="icon_list">
+                <li class="icon"><a href="https://www.linkedin.com/company/hwy6studios"><i
+                      class="fa-brands fa-linkedin fa-sm"></i></a></li>
+                <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-sm"></i></a>
+                </li>
+                <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-sm"></i></a>
+                </li>
+                <li class="icon"><a href="https://www.instagram.com/hwy6studios/"><i
+                      class="fa-brands fa-instagram fa-sm"></i></a></li>
+                <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-sm"></i></a></li> -->
+                <li class="icon"><a
+                    href="https://www.tiktok.com/@MS4wLjABAAAAZ4zbBTXDR5Vvmuv_ZNMiNUTCF1ogYUOgr6bdc0cMLc3sRRe0XleCqxJWqA3qePcD"><i
+                      class="fa-brands fa-tiktok fa-sm"></i></a></li>
+                <li class="icon"><a href="https://www.youtube.com/channel/UC3EYz3mtSoDCECNNz_eHuxg"><i
+                      class="fa-brands fa-youtube fa-sm"></i></a></li>
+                <!-- <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-sm"></i></a></li> -->
+              </div>
+            </div>
+    
+            <div id="page_credit">
+              <p class="font_aza credit">Site designed by:</p>
+              <a class="font_aza credit" id="link_rem" href="https://github.com/JunoAndIce">Juno and Ice &#8226; Ediubong Ekwere</a>
+            </div>
+    
+          </div>
+        </footer>
+
+
+    </div>
+
+
+  </div>
+  <script src="https://kit.fontawesome.com/9cb376baee.js" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    <script src="./assets/js/loader.js"></script>
+    <script src="./assets/js/galleryScript.js"></script>
+</body>
+
+
+</html>
