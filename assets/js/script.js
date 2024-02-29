@@ -47,7 +47,7 @@ const initialSetup = () => {
   setLogo(lastChoice); // Set the logo based on the last choice or default to 'FRNDSNFOES'
 
   // Check if 'FRNDSNFOES' is not the current choice
-  if (lastChoice !== 'FRNDSNFOES' && userHasInteracted) {
+  if (lastChoice !== 'FRNDSNFOES') {
       // Remove the current choice from the list if it exists
       removeListItem(currentBrand.dataset.id);
       // Add 'FRNDSNFOES' to the list
@@ -119,9 +119,22 @@ const setSelectedCategory = (event) => {
       // Check if the selectedCategory is one of the card's categories
       const shouldDisplay = cardCategories.includes(selectedCategory) || selectedCategory === 'PROJECTS';
 
+      // Set the display property of the card based on the selected category
       card.style.display = shouldDisplay ? 'block' : 'none';
   });
+
+  // Hide the Typeform card if the selected category is not 'Contact'
+  const typeformCard = document.querySelector('.card_ctn[data-category="CONTACT"]');
+  
+  console.log(typeformCard);
+  if (selectedCategory !== 'CONTACT') {
+      typeformCard.style.display = 'none';
+  } else {
+      typeformCard.style.display = 'block';
+  }
 }
+
+
 
 $('.card.proj').each(function() {
   $(this).on('click', function(event) {
@@ -176,19 +189,16 @@ document.querySelectorAll('.card.proj').forEach(card => {
   });
 });
 
-var speed = 'slow';
+const adjustBackgroundCtnHeight = () => {
+  const viewportHeight = window.innerHeight;
+  const backgroundCtn = document.getElementById('background_ctn');
+  if (backgroundCtn) {
+    backgroundCtn.style.height = `${viewportHeight}px`;
+  }
+}
 
-$('html, body').hide();
+// Adjust height on initial load
+adjustBackgroundCtnHeight();
 
-$(document).ready(function() {
-    $('html, body').fadeIn(speed, function() {
-        $('a[href], button[href]').click(function(event) {
-            var url = $(this).attr('href');
-            if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
-            event.preventDefault();
-            $('html, body').fadeOut(speed, function() {
-                window.location = url;
-            });
-        });
-    });
-});
+// Adjust height whenever the window resizes
+// window.addEventListener('resize', adjustBackgroundCtnHeight);
