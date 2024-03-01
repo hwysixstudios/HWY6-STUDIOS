@@ -22,6 +22,10 @@ function updateGallery(itemId) {
       const imgContainer = document.getElementById('main_img_ctn');
       const videoPlayer = document.getElementById('video-player');
       const videoContainer = document.getElementById('video-container');
+
+      const gParagraph = document.getElementById('gallery_paragraph');
+      gParagraph.textContent = data.galleryInfo;
+
       if (data.type === 'image') {
         mainImg.src = data.mainImage;
         mainImg.style.display = 'block';
