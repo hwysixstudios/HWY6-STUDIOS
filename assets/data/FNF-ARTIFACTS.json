@@ -1,11 +1,13 @@
 {
     "type": "video",
     "title": "Stolen Artifacts",
+    "galleryInfo":" Dir. @hwy6studios\nDP. @ekdsgn_\nProd Co. @hwy6studios\nProd Co. @02NotNice\nAC: @derrkio\n AC: @clintsuavee ",
     "logo": "./assets/images/FNF-Logo.png",
     "logoWidth": "400px",
     "logoHeight": "150px",
     "mainImage": "https://www.youtube.com/embed/hH71pnHr_lc?autoplay=1&mute=1&loop=1&playlist=hH71pnHr_lc",
-    "subImages": [
+    "subImages":
+   [
       "https://drive.google.com/thumbnail?id=1h9Q_TDY_zrlyzO468ATC-bDe6D7PDBL9&sz=w1080",
       "https://drive.google.com/thumbnail?id=1AB2oam33xYBiDQa4-xeuPZps7gidFvKG&sz=w1080",
       "https://drive.google.com/thumbnail?id=1Z6rmDC8QUvuX-TXVYqM8biukAVM0F7Lk&sz=w1080",
