@@ -125,13 +125,17 @@ const setSelectedCategory = (event) => {
 
   // Hide the Typeform card if the selected category is not 'Contact'
   const typeformCard = document.querySelector('.card_ctn[data-category="CONTACT"]');
-  
-  console.log(typeformCard);
+  const cardHolder = document.getElementById('card_holder');
+
   if (selectedCategory !== 'CONTACT') {
-      typeformCard.style.display = 'none';
-  } else {
-      typeformCard.style.display = 'block';
-  }
+    typeformCard.style.display = 'none';
+    
+    cardHolder.classList.remove('contact-layout');
+ } else {
+    typeformCard.style.display = 'block';
+
+    cardHolder.classList.add('contact-layout');
+ }
 }
 
 
