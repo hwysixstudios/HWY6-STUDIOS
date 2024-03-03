@@ -432,7 +432,7 @@ body {
   display: grid;
   flex-wrap: wrap;
   grid-template-rows: auto;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   /* padding-left: 25px; */
   margin: auto;
   gap: 5px;
@@ -605,6 +605,10 @@ i {
 }
 
 /* ! FLAVOR TEXT SECTION  */
+
+#card_holder {
+  grid-template-columns: 50% 50%;
+}
 }
 
 @media screen and (min-width: 1024px) {
@@ -707,4 +711,8 @@ i {
   #card_holder {
     grid-template-columns: 25% 25% 25% 25%;
   }
+}
+
+.contact-layout {
+  grid-template-columns: 1fr !important; /* Single column layout for the contact card */
 }
