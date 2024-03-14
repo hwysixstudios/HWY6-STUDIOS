@@ -23,8 +23,39 @@ function updateGallery(itemId) {
       const videoPlayer = document.getElementById('video-player');
       const videoContainer = document.getElementById('video-container');
 
-      const gParagraph = document.getElementById('gallery_paragraph');
-      gParagraph.textContent = data.galleryInfo;
+      const gParagraphContainer = document.getElementById('gallery_paragraph_container');
+      const gProdHeader = document.getElementById('prod_id');
+      
+      if (data.galleryInfo) {
+        data.galleryInfo.forEach(info => {
+          const gParagraph = document.createElement('p');
+          const gLink = document.createElement('a');
+          gProdHeader.style.opacity = '1';
+          gLink.textContent = info.text;
+          gLink.href = info.link;
+          gLink.classList.add('gallery_paragraph');
+          gParagraph.appendChild(gLink);
+          gParagraphContainer.appendChild(gParagraph);
+        });
+      }
+
+
+      const gCastContainer = document.getElementById('gallery_cast_container');
+      const gCastHeader = document.getElementById('cast_id');
+
+      if (data.galleryCast) {
+        data.galleryCast.forEach(info => {
+          const gParagraph = document.createElement('p');
+          const gLink = document.createElement('a');
+          gCastHeader.style.opacity = '1'
+          gLink.textContent = info.text;
+          gLink.href = info.link;
+          gLink.classList.add('gallery_paragraph');
+          gParagraph.appendChild(gLink);
+          gCastContainer.appendChild(gParagraph);
+        });
+      }
+
 
       if (data.type === 'image') {
         mainImg.src = data.mainImage;

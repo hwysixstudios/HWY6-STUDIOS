@@ -1,0 +1,101 @@
+{
+    "type": "video",
+    "title": "HWY6 Pop Up: Promo Run",
+    "galleryInfo": [
+        {
+            "text": "Producer: @jahiree_",
+            "link": "https://www.example.com/studio"
+        },
+        {
+            "text": "DP: @ekdsgn_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Edit: @ekdsgn_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Recording Sound Mixer: @ysldxy_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Boom Operator: @clintsuavee",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "VFX: @aozeyy",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Sound Design: @galzxys",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "BTS: @upthescorefilms",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "PA: @nolimitemaan",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "PA : @stunnamang",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Production Company: @hwy6studios",
+            "link": "https://www.example.com/ac"
+        }
+    ],
+    "galleryCast": [
+        {
+            "text": "@judystarx",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@_robwick",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@versesuniverse_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@shanefromhtx",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@teejayrarii",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@maxostiff",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@winniepolkk",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@fw.temi",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@djeze___",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@lil.chikaa",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "@harkheem._",
+            "link": "https://www.example.com/ac"
+        }
+    ],
+    "logo": "./assets/images/hwy6Logo.png",
+    "logoWidth": "475px",
+    "logoHeight": "115px",
+    "mainImage": "https://www.youtube.com/embed/VloeirBA9a4?autoplay=1&mute=1&loop=1&playlist=VloeirBA9a4",
+    "subImages": []
+}
