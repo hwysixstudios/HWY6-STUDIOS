@@ -1,0 +1,51 @@
+{
+    "type": "video",
+    "title": "NORSU Capsule 001 : Available 3/9/2024.",
+    "galleryInfo": [
+        {
+            "text": "CD: @clintsuavee",
+            "link": "https://www.example.com/studio"
+        },
+        {
+            "text": "DP: @ekdsgn_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Photographer: @upthescorefilms",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Edit: @ekdsgn_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "SFX: @pslmsmn",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "PA: @ysldxy_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "PA: @derrkio",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "PA: @keenxneth",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Studio: @sanmanstudios",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Production Company: @hwy6studios",
+            "link": "https://www.example.com/ac"
+        }
+    ],
+    "logo": "./assets/images/NORSU-LOGO.png",
+    "logoWidth": "300px",
+    "logoHeight": "200px",
+    "mainImage": "https://www.youtube.com/embed/zCG3V0S4jeE?autoplay=1&mute=1&loop=1&playlist=zCG3V0S4jeE",
+    "subImages": []
+}

@@ -1,9 +1,9 @@
 {
     "type": "image",
     "title": "Jesus Piece",
-    "logo": "./assets/images/STUDIOS.png",
-    "logoWidth": "250px",
-    "logoHeight": "100px",
+    "logo": "./assets/images/hwy6Logo.png",
+    "logoWidth": "475px",
+    "logoHeight": "115px",
     "mainImage": "https://drive.google.com/thumbnail?id=1AaAEFsB2LZVJ9hyukQ_ITZk8TLKXef0D&sz=w1920",
     "subImages": [
       "https://drive.google.com/thumbnail?id=1Ge3Ib5V5mHicQ5EDtL7mUn-TUX3LrxUX&sz=w1080",

@@ -474,7 +474,10 @@ body {
   bottom: 0; 
   left: 0; 
   width: 100%; 
-  z-index: 2; 
+  z-index: 2;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .heading_name {
@@ -716,3 +719,31 @@ i {
 .contact-layout {
   grid-template-columns: 1fr !important; /* Single column layout for the contact card */
 }
+
+/* ! CENTER LINE  */
+#align{
+  margin-left: -12px;
+  margin-right: -8px;
+}
+
+.break_line{
+  margin-right: 8px;
+  margin-left: 12px;
+  color: white;
+  word-break: break-word;
+}
+
+
+.break_line:not(:last-child)::after{
+  border-left-style: solid;
+  border-left-width: 1px;
+  content: "";
+  height: 60%;
+  border-color: #7A7A7A;
+
+  width: auto;
+  left: auto;
+  right: -8px;
+  position: relative;
+}
+/* ! CENTER LINE  */
