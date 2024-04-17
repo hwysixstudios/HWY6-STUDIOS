@@ -75,7 +75,7 @@ function updateGallery(itemId) {
       data.subImages.forEach((url, index) => {
         const galleryImgCtn = document.createElement('div');
         galleryImgCtn.className = 'gallery_img_ctn';
-        galleryImgCtn.id = 'gallery_img_ctn_' + (index + 1);
+        // galleryImgCtn.id = 'gallery_img_ctn_' + (index + 1);
 
         const img = document.createElement('img');
         img.className = 'sub_img hidden';
@@ -83,6 +83,8 @@ function updateGallery(itemId) {
 
         galleryImgCtn.appendChild(img);
         galleryContainer.appendChild(galleryImgCtn);
+
+        
 
         // Add Intersection Observer to each image
         const observer = new IntersectionObserver((entries) => {
@@ -97,6 +99,7 @@ function updateGallery(itemId) {
         observer.observe(img);
 
       });
+      updateGalleryControlsVisibility();
     })
     .catch(error => console.error('Error loading gallery data:', error));
 }
@@ -116,24 +119,49 @@ window.onload = function () {
   console.log(dataId)
   if (dataId) {
     updateGallery(dataId); // Call updateGallery with the retrieved data-id
+
   }
+
 };
 
 
-
-var speed = 'slow';
-
-$('html, body').hide();
-
-$(document).ready(function () {
-  $('html, body').fadeIn(speed, function () {
-    $('a[href], button[href]').click(function (event) {
-      var url = $(this).attr('href');
-      if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
-      event.preventDefault();
-      $('html, body').fadeOut(speed, function () {
-        window.location = url;
-      });
-    });
+document.querySelectorAll('#gallery_icons span i').forEach(icon => {
+  icon.addEventListener('click', function() {
+    // Remove 'active' class from all icons
+    document.querySelectorAll('#gallery_icons span i').forEach(i => i.classList.remove('active'));
+    // Add 'active' class to the clicked icon
+    this.classList.add('active');
+    // Update the gallery view based on the active icon
+    updateGalleryView();
   });
 });
+
+function updateGalleryView() {
+  const galleryContainer = document.getElementById('gallery-container'); // Make sure to replace 'gallery_container' with the actual ID of your gallery container
+  const isGridViewActive = document.querySelector('#gallery_icons .fa-grip-vertical').classList.contains('active');
+  const isSingleViewActive = document.querySelector('#gallery_icons .fa-square').classList.contains('active');
+
+  if (isGridViewActive) {
+    galleryContainer.classList.remove('single-view');
+    galleryContainer.classList.add('grid-view');
+  } else if (isSingleViewActive) {
+    galleryContainer.classList.remove('grid-view');
+    galleryContainer.classList.add('single-view');
+  }
+}
+
+function updateGalleryControlsVisibility() {
+  const galleryContainer = document.getElementById('gallery-container');
+  const galleryControls = document.getElementById('gallery_controls');
+  const galleryImages = galleryContainer.querySelectorAll('.gallery_img_ctn');
+
+  console.log(galleryImages.length);
+
+  if (galleryImages.length === 0) {
+    // If there are no gallery images, hide the gallery controls
+    galleryControls.style.display = 'none';
+  } else {
+    // If there are gallery images, show the gallery controls
+    galleryControls.style.display = 'block';
+  }
+}

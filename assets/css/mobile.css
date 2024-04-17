@@ -585,7 +585,7 @@ i {
 
 /* ! FLAVOR TEXT SECTION  */
 .subtitle_sec {
-  bottom: 400px;
+  bottom: 100px;
   font-size: 15px;
 }
 
@@ -728,7 +728,7 @@ i {
 
 .break_line{
   margin-right: 8px;
-  margin-left: 12px;
+  margin-left: 8px;
   color: white;
   word-break: break-word;
 }
