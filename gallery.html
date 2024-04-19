@@ -9,8 +9,26 @@
   <link rel="icon" type="image/x-icon" href="./assets/images/HWY6.ico">
   <link rel="stylesheet" href="./assets/css/gallery.css" />
   <link rel="stylesheet" href="./assets/css/fadeOut.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+
+
 </head>
 
+<!-- ! Credit to Fancyapps for Fancybox gallery  -->
 <body>
 
   <div class="loading_ctn" id="loader">
@@ -42,12 +60,16 @@
 
 
 
-      <div id="main_img_ctn">
-        <img id="main-img" src="./assets/images/stolenartifactss.png">
-      </div>
+      <div id="main_content">
 
-      <div id="video-container" style="display: none;">
-        <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+        <div id="main_img_ctn">
+          <img id="main-img" src="./assets/images/stolenartifactss.png">
+        </div>
+
+        <div id="video-container" style="display: none;">
+          <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
       </div>
 
 
@@ -58,7 +80,7 @@
 
         <div class="gallery_text">
           <div>
-            <h1 id="gallery_title" class="font_aza" style="text-decoration: underline;">"Stolen Artifacts"</h1>
+            <h1 id="gallery_title" class="font_aza">"Stolen Artifacts"</h1>
           </div>
 
           <div class="gallery_text_box">
@@ -86,8 +108,11 @@
   <div id="gallery-container" class="single-view">
     <!-- Dynamic gallery_img_ctn elements will be appended here -->
   </div>
-
-
+  
+  <div id="collageView" class="gone">
+    <div id="mainCollage" class="f-carousel" >
+    </div>
+  </div>
 
   <footer>
     <div class="footer_sec_div">
@@ -95,20 +120,20 @@
       <div class="contact_icons">
         <div class="icon_list">
           <li class="icon"><a href="https://www.linkedin.com/company/hwy6studios"><i
-                class="fa-brands fa-linkedin fa-sm"></i></a></li>
-          <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-sm"></i></a>
+                class="fa-brands fa-linkedin fa-lg"></i></a></li>
+          <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-lg"></i></a>
           </li>
-          <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-sm"></i></a>
+          <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
           </li>
           <li class="icon"><a href="https://www.instagram.com/hwy6studios/"><i
-                class="fa-brands fa-instagram fa-sm"></i></a></li>
-          <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-sm"></i></a></li> -->
+                class="fa-brands fa-instagram fa-lg"></i></a></li>
+          <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li> -->
           <li class="icon"><a
               href="https://www.tiktok.com/@MS4wLjABAAAAZ4zbBTXDR5Vvmuv_ZNMiNUTCF1ogYUOgr6bdc0cMLc3sRRe0XleCqxJWqA3qePcD"><i
-                class="fa-brands fa-tiktok fa-sm"></i></a></li>
+                class="fa-brands fa-tiktok fa-lg"></i></a></li>
           <li class="icon"><a href="https://www.youtube.com/channel/UC3EYz3mtSoDCECNNz_eHuxg"><i
-                class="fa-brands fa-youtube fa-sm"></i></a></li>
-          <!-- <li claslogoWidth.png","><a href="#"><i class="fa-regular fa-envelope fa-sm"></i></a></li> -->
+                class="fa-brands fa-youtube fa-lg"></i></a></li>
+          <!-- <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li> -->
         </div>
       </div>
 
