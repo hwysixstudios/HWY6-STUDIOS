@@ -28,8 +28,8 @@
         }
     ],
     "logo": "./assets/images/FNF-Logo.png",
-    "logoWidth": "400px",
-    "logoHeight": "150px",
+    "logoWidth": "300px",
+    "logoHeight": "120px",
     "mainImage": "https://www.youtube.com/embed/hH71pnHr_lc?autoplay=1&mute=1&loop=1&playlist=hH71pnHr_lc",
     "subImages": [
         "https://drive.google.com/thumbnail?id=1h9Q_TDY_zrlyzO468ATC-bDe6D7PDBL9&sz=w1080",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,29 @@
   <link rel="icon" type="image/x-icon" href="./assets/images/HWY6.ico">
   <link rel="stylesheet" href="./assets/css/gallery.css" />
   <link rel="stylesheet" href="./assets/css/fadeOut.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+
+
 </head>
+
+<!-- ! Credit to Fancyapps for Fancybox gallery  -->
 <body>
 
-<div class="loading_ctn" id="loader">
+  <div class="loading_ctn" id="loader">
 
     <div class="loading_assets">
       <div class="img_ctn">
@@ -27,96 +47,115 @@
   <div class="main_page">
 
     <div class="page_content">
-      
+
       <header>
-        <a class="header_img_ctn" href="index.html" > 
+        <a class="header_img_ctn" href="index.html">
           <img id="org" style="background:none" src="./assets/images/STUDIOS.png">
         </a>
       </header>
 
-      <div class="gallery_img_ctn" id="main_img_ctn">
-        <img id="main-img" src="./assets/images/stolenartifactss.png">
-      </div>
 
-      <div id="video-container" style="display: none;">
-        <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+      <div id="main_content">
+
+        <div id="main_img_ctn">
+          <img id="main-img" src="./assets/images/stolenartifactss.png">
+        </div>
+
+        <div id="video-container" style="display: none;">
+          <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+
       </div>
 
 
       <div class="gallery_info">
         <div class="gallery_logo" id="logo_ctn">
-            <img data-id="FRNDSNFOES" id="logo" src="./assets/images/FNF-Logo.png"></img>
+          <img data-id="FRNDSNFOES" id="logo" src="./assets/images/FNF-Logo.png"></img>
         </div>
-    
+
         <div class="gallery_text">
-            <div>
-                <h1 id="gallery_title" class="font_aza" style="text-decoration: underline;">"Stolen Artifacts"</h1>
-            </div>
+          <div>
+            <h1 id="gallery_title" class="font_aza">"Stolen Artifacts"</h1>
+          </div>
 
-            <div class="gallery_text_box">
-              <div id="gallery_paragraph_container">
-                <h3 id="prod_id" style="opacity: 0;">PRODUCTION:</h3>
-              </div>
-              <div id="gallery_cast_container">
-                <h3 id="cast_id" style="opacity: 0;">CAST:</h3>
-              </div>
+          <div class="gallery_text_box">
+            <div id="gallery_paragraph_container">
+              <h3 id="prod_id" style="opacity: 0;">PRODUCTION:</h3>
             </div>
-
-        </div>
-    </div>
+            <div id="gallery_cast_container">
+              <h3 id="cast_id" style="opacity: 0;">CAST:</h3>
+            </div>
+          </div>
 
         </div>
       </div>
 
-        <div id="gallery-container">
-          <!-- Dynamic gallery_img_ctn elements will be appended here -->
+    </div>
+  </div>
+
+  <div id="gallery_controls">
+    <div id="gallery_icons">
+      <span class="break_line"><i class="active fa-regular fa-square"></i></span>
+      <span class="break_line"><i class="fa-solid fa-grip-vertical"></i></span>
+    </div>
+  </div>
+
+  <div id="gallery-container" class="single-view">
+    <!-- Dynamic gallery_img_ctn elements will be appended here -->
+  </div>
+  
+  <div id="collageView" class="gone">
+    <div id="mainCollage" class="f-carousel" >
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer_sec_div">
+
+      <div class="contact_icons">
+        <div class="icon_list">
+          <li class="icon"><a href="https://www.linkedin.com/company/hwy6studios"><i
+                class="fa-brands fa-linkedin fa-lg"></i></a></li>
+          <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-lg"></i></a>
+          </li>
+          <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+          </li>
+          <li class="icon"><a href="https://www.instagram.com/hwy6studios/"><i
+                class="fa-brands fa-instagram fa-lg"></i></a></li>
+          <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-lg"></i></a></li> -->
+          <li class="icon"><a
+              href="https://www.tiktok.com/@MS4wLjABAAAAZ4zbBTXDR5Vvmuv_ZNMiNUTCF1ogYUOgr6bdc0cMLc3sRRe0XleCqxJWqA3qePcD"><i
+                class="fa-brands fa-tiktok fa-lg"></i></a></li>
+          <li class="icon"><a href="https://www.youtube.com/channel/UC3EYz3mtSoDCECNNz_eHuxg"><i
+                class="fa-brands fa-youtube fa-lg"></i></a></li>
+          <!-- <li class="icon"><a href="#"><i class="fa-regular fa-envelope fa-lg"></i></a></li> -->
         </div>
+      </div>
 
-
-
-        <footer>
-          <div class="footer_sec_div">
-    
-            <div class="contact_icons">
-              <div class="icon_list">
-                <li class="icon"><a href="https://www.linkedin.com/company/hwy6studios"><i
-                      class="fa-brands fa-linkedin fa-sm"></i></a></li>
-                <li class="icon"><a href="https://github.com/hwysixstudios"><i class="fa-brands fa-github fa-sm"></i></a>
-                </li>
-                <li class="icon"><a href="https://twitter.com/hwy6studios"><i class="fa-brands fa-x-twitter fa-sm"></i></a>
-                </li>
-                <li class="icon"><a href="https://www.instagram.com/hwy6studios/"><i
-                      class="fa-brands fa-instagram fa-sm"></i></a></li>
-                <!-- <li class="icon"><a href="#"><i class="fa-brands fa-discord fa-sm"></i></a></li> -->
-                <li class="icon"><a
-                    href="https://www.tiktok.com/@MS4wLjABAAAAZ4zbBTXDR5Vvmuv_ZNMiNUTCF1ogYUOgr6bdc0cMLc3sRRe0XleCqxJWqA3qePcD"><i
-                      class="fa-brands fa-tiktok fa-sm"></i></a></li>
-                <li class="icon"><a href="https://www.youtube.com/channel/UC3EYz3mtSoDCECNNz_eHuxg"><i
-                      class="fa-brands fa-youtube fa-sm"></i></a></li>
-                <!-- <li claslogoWidth.png","><a href="#"><i class="fa-regular fa-envelope fa-sm"></i></a></li> -->
-              </div>
-            </div>
-    
-            <div id="page_credit">
-              <p class="font_aza credit">© 2024 Developed and Designed by: </p>
-              <a class="font_aza credit" id="link_rem" href="https://github.com/JunoAndIce">Juno and Ice &#8226; Ediubong Ekwere</a>
-            </div>
-    
-          </div>
-        </footer>
-
+      <div id="page_credit">
+        <p class="font_aza credit">© 2024 Developed and Designed by: </p>
+        <a class="font_aza credit" id="link_rem" href="https://github.com/JunoAndIce">Juno and Ice &#8226; Ediubong
+          Ekwere</a>
+      </div>
 
     </div>
+  </footer>
+
+
+  </div>
 
 
   </div>
   <script src="https://kit.fontawesome.com/9cb376baee.js" crossorigin="anonymous"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.7.1.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
-    <script src="./assets/js/loader.js"></script>
-    <script src="./assets/js/galleryScript.js"></script>
+  <script src="./assets/js/loader.js"></script>
+  <script src="./assets/js/galleryScript2.js"></script>
 </body>
 
 

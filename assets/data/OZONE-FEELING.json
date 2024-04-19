@@ -32,8 +32,8 @@
         }
     ],
     "logo": "./assets/images/hwy6Logo.png",
-    "logoWidth": "475px",
-    "logoHeight": "115px",
+    "logoWidth": "345px",
+    "logoHeight": "65px",
     "mainImage": "https://www.youtube.com/embed/LHzx_zU5DPc?autoplay=1&mute=1&loop=1&playlist=LHzx_zU5DPc",
     "subImages": []
 }

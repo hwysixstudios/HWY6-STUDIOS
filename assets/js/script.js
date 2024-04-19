@@ -203,6 +203,3 @@ const adjustBackgroundCtnHeight = () => {
 
 // Adjust height on initial load
 adjustBackgroundCtnHeight();
-
-// Adjust height whenever the window resizes
-// window.addEventListener('resize', adjustBackgroundCtnHeight);
