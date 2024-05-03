@@ -77,7 +77,7 @@ const setLogo = (name) => {
       currentBrand.src = './assets/images/NORSU.png';
       mainSiteImg.src = './assets/images/New-Norsu-Header.png';
       mainSiteImg.style.height = '100%';
-      // mainSiteImg.style.width = '285%';
+      mainSiteImg.style.width = '350%';
       currentBrand.dataset.id = 'Norsu';
       localStorage.setItem('lastChoice', 'Norsu');
       break;
@@ -85,13 +85,15 @@ const setLogo = (name) => {
       currentBrand.src = './assets/images/SEQUOIAH.png';
       mainSiteImg.src = './assets/images/zipup.JPG';
       mainSiteImg.style.height = '100%';
+      mainSiteImg.style.width = '350%';
       currentBrand.dataset.id = 'Sequoiah';
       localStorage.setItem('lastChoice', 'Sequoiah');
       break;
     case 'FRNDSNFOES':
       currentBrand.src = './assets/images/FNF-Logo.png';
       mainSiteImg.src = './assets/images/royalty.jpg';
-      mainSiteImg.style.height = '125%';
+      mainSiteImg.style.height = '100%';
+      mainSiteImg.style.width = '200%';
       currentBrand.dataset.id = 'FRNDSNFOES';
       localStorage.setItem('lastChoice', 'FRNDSNFOES');
       break;
