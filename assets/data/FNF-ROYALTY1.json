@@ -1,0 +1,18 @@
+{
+    "type": "image",
+    "title": "Royalty v1",
+    "galleryInfo":"",
+    "logo": "./assets/images/FNF-Logo.png",
+    "logoWidth": "300px",
+    "logoHeight": "120px",
+    "mainImage": "https://drive.google.com/thumbnail?id=1JG3sLoAfTbEXjGsSBvgCj5sRlRmM2lqF&sz=w1920",
+    "subImages": [
+      "https://drive.google.com/thumbnail?id=16HvpviNt4YshwKcUvkQAEB_oJAFdSGtj&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1joPOLOMC32cBWguYllmIK4Outwn8sKlz&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1DbWHXn11LMFuBpvyo9nH_k_HGYIXxS5J&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1ncRFnnidmnawFRvyeD9m22tsJI4DB0Yr&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1Fuf5pCMZIYLo02usd6hAA8sQWtWZZeCF&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1aFjyIAZ2_ILft9aG__oNzBIoje5IA14O&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1JG3sLoAfTbEXjGsSBvgCj5sRlRmM2lqF&sz=w1080"
+  ]
+}

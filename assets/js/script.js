@@ -82,15 +82,15 @@ const setLogo = (name) => {
       break;
     case 'Sequoiah':
       currentBrand.src = './assets/images/SEQUOIAH.png';
-      mainSiteImg.src = './assets/images/agthsb-sequoiah-tee.png';
+      mainSiteImg.src = './assets/images/zipup.JPG';
       mainSiteImg.style.height = '100%';
       currentBrand.dataset.id = 'Sequoiah';
       localStorage.setItem('lastChoice', 'Sequoiah');
       break;
     case 'FRNDSNFOES':
       currentBrand.src = './assets/images/FNF-Logo.png';
-      mainSiteImg.src = './assets/images/fnfwarshirt.jpg';
-      mainSiteImg.style.height = '100%';
+      mainSiteImg.src = './assets/images/royalty.jpg';
+      mainSiteImg.style.height = '125%';
       currentBrand.dataset.id = 'FRNDSNFOES';
       localStorage.setItem('lastChoice', 'FRNDSNFOES');
       break;
