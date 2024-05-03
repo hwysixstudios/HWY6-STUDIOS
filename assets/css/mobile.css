@@ -329,7 +329,7 @@ body {
 
 #main_card {
   display: inline-block;
-  background-size: %;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(50%);
