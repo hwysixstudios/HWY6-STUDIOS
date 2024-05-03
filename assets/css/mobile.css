@@ -211,7 +211,7 @@ body {
 
 #background_ctn img {
   height: 100%;
-  width: 275%;
+  width: 325%;
   filter: brightness(55%);
 
   /* Image Centering  */
@@ -329,7 +329,7 @@ body {
 
 #main_card {
   display: inline-block;
-  background-size: cover;
+  background-size: %;
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(50%);
@@ -384,6 +384,7 @@ body {
   font-weight: 700;
   text-decoration: none;
   padding-bottom: 20px;
+  
 }
 /* !! ARCHIVES SECTION  */
 
@@ -491,6 +492,7 @@ body {
 .heading_sub {
   font-size: 0.75em;
   font-weight: 700;
+  /* text-transform: uppercase; */
 }
 /* !! CARD SECTION  */
 

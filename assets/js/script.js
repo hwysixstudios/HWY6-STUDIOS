@@ -75,8 +75,9 @@ const setLogo = (name) => {
   switch (name) {
     case 'Norsu':
       currentBrand.src = './assets/images/NORSU.png';
-      mainSiteImg.src = './assets/images/NORSU_1.jpg';
-      mainSiteImg.style.height = '170%';
+      mainSiteImg.src = './assets/images/New-Norsu-Header.png';
+      mainSiteImg.style.height = '100%';
+      // mainSiteImg.style.width = '285%';
       currentBrand.dataset.id = 'Norsu';
       localStorage.setItem('lastChoice', 'Norsu');
       break;
