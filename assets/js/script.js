@@ -92,7 +92,7 @@ const setLogo = (name) => {
     case 'FRNDSNFOES':
       currentBrand.src = './assets/images/FNF-Logo.png';
       mainSiteImg.src = './assets/images/royalty.jpg';
-      mainSiteImg.style.height = '100%';
+      mainSiteImg.style.height = '125%';
       mainSiteImg.style.width = '200%';
       currentBrand.dataset.id = 'FRNDSNFOES';
       localStorage.setItem('lastChoice', 'FRNDSNFOES');
