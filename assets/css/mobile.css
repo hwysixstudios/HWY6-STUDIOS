@@ -581,7 +581,7 @@ i {
 }
 
 #background_ctn img {
-  width: 175%;
+  width: 100% !important;
 }
 /* ! BACKGROUND SECTION  */
 
