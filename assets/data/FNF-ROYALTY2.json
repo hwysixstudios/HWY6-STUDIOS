@@ -1,0 +1,25 @@
+{
+    "type": "image",
+    "title": "Royalty v2",
+    "galleryInfo":"",
+    "logo": "./assets/images/FNF-Logo.png",
+    "logoWidth": "300px",
+    "logoHeight": "120px",
+    "mainImage": "https://drive.google.com/thumbnail?id=1PT33XtW1pWQLU8Ai0HyoS-KcDjAslK6X&sz=w1920",
+    "subImages": [
+      "https://drive.google.com/thumbnail?id=1qWTmDxmw5Y-DCRlvpTmTPZUJF9pZASJa&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1JWuWOOxNUvYmsKkXd2tijoJ4hPls1Zjz&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1lX0AIE5Dsx-mL6Igp_y6AFXarfYHPo-L&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1A0Y0LZrnDWa2pW6gtXvtQTfw9K6kKqt1&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1qFAkGQLTJovOiZnCXuf7aDWhS2wGGz73&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1QI9ZarSsFpMpYydKXhmNtp4YA31WFM4T&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1PT33XtW1pWQLU8Ai0HyoS-KcDjAslK6X&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1ycMEAwHBBxc2efu4oSPlom_p_j4GbECq&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1-ACePdX3inYTA51FqVtt8DMABQQg0XDO&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1TAmJnSAriUVz2iBKHRoO0Ttc4N_5rDfd&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1tdffUnHZufHcZ7auX_WfN7dwFEDtHk7a&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1zKD8bEq5w2rTikDcK-RkDF6L8nyCE7EZ&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1ca-_34zZsDhM7tfSnE-ZpidtLONqINnp&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1A6X0x7wm7CucH2mracy6Zto9Qy967b2O&sz=w1080"
+  ]
+}

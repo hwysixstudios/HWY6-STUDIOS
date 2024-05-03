@@ -1,0 +1,19 @@
+{
+    "title": "DJ EZE - \"LoveNRnB 3: The Short Film\"",
+    "type": "video",
+    "galleryInfo": [
+        {
+            "text": "Performed by:",
+            "link": "https://www.example.com/studio"
+        },
+        {
+            "text": "Director / DP: @ekdsgn_",
+            "link": "https://www.example.com/ac"
+        }
+    ],
+    "logo": "./assets/images/hwy6Logo.png",
+    "logoWidth": "345px",
+    "logoHeight": "65px",
+    "mainImage": "https://www.youtube.com/embed/N_GJXViPmFk?autoplay=1&mute=1&loop=1&playlist=N_GJXViPmFk",
+    "subImages": []
+}
