@@ -1,0 +1,16 @@
+{
+    "type": "image",
+    "title": "Academy Collection",
+    "galleryInfo":[],
+    "logo": "./assets/images/FNF-Logo.png",
+    "logoWidth": "300px",
+    "logoHeight": "120px",
+    "mainImage": "https://drive.google.com/thumbnail?id=1ow_EkaycgNcxKcQpZdlhyRgMVFIyh4K3&sz=w1920",
+    "subImages": [
+      "https://drive.google.com/thumbnail?id=1ow_EkaycgNcxKcQpZdlhyRgMVFIyh4K3&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1K1PTFrw1K1gYZpj7EfacynOINLEkEiqD&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1_84KYh15PlUdWbC0KntstL5KRNUQ0E6O&sz=w1080",
+      "https://drive.google.com/thumbnail?id=13ebLFJYg5oHg2sAFiM2JMY2zE8ubQoZG&sz=w1080",
+      "https://drive.google.com/thumbnail?id=1PGJeKsaH6WG_msZxxpCHRGUmsu6-Z7zM&sz=w1080"
+    ]
+  }
