@@ -143,10 +143,9 @@ header {
   /* Maintain a 16:9 aspect ratio */
 }
 
-#main-img,
-.sub_img {
-  /* height: 100%; */
-  /* width: 100%; */
+#main-img{
+  height: 100%;
+  width: 100%;
 }
 
 #gallery_title {
