@@ -1,42 +1,60 @@
-// Loader functionality 
-let isMoving = false;
-
-const move = () => {
+// Utility function to handle the progress bar animation
+function animateProgressBar(elem) {
+  let width = 1;
   return new Promise((resolve, reject) => {
-    if (!isMoving) {
-      isMoving = true;
-      const elem = document.getElementById("progressbar").firstElementChild;
-      let width = 1;
-      const id = setInterval(() => {
-        if (width >= 100) {
-          clearInterval(id);
-          isMoving = false;
-          resolve(); // Resolve the promise when the animation is done
-        } else {
-          width++;
-          elem.style.width = width + "%";
-        }
-      }, 10);
-    } else {
-      reject(new Error("Animation already in progress"));
-    }
+    const id = setInterval(() => {
+      if (width >= 100) {
+        clearInterval(id);
+        resolve();
+      } else {
+        width++;
+        elem.style.width = width + '%';
+      }
+    }, 10);
   });
 }
 
-// Disable scrolling
-document.body.style.overflow = 'hidden';
+// Function to disable body scroll
+function disableBodyScroll() {
+  document.body.style.overflow = 'hidden';
+}
 
-// Delay the start of the move function by a certain number of milliseconds
-setTimeout(async () => {
-  await move();
-  // Check if the document's readyState is complete after the move function is done animating
-  if (document.readyState == "complete") {
-    // hide loader after 2 seconds
-    setTimeout(() => {
-      document.getElementById('loader').style.display = 'none';
-      const mainPage = document.getElementsByClassName('main_page')[0];
-      mainPage.style.opacity = '1';
-      document.body.style.overflow = 'auto'; // Enable scrolling again
-    }, 600);
+// Function to enable body scroll
+function enableBodyScroll() {
+  document.body.style.overflow = 'auto';
+}
+
+// Function to hide the loader
+function hideLoader(loaderId) {
+  const loader = document.getElementById(loaderId);
+  if (loader) {
+    loader.style.display = 'none';
   }
-}, 900); // Replace 1000 with the number of milliseconds you want to delay
+}
+
+// Function to show the main page content
+function showMainContent(mainPageClass) {
+  const mainPage = document.getElementsByClassName(mainPageClass)[0];
+  if (mainPage) {
+    mainPage.style.opacity = '1';
+  }
+}
+
+// Main loader function
+async function startLoader() {
+  disableBodyScroll();
+
+  try {
+    await animateProgressBar(document.getElementById("progressbar").firstElementChild);
+    // Assuming the document's readyState is checked elsewhere or automatically managed
+    hideLoader('loader');
+    showMainContent('main_page');
+    enableBodyScroll();
+  } catch (error) {
+    console.error('Loader animation failed:', error);
+    // Handle error case, e.g., retry or notify the user
+  }
+}
+
+// Start the loader process
+startLoader();

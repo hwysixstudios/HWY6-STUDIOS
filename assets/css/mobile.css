@@ -264,6 +264,7 @@ body {
   /* text-align: right; */
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 
@@ -403,7 +404,7 @@ body {
   padding-right: 10px;
 }
 
-.choice a {
+.choice span {
   font-family: var(--font-azeret);
   font-size: 13px;
   /* padding: 5px; */
