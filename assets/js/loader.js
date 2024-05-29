@@ -17,6 +17,8 @@ const move = () => {
           elem.style.width = width + "%";
         }
       }, 10);
+    } else {
+      reject(new Error("Animation already in progress"));
     }
   });
 }
