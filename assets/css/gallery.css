@@ -58,6 +58,11 @@ body {
   -ms-overflow-style: none;
 }
 
+.loading_ctn video {
+  width: inherit;
+  height: inherit;
+}
+
 .loading_assets {
   flex-shrink: 0;
   /* ADDED instead of the width/height of the wrapper */

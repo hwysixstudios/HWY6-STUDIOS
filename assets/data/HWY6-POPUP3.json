@@ -1,0 +1,43 @@
+{
+    "type": "video",
+    "title": "HWY6 Pop Up: Phase 3",
+    "galleryInfo": [
+        {
+            "text": "Producer: @jahiree",
+            "link": "https://www.example.com/studio"
+        },
+        {
+            "text": "AD: Ekemini Ekwere",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "AD: Ekemini Ekwere",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "B Cam: @upthescorefilms",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Edit: @ekdsgn_",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Gaffer: @kisangaarsel",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Recording Sound Mixer: @kisangaarsel",
+            "link": "https://www.example.com/ac"
+        },
+        {
+            "text": "Production Company: @hwy6studios",
+            "link": "https://www.example.com/ac"
+        }
+    ],
+    "logo": "./assets/images/hwy6Logo.png",
+    "logoWidth": "345px",
+    "logoHeight": "65px",
+    "mainImage": "https://www.youtube.com/embed/4ai2vxTh_0w?autoplay=1&mute=1&loop=1&playlist=4ai2vxTh_0w",
+    "subImages": []
+}
