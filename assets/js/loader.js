@@ -45,7 +45,14 @@ async function startLoader() {
   disableBodyScroll();
 
   try {
-    await animateProgressBar(document.getElementById("progressbar").firstElementChild);
+    // await animateProgressBar(document.getElementById("progressbar").firstElementChild);
+
+    const video = document.getElementById('myVideo');
+    await new Promise(resolve => {
+      video.onended = resolve;
+    });
+
+
     // Assuming the document's readyState is checked elsewhere or automatically managed
     hideLoader('loader');
     showMainContent('main_page');
