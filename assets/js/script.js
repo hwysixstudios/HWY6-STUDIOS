@@ -100,37 +100,31 @@ const setLogo = (name) => {
   }
 }
 
-
-const setSelectedCategory = (event) => {
-  // Remove highlighting from all categories and add it to the selected one
-  projectCategories.forEach(category => {
-      category.classList.toggle('highlighted', category === event.target);
-      category.classList.toggle('unselected', category !== event.target);
-  });
-
-  // Get the category from the clicked element
-  const selectedCategory = event.target.innerText;
-
-  // Get all project cards
+// Function to handle category selection
+function handleCategorySelection(category) {
+  // Hide all project cards initially
   const projectCards = document.querySelectorAll('.card_ctn');
+  projectCards.forEach(card => {
+    card.style.display = 'none';
+  });
 
   // Show or hide project cards based on the selected category
   projectCards.forEach(card => {
-      // Split the data-category attribute into an array of categories
-      const cardCategories = card.getAttribute('data-category').split(' ');
+    // Split the data-category attribute into an array of categories
+    const cardCategories = card.getAttribute('data-category').split(' ');
 
-      // Check if the selectedCategory is one of the card's categories
-      const shouldDisplay = cardCategories.includes(selectedCategory) || selectedCategory === 'PROJECTS';
+    // Check if the selectedCategory is one of the card's categories
+    const shouldDisplay = cardCategories.includes(category) || category === 'PROJECTS';
 
-      // Set the display property of the card based on the selected category
-      card.style.display = shouldDisplay ? 'block' : 'none';
-  });
+    // Set the display property of the card based on the selected category
+    card.style.display = shouldDisplay ? 'block' : 'none';
+});
 
   // Hide the Typeform card if the selected category is not 'Contact'
   const typeformCard = document.querySelector('.card_ctn[data-category="CONTACT"]');
   const cardHolder = document.getElementById('card_holder');
 
-  if (selectedCategory !== 'CONTACT') {
+  if (category !== 'CONTACT') {
     typeformCard.style.display = 'none';
     
     cardHolder.classList.remove('contact-layout');
@@ -139,9 +133,48 @@ const setSelectedCategory = (event) => {
 
     cardHolder.classList.add('contact-layout');
  }
+
+  // Optionally, highlight the selected category in the UI
+  const projectCategories = document.querySelectorAll(".catChoice");
+  projectCategories.forEach(category => {
+    category.classList.remove('highlighted');
+    category.classList.add('unselected');
+  });
+  const selectedCategoryElement = document.querySelector(`.catChoice[data-value="${category}"]`);
+  if (selectedCategoryElement) {
+    selectedCategoryElement.classList.remove('unselected');
+    selectedCategoryElement.classList.add('highlighted');
+  }
+
+
+    // Scroll to the Typeform container if the selected category is 'CONTACT'
+    if (category === 'CONTACT') {
+      const typeformContainer = document.querySelector('#typeform_card'); // Adjust the selector as needed
+      if (typeformContainer) {
+        typeformContainer.scrollIntoView({ behavior: 'smooth' }); // Scrolls smoothly to the Typeform container
+      }
+  }
 }
 
 
+
+// Attach event listeners to the button and other elements that trigger category selection
+document.addEventListener('DOMContentLoaded', () => {
+  const heroBtn = document.querySelector('.hero-btn');
+  heroBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the default action
+    handleCategorySelection('CONTACT');
+  });
+
+  // Attach event listeners to other category selection elements
+  const categoryButtons = document.querySelectorAll(".catChoice");
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default action
+      handleCategorySelection(event.target.dataset.value);
+    });
+  });
+});
 
 $('.card.proj').each(function() {
   $(this).on('click', function(event) {
@@ -178,9 +211,9 @@ dropdownItems.forEach(function (item) {
   item.addEventListener("click", handleDropdown);
 });
 
-projectCategories.forEach(function (item) {
-  item.addEventListener('click', setSelectedCategory);
-})
+// projectCategories.forEach(function (item) {
+//   item.addEventListener('click', setSelectedCategory);
+// })
 
 
 ddBtn.addEventListener("click", function () {
