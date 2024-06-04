@@ -252,13 +252,14 @@ body {
   font-family: var(--font-azeret);
   font-weight: 100;
 
-  padding-left: 10px;
+
 }
 
 #links_loc {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding-left: 10px;
 }
 
 #links_sec {
@@ -288,6 +289,23 @@ body {
 
 #links_sec ul li a:hover {
   color: rgb(0, 217, 255);
+}
+
+.hero-btn {
+  width: 220px;
+  border-radius: 6px;
+  border: 1px solid white;
+  background-color: transparent;
+
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: rgb(0, 217, 255);
+  border: transparent;
 }
 
 #location > p {
@@ -444,7 +462,6 @@ body {
   /* padding-left: 25px; */
   margin: auto;
   gap: 5px;
-
 }
 
 
